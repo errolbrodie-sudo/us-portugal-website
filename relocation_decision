@@ -1,0 +1,295 @@
+RECON
+CLASSIFIED
+
+FIELD DOSSIER
+Competitive Intelligence · Relocation Tech
+Where the winners moved first.
+A teardown of the global relocation web: who wins, why they win, and what a family-first decision platform should steal from them before writing a line of code.
+
+Scope: global generalists + corridor specialists
+Sites screened: 22
+Scored: 15
+Method: weighted 7-factor matrix
+The one thing to read if you read nothing else
+Nobody has built the thing you described. That is the opportunity and the trap.
+Every feature on your list (moving cost, insurance, pet rules, schools, visas, rentals, cost of living, transport, healthcare, tax, VAT, home insurance) exists somewhere. No single platform stitches them into one trustworthy, decision-grade experience for a family. The gap is real.
+
+It is also empty for a reason: the data-maintenance and trust burden of "everything, everywhere, always current" has broken everyone who tried to boil the ocean. The sites that won did the opposite. They took one sharp job, made it the best on the internet, ranked for it at massive scale, and only then widened out.
+
+Win a wedge. Don't launch an encyclopedia. The build principles below are all downstream of that.
+
+01
+The landscape splits into four archetypes
+"Relocation sites" is not one market. It is four that barely compete with each other, each with a different data model, growth engine, and way of making money. Your hybrid concept is really an attempt to fuse all four, which is why no direct competitor exists and why the benchmark has to span all of them.
+
+Archetype A
+Data engines
+Structured, comparable numbers at planetary scale. Cost of living, salaries, prices. Grow through programmatic SEO on thousands of auto-generated comparison pages. Monetize with display ads.
+
+Numbeo · Expatistan · livingcost.org · Bestplaces
+Archetype B
+Content & community hubs
+Guides, forums, and expat networks. Broad topical coverage written by humans. Grow on editorial SEO and word of mouth. Monetize with ads, directories, memberships, and events.
+
+InterNations · Expatica · Expat.com · International Living
+Archetype C
+Service marketplaces
+Turn intent into a transaction. Match users to movers, insurers, or agents and take a lead fee. Narrow but high revenue per user. This is where the money in relocation actually is.
+
+Sirelo · MoveHub · Unpakt · reallymoving · moveBuddha
+Archetype D
+All-in-one planners & AI roadmaps
+The newest wave, and the closest to your idea. Interactive tools and personalized roadmaps spanning visa, tax, cost, and healthcare. Small on traffic, sharp on product. Monetization still unproven.
+
+WhereNext · Relocate.world · Expatsi · Nomad List
+02
+The full field: 22 sites screened
+Scale figures are directional estimates in the style of Similarweb / Semrush public data (monthly visits), not audited numbers. Treat them as order-of-magnitude, not decimal-point. "est." marks a rougher estimate.
+
+Site	Archetype	Approx monthly visits	Primary job	How it earns
+Numbeo	Data engine	~5.0M	Cost-of-living comparison	Display ads
+Bestplaces	Data engine	~1.9M	US city livability + cost	Ads
+Expatistan	Data engine	~1.1M	Cost + salary + schools DB	Ads / affiliate
+livingcost.org	Data engine	~0.4M est	Cost calculator, 197 countries	Ads
+MyLifeElsewhere	Data engine	~137K	Country vs country compare	Ads
+Expatica	Content hub	~1.2M	Broad expat guides	Ads / directory
+Expat.com	Content hub	~2M est	Forums, classifieds, guides	Ads / listings
+International Living	Content hub	~1M est	Retire-overseas content	Subscriptions / events
+InterNations	Content hub	~1M est	Expat network + events	Membership
+Expat Exchange	Content hub	~231K	Forums + articles	Ads
+Expat Focus	Content hub	~200K est	Guides + podcast + forums	Ads / affiliate
+William Russell	Content hub	~300K est	Country guides (insurer-owned)	Insurance lead-gen
+Sirelo	Marketplace	~0.5M est	Moving-quote comparison + reviews	Mover lead fees
+MoveHub	Marketplace	~0.5M est	Guides + cost tools + quotes	Mover lead fees
+moveBuddha	Marketplace	~0.6M est	Moving cost calc + guides (US)	Mover lead fees
+Unpakt	Marketplace	~0.3M est	Book movers online (US)	Booking commission
+reallymoving	Marketplace	~0.4M est	UK removals + services quotes	Lead fees
+Nomad List	AI / planner	~680K	Nomad city picker + data + community	Subscription
+WhereNext	AI / planner	<50K est	32 relocation tools, no signup	Unproven / early
+Relocate.world	AI / planner	<50K est	AI visa/cost/risk roadmap	Services / referrals
+Expatsi	AI / planner	~100K est	Move-abroad quiz + planning app	Paid product / community
+RelocateMe	AI / planner	~150K est	Tech-relocation jobs + info	Employer fees
+03
+The judging matrix
+Raw traffic answers "who is biggest," not "who should we learn from." Because you are building a hybrid decision tool for families, the matrix deliberately weights breadth of decisions covered and whether the site actually helps you decide and act as heavily as reach. Google reviews were dropped as a factor: content sites don't have them (they belong to movers with physical branches), so they would only measure the marketplace archetype.
+
+20% Reach & authority — traffic, backlinks, domain age
+20% Feature breadth — how many relocation decisions it covers
+15% Data depth & freshness — coverage, structure, currency
+15% Decision utility — tools & personalization vs static text
+10% UX & polish
+10% Trust & transparency — sourcing, methodology, reviews
+10% Monetization proof — durable, demonstrated model
+Each factor scored 1–5. Weighted total out of 5.0. Top five starred. Note the deliberate tension: Numbeo has the most reach on earth here yet lands mid-pack because it covers one decision; WhereNext has almost no traffic yet ranks top-five because it nails the exact product shape you want. Read both signals.
+
+#	Site	Reach	Breadth	Data	Decide	UX	Trust	Money	Weighted total
+1	Nomad List	3.5	3.5	4	4	4	3.5	3.5	3.70 
+2	Expatica	4.5	4	3.5	2.5	3.5	3.5	3.5	3.65 
+3	MoveHub	3.5	4	3.5	3	3.5	3.5	4	3.58 
+4	Numbeo	5	2.5	5	2.5	2	3.5	3.5	3.53 
+4	WhereNext	1.5	5	4	4.5	4.5	3.5	1.5	3.53 
+6	InterNations	4	3	3	3	3.5	4	4.5	3.50 
+7	Bestplaces	4	3	3.5	3	3	3	3	3.28 
+8	Expatistan	3.5	3	4	3	3	3.5	2.5	3.25 
+8	Intl Living	4	3.5	2.5	2.5	3	3	4	3.25 
+8	Relocate.world	1.5	4	3.5	4.5	4	3	2.5	3.25 
+11	Expat.com	4	3.5	3	2.5	2.5	3	3.5	3.23 
+12	Sirelo	3	2	3	3.5	4	4	4	3.18 
+12	moveBuddha	3	2.5	3	3.5	4	3.5	3.5	3.18 
+14	Expatsi	1.5	3.5	2.5	4	4	3	3	2.98 
+15	livingcost.org	2.5	2.5	4	2.5	3	3	2	2.78 
+04
+The top five, and the one lesson each
+Together these five span all four archetypes, which is the point: your product has to borrow something different from each. One lesson per site, chosen to be the thing worth copying.
+
+RANK 01
+Nomad List
+AI / planner · data + community + tools for a narrow audience
+3.70
+WEIGHTED
+The best-run business in the space, and the proof that a relocation product can be a real product, not a content farm. It picked one audience (remote workers), one job (where should I live), and built a filterable data experience across cost, internet, weather, and safety, wrapped in a paying community. Narrow by design, which is exactly why it works.
+
+Steal this
+Depth beats breadth for a wedge. A filterable, opinionated data experience for one audience outperforms a shallow encyclopedia for everyone. Subscriptions are viable when the tool is genuinely useful and the community creates lock-in.
+
+RANK 02
+Expatica
+Content hub · the broadest editorial coverage of expat life
+3.65
+WEIGHTED
+The reference point for SEO-driven relocation content: deep guides on visas, housing, healthcare, tax, and banking, organized by country, pulling over a million visits a month. It also quietly runs an International Schools Database as a sister property, showing how a spun-out vertical tool feeds the mothership.
+
+Steal this
+Editorial SEO organized rigidly by country and topic is a durable traffic moat. But notice the ceiling: it is read-only. It tells you about tax; it never calculates yours. That unmet gap between "explains" and "computes" is your wedge.
+
+RANK 03
+MoveHub
+Marketplace · the cleanest hybrid of content, tools and transaction
+3.58
+WEIGHTED
+The closest existing thing to a hybrid model that pays for itself. Free country guides and cost comparisons pull people in on organic search, then a moving-quote form converts that intent into paid mover leads. Information is the top of a funnel that ends in a transaction.
+
+Steal this
+Every content page should have a transaction waiting at the bottom. This is the single most important monetization pattern for what you're building: content earns the traffic, the quote form earns the money.
+
+RANK 04
+Numbeo
+Data engine · the largest relocation-adjacent site on the internet
+3.53
+WEIGHTED
+Roughly 5M visits a month and millions of backlinks off one idea, executed relentlessly: crowdsourced cost-of-living data on thousands of cities, turned into a near-infinite set of auto-generated "City A vs City B" comparison pages that own the long tail of relocation search. Ugly, dated interface. Does not matter. The data and the SEO structure are the moat.
+
+Steal this
+Programmatic SEO off a structured data core is the growth engine of this entire category. One data model, thousands of pages, endless long-tail queries. Plus: crowdsourcing solves the freshness problem that would otherwise bankrupt you.
+
+RANK 04
+WhereNext
+AI / planner · the product blueprint, low on scale, high on shape
+3.53
+WEIGHTED
+Ranks top-five on merit despite near-zero traffic, because it is the closest anyone has come to your spec: 32 interactive tools spanning cost, salary, tax, visa eligibility, healthcare, climate, and safety across 95 countries, all free and requiring no signup, built on institutional datasets. It shows the product is buildable. Its weakness (no proven monetization, no reach) is precisely the half you would add.
+
+Steal this
+Interactive tools that return a personalized answer, with zero signup friction, are the modern shape of this category. This is your product blueprint. Their unsolved problem, turning free tools into revenue and traffic, is the exact problem this dossier is built to help you solve.
+
+04b
+Three more worth a specific steal
+Monetization blueprint
+InterNations (#6)
+The membership and retention exemplar. Free tier for reach, paid "Albatross" tier plus real-world events create recurring revenue and belonging. If you want subscription income, this is the model to study, not ads.
+
+Roadmap blueprint
+Relocate.world (#8)
+Turns scattered facts into a single personalized roadmap: visa pathways, timelines, costs, and risks generated from a profile. This "one plan, not fifty tabs" output is the emotional promise families actually pay for.
+
+Trust blueprint
+Sirelo (#12)
+Narrow but disciplined: verified mover reviews plus a five-quote comparison. High trust and high monetization scores. Proof that reviews and a tight quote flow convert intent into money better than volume alone.
+
+05
+Winners vs the mediocre middle
+You asked for best-five against worst-five. The worst sites are just broken or abandoned, so that contrast only teaches you to load fast and not look like 2009. The sharper, more actionable contrast is the top five against the mediocre middle: sites that get real traffic yet never break out because they do one thing and stop. Think dated forums (Expat Exchange), thin single-calculator pages, and generic "10 countries that will pay you to move" listicle farms.
+
+What the top five do
+Own a structured data asset and generate pages from it at scale.
+Return a personalized answer (a number, a match, a plan), not just an article.
+Build a path to a transaction into the experience.
+Show freshness and sourcing ("2026 data", methodology, verified reviews).
+Run a flywheel: crowdsourcing or community keeps data fresh and cost low.
+Started from one sharp wedge and expanded outward.
+What the middle does
+Re-bands generic content anyone can copy; no proprietary data.
+Publishes read-only articles; the user still has to do the work.
+Ends the page with nothing; traffic leaves and never converts.
+Runs undated, unsourced content that quietly goes stale.
+Requires manual updates that no one keeps up, so trust erodes.
+Tried to cover everything shallowly and ranked for nothing.
+06
+Seven patterns the winners share
+Distilled from the contrast above. These are the principles to design around before touching a feature list.
+
+1
+A defensible data core, not borrowed content
+Numbeo's crowdsourced price database, Nomad List's metrics, Expatistan's schools index. The asset that competitors can't cheaply clone is the moat. Facts you scrape from anywhere are facts anyone can scrape from you.
+
+Middle fails here: content with no proprietary layer.
+2
+Programmatic SEO is the growth engine
+One data model becomes thousands of pages: "cost of living in Lisbon vs Berlin", "moving to Spain from the UK", "tax in Portugal for expats". This captures the long tail of relocation search that no hand-written blog can match. It is how Numbeo and livingcost cover 9,000+ cities.
+
+Middle fails here: a few dozen hand-made pages.
+3
+Tools that compute, not articles that explain
+The winners return a personalized output: a cost delta, a city match, a visa eligibility result, a roadmap. WhereNext and Relocate.world are entirely built on this. It is the difference between a reader and a user, and users convert.
+
+Middle fails here: read-only text.
+4
+Every page routes toward a transaction
+MoveHub's guides feed a quote form; William Russell's country guides feed insurance sign-ups; Sirelo's reviews feed mover leads. Information is the funnel, not the destination. This is what makes the free stuff pay for itself.
+
+Middle fails here: dead-end pages, no monetization bridge.
+5
+Freshness and sourcing sold as a feature
+"2026 data", visible methodology, "last verified March 2026", verified reviews. In a category where wrong tax or visa info is dangerous, provable currency is a trust product, not a footnote. It is also what earns backlinks and Google's confidence.
+
+Middle fails here: undated, anonymous, stale.
+6
+A flywheel keeps data fresh without a huge team
+Crowdsourcing (Numbeo), community (InterNations, Nomad List), user reviews (Sirelo). Users maintain the asset, which solves the fatal economics of manually updating cost, tax, and rental data for every country forever.
+
+Middle fails here: relies on staff updates that stop.
+7
+They won a wedge before they widened
+Numbeo = cost data. Sirelo = moving quotes. Nomad List = nomad city choice. Each became the best on the internet at one job, then expanded from strength. None launched as the everything-platform. This is the pattern most relevant to your risk.
+
+Middle fails here: broad and shallow from day one.
+07
+What this means for your build
+Your feature list (moving cost, insurance, pets, schools, visas, rentals, cost of living, transport, healthcare, tax, VAT, home insurance) is the right destination. It is the wrong launch. Here is how the patterns translate into decisions.
+
+Principle 01 · Sequencing
+Launch one corridor and one killer calculator, not the world
+Pick a high-volume, high-intent corridor (for example UK to Spain/Portugal, or US to Portugal/Mexico) and one flagship tool: a family "true cost of moving" calculator that combines moving quote, rentals, cost of living, and healthcare into a single number. Be the best on earth at that one output. Expand corridors and modules from there.
+
+Principle 02 · Growth
+Build the data core so it generates pages automatically
+Model your data as structured records (country, city, cost basket, tax bands, visa rules, rental averages) so one dataset spawns thousands of comparison and "moving from X to Y" pages. This is your organic-traffic engine and it is non-negotiable. Design the schema before the UI.
+
+Principle 03 · Money
+Put a transaction at the bottom of every tool
+The calculator that estimates a move should hand off to real mover quotes, insurance quotes, an FX provider, and a visa service. That is both the utility (they can act now) and the revenue. Copy MoveHub's funnel from day one rather than bolting on monetization later.
+
+Principle 04 · Trust
+Make freshness and sourcing visible and structural
+Every data point carries a source and a "last updated" date. Ship a methodology page. Frame all outputs as indicative estimates with clear disclaimers, because tax, visa, and healthcare guidance that reads as advice is a real liability. This protects you legally and wins Google and backlinks.
+
+Principle 05 · Economics
+Design a flywheel or you will drown in maintenance
+"Everything, everywhere, current" is unmaintainable by a team. Lean on authoritative datasets and APIs where they exist, and add user contributions and reviews where they don't. If users don't help keep the data alive, the data dies, and so does the trust.
+
+Principle 06 · Wedge output
+Sell the roadmap, not the raw data
+Families don't want fifty browser tabs; they want one plan. Relocate.world's personalized roadmap is the emotional product. Package your tools' outputs into a single, shareable, printable family relocation plan. That is the thing worth paying for and the thing worth sharing.
+
+08
+Since money model is undecided: the stack that fits
+You said monetization is open. The evidence points to a clear answer for a family relocation platform. Relocation has unusually high revenue-per-user because the adjacent purchases (moving, insurance, currency) are large and commissioned. Lead a lead-gen stack; add subscription only once the tools earn loyalty.
+
+PRIMARY
+Lead-gen & referral
+International moving quotes, health and home insurance, currency transfer, visa and legal services. The highest-value events in a move, and providers pay well for qualified intent.
+
+Highest revenue per user
+SECONDARY
+Premium plan
+Advanced tools, the full personalized roadmap, saved scenarios, document checklists, and priority support. Introduce once free tools prove they retain users, InterNations-style.
+
+Recurring, higher margin
+TERTIARY
+Programmatic display
+The Numbeo model. Low value per visit but scales passively with the programmatic-SEO traffic engine. A floor, not a strategy.
+
+Passive, scales with traffic
+The blended target: content and tools earn traffic at near-zero marginal cost via programmatic SEO, moving and insurance leads monetize high-intent users immediately, and a premium roadmap converts the committed few into recurring revenue. That stack is derived directly from what the top five actually do.
+
+09
+A phased path that respects the wedge rule
+PHASE 1
+Wedge
+One corridor, one flagship "true cost of moving" calculator, one lead-gen partner for mover quotes. Structured data schema built to scale. Goal: rank for "moving from X to Y" and prove the quote funnel converts.
+
+PHASE 2
+Deepen
+Add the high-value modules for that corridor: rentals, cost of living, healthcare, visa eligibility. Add insurance and FX referrals. Ship the shareable family roadmap. Layer in user contributions to keep data fresh.
+
+PHASE 3
+Widen
+Clone the corridor playbook to new country pairs, letting programmatic SEO compound. Add schools, pets, transport, tax detail. Introduce the premium plan once retention is proven.
+
+PHASE 4
+Platform
+Now become the all-in-one platform you originally described, backed by a data moat, an SEO engine, a monetization funnel, and a maintenance flywheel that can actually carry global breadth. Reach the destination from a position of strength, not from a blank slate.
+
+Methodology & caveats. Sites identified via web research across four archetypes (data engines, content/community hubs, service marketplaces, all-in-one planners). Traffic figures are directional estimates in the style of public Similarweb / Semrush data (monthly visits) and should be read as order-of-magnitude; those marked "est." are rougher. The judging matrix scores seven weighted factors (reach, feature breadth, data depth, decision utility, UX, trust, monetization) 1–5, weighted to reward the hybrid, decision-tool model relevant to a family relocation platform, so it is not a pure popularity ranking. Google reviews were excluded as a factor because they don't exist for content and data sites. This is competitive intelligence to inform product strategy, not investment, legal, or financial advice.
+
+Prepared as a build-planning input · relocation decision platform · 2026

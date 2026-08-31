@@ -1,0 +1,23 @@
+{
+  "lastUpdated": "August 31, 2026",
+  "fees": {
+    "single": 450,
+    "couple": 750,
+    "family": 1200
+  },
+  "minWages": {
+    "portugal": 920
+  },
+  "checklist": [
+    "Valid US Passport (valid for at least 3 months past stay)",
+    "Two passport-sized photographs (recent & identical)",
+    "Consular application form (fully completed and signed)",
+    "Declaration page authorizing criminal record checks in Portugal",
+    "FBI Criminal Record Background Check (Apostilled & Translated)",
+    "Valid Private Expat Health Insurance (covering repatriation)",
+    "Portuguese NIF Number (Fiscal Identification)",
+    "Active Portuguese Bank Account with qualifying deposit funds (a minimum initial deposit required by a bank to activate a new checking or current account, where most standard brick-and-mortar institutions require an initial activation deposit ranging from €100 to €250, sometimes up to €500 for specialized non-resident or expat packages)",
+    "Proof of accommodation (12-month lease registered with AT)",
+    "Proof of financial resources (passive income statements or remote paystubs)"
+  ]
+}

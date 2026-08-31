@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relocation Platforms — Competitive Intelligence Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16302B;
+    --ink2:#234A42;
+    --paper:#EAE3DD;
+    --panel:#E6E2D7;
+    --panel2:#DBD6C8;
+    --stamp:#B23A2E;
+    --teal:#2F7A67;
+    --gold:#B4832B;
+    --text:#1C231F;
+    --muted:#5B645E;
+    --line:#CBC5B6;
+    --line-dk:#A9A493;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+  .mono{font-family:"IBM Plex Mono",monospace;}
+  h1,h2,h3,h4{font-family:"Archivo",sans-serif;color:var(--ink);line-height:1.1;margin:0;}
+  a{color:var(--teal);}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--stamp);font-weight:600;
+  }
+  .eyebrow.teal{color:var(--teal);}
+  .eyebrow.muted{color:var(--muted);}
+
+  /* MASTHEAD */
+  .masthead{background:var(--ink);color:var(--paper);padding:64px 0 52px;border-bottom:4px solid var(--stamp);}
+  .masthead .wrap{position:relative;}
+  .stamp-badge{
+    position:absolute;top:-6px;right:28px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+    color:var(--paper);border:2px solid var(--stamp);border-radius:4px;
+    padding:10px 12px;transform:rotate(-7deg);text-align:center;line-height:1.35;
+    background:rgba(178,58,46,.12);
+  }
+  .stamp-badge b{color:#E8917F;font-weight:600;display:block;font-size:13px;}
+  .kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#8FB8AC;margin-bottom:22px;}
+  .masthead h1{color:var(--paper);font-size:clamp(36px,6vw,64px);font-weight:800;letter-spacing:-.015em;max-width:15ch;}
+  .masthead .sub{font-size:20px;color:#CBD9D3;max-width:60ch;margin-top:20px;font-family:"Newsreader",serif;}
+  .metaline{margin-top:34px;display:flex;flex-wrap:wrap;gap:26px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:#9DBDB2;letter-spacing:.04em;border-top:1px solid rgba(255,255,255,.14);padding-top:20px;}
+  .metaline span b{color:var(--paper);font-weight:500;}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:26px;}
+  .sechead .num{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--stamp);font-weight:600;letter-spacing:.1em;}
+  h2{font-size:clamp(26px,3.6vw,38px);font-weight:700;letter-spacing:-.01em;}
+  h3{font-size:22px;font-weight:700;margin-top:8px;}
+  p{margin:0 0 16px;}
+  .lead{font-size:20px;color:#2A332D;}
+  strong{font-weight:600;color:var(--ink);}
+  em{font-style:italic;}
+
+  /* VERDICT BOX */
+  .verdict{background:var(--ink2);color:var(--paper);border-radius:10px;padding:34px 34px 30px;box-shadow:0 18px 40px -24px rgba(22,48,43,.6);}
+  .verdict .eyebrow{color:#E8917F;}
+  .verdict h2{color:var(--paper);margin:10px 0 16px;}
+  .verdict p{color:#D6E2DC;}
+  .verdict strong{color:#fff;}
+  .verdict .punch{font-family:"Archivo",sans-serif;font-weight:600;font-size:21px;color:#fff;line-height:1.32;border-left:3px solid var(--stamp);padding-left:18px;margin:22px 0 4px;}
+
+  /* ARCHETYPE GRID */
+  .arch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px;}
+  .arch{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px 22px 20px;}
+  .arch .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+  .arch h4{font-size:19px;margin:8px 0 8px;}
+  .arch p{font-size:16px;color:var(--muted);margin:0;line-height:1.5;}
+  .arch .ex{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);margin-top:12px;display:block;}
+
+  /* TABLES */
+  .tbl-scroll{overflow-x:auto;margin:6px 0 4px;border:1px solid var(--line);border-radius:8px;}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel);}
+  thead th{background:var(--ink);color:var(--paper);font-family:"Archivo",sans-serif;font-weight:600;font-size:12px;letter-spacing:.03em;text-transform:uppercase;text-align:left;padding:12px 12px;position:sticky;top:0;}
+  tbody td{padding:11px 12px;border-top:1px solid var(--line);vertical-align:top;font-family:"Newsreader",serif;}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.28);}
+  .site{font-weight:600;color:var(--ink);font-family:"Archivo",sans-serif;font-size:14px;white-space:nowrap;}
+  .cat-pill{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;padding:2px 7px;border-radius:20px;border:1px solid var(--line-dk);color:var(--ink2);white-space:nowrap;}
+  .num-cell{font-family:"IBM Plex Mono",monospace;font-size:13px;white-space:nowrap;}
+  .muted-cell{color:var(--muted);font-size:13.5px;}
+
+  /* MATRIX */
+  .matrix td.sc{font-family:"IBM Plex Mono",monospace;text-align:center;color:var(--ink2);width:52px;}
+  .matrix td.total{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--ink);white-space:nowrap;}
+  .bar{display:inline-block;height:7px;border-radius:4px;background:var(--teal);vertical-align:middle;margin-left:8px;}
+  tr.top5 td{background:rgba(178,58,46,.07);}
+  tr.top5 .site::before{content:"★ ";color:var(--stamp);}
+  .rank{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--stamp);text-align:center;width:34px;}
+
+  .weights{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px;}
+  .wt{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:9px 13px;font-size:13.5px;}
+  .wt b{font-family:"IBM Plex Mono",monospace;color:var(--stamp);font-weight:600;}
+  .wt span{font-family:"Archivo",sans-serif;font-weight:600;color:var(--ink);font-size:13px;}
+
+  /* DOSSIER CARDS */
+  .dossier{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:20px;background:var(--panel);}
+  .dossier .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:20px 24px 16px;border-bottom:1px solid var(--line);background:var(--panel2);}
+  .dossier .rankbadge{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;color:var(--paper);background:var(--stamp);border-radius:5px;padding:4px 9px;letter-spacing:.05em;white-space:nowrap;}
+  .dossier h3{font-size:22px;}
+  .dossier .whatis{font-size:14.5px;color:var(--muted);font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;margin-top:5px;}
+  .dossier .score{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap;}
+  .dossier .score b{font-size:26px;color:var(--ink);font-weight:600;display:block;line-height:1;}
+  .dossier .score small{font-size:11px;color:var(--muted);letter-spacing:.08em;}
+  .dossier .body{padding:18px 24px 20px;}
+  .dossier .body p{font-size:16px;margin:0 0 12px;}
+  .lesson{background:rgba(47,122,103,.1);border-left:3px solid var(--teal);padding:12px 16px;border-radius:0 6px 6px 0;margin-top:6px;}
+  .lesson .eyebrow{color:var(--teal);}
+  .lesson p{margin:6px 0 0;font-size:15.5px;color:var(--ink2);}
+
+  /* PATTERN LIST */
+  .pat{border-top:1px solid var(--line);padding:20px 0;display:grid;grid-template-columns:56px 1fr;gap:20px;}
+  .pat:first-of-type{border-top:none;}
+  .pat .pn{font-family:"Archivo",sans-serif;font-weight:800;font-size:30px;color:var(--line-dk);line-height:1;}
+  .pat h4{font-size:19px;margin-bottom:8px;}
+  .pat p{font-size:16px;margin:0;color:#2b332d;}
+  .pat .contrast{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--stamp);margin-top:10px;display:block;letter-spacing:.01em;}
+
+  /* SPLIT compare */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:6px;}
+  .split .col{padding:22px 24px;}
+  .split .win{background:rgba(47,122,103,.09);}
+  .split .lose{background:rgba(178,58,46,.06);border-left:1px solid var(--line);}
+  .split h4{font-size:16px;margin-bottom:14px;}
+  .split .win h4{color:var(--teal);}
+  .split .lose h4{color:var(--stamp);}
+  .split ul{margin:0;padding-left:18px;}
+  .split li{font-size:15px;margin-bottom:9px;line-height:1.45;}
+
+  /* PRINCIPLES */
+  .prin{counter-reset:none;}
+  .principle{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:0 8px 8px 0;padding:18px 22px;margin-bottom:14px;}
+  .principle .lab{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+  .principle h4{font-size:18px;margin:6px 0 8px;}
+  .principle p{font-size:15.5px;margin:0;color:#2b332d;}
+
+  /* MONETIZATION */
+  .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+  .rev{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;}
+  .rev .rk{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--stamp);font-weight:600;letter-spacing:.08em;}
+  .rev h4{font-size:16px;margin:6px 0 8px;}
+  .rev p{font-size:14px;color:var(--muted);margin:0;line-height:1.45;}
+  .rev .val{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--teal);margin-top:10px;display:block;font-weight:600;}
+
+  /* ROADMAP */
+  .phase{display:grid;grid-template-columns:120px 1fr;gap:22px;border-top:1px solid var(--line);padding:20px 0;}
+  .phase:first-of-type{border-top:none;}
+  .phase .ph{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--stamp);font-weight:600;letter-spacing:.06em;}
+  .phase .ph b{display:block;font-family:"Archivo",sans-serif;font-size:16px;color:var(--ink);margin-top:4px;letter-spacing:0;}
+  .phase p{margin:0;font-size:15.5px;color:#2b332d;}
+
+  .foot{background:var(--ink);color:#B9CCC5;padding:40px 0 48px;font-size:14px;}
+  .foot .wrap{font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;line-height:1.7;font-size:12.5px;}
+  .foot b{color:var(--paper);}
+
+  @media(max-width:760px){
+    body{font-size:16.5px;}
+    .arch-grid{grid-template-columns:1fr;}
+    .stack{grid-template-columns:1fr;}
+    .split{grid-template-columns:1fr;}
+    .split .lose{border-left:none;border-top:1px solid var(--line);}
+    .stamp-badge{position:static;transform:none;display:inline-block;margin-bottom:24px;}
+    .phase{grid-template-columns:1fr;gap:8px;}
+    .dossier .top{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="stamp-badge">RECON<br><b>CLASSIFIED</b><br>FIELD DOSSIER</div>
+    <div class="kicker">Competitive Intelligence · Relocation Tech</div>
+    <h1>Where the winners moved first.</h1>
+    <p class="sub">A teardown of the global relocation web: who wins, why they win, and what a family-first decision platform should steal from them before writing a line of code.</p>
+    <div class="metaline">
+      <span><b>Last Updated:</b> August 30, 2026</span>
+      <span><b>Scope:</b> global generalists + corridor specialists</span>
+      <span><b>Sites screened:</b> 22</span>
+      <span><b>Scored:</b> 15</span>
+      <span><b>Method:</b> weighted 7-factor matrix</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- VERDICT -->
+<section>
+  <div class="verdict">
+    <span class="eyebrow">The one thing to read if you read nothing else</span>
+    <h2>Nobody has built the thing you described. That is the opportunity and the trap.</h2>
+    <p>Every feature on your list (moving cost, insurance, pet rules, schools, visas, rentals, cost of living, transport, healthcare, tax, VAT, home insurance) exists somewhere. No single platform stitches them into one trustworthy, decision-grade experience for a family. The gap is real.</p>
+    <p>It is also empty for a reason: the data-maintenance and trust burden of "everything, everywhere, always current" has broken everyone who tried to boil the ocean. The sites that won did the opposite. They took <strong>one sharp job</strong>, made it the best on the internet, ranked for it at massive scale, and only then widened out.</p>
+    <p class="punch">Win a wedge. Don't launch an encyclopedia. The build principles below are all downstream of that.</p>
+  </div>
+</section>
+
+<!-- 1. LANDSCAPE -->
+<section>
+  <div class="sechead"><span class="num">01</span><h2>The landscape splits into four archetypes</h2></div>
+  <p class="lead">"Relocation sites" is not one market. It is four that barely compete with each other, each with a different data model, growth engine, and way of making money. Your hybrid concept is really an attempt to fuse all four, which is why no direct competitor exists and why the benchmark has to span all of them.</p>
+  <div class="arch-grid">
+    <div class="arch">
+      <span class="tag">Archetype A</span>
+      <h4>Data engines</h4>
+      <p>Structured, comparable numbers at planetary scale. Cost of living, salaries, prices. Grow through programmatic SEO on thousands of auto-generated comparison pages. Monetize with display ads.</p>
+      <span class="ex">Numbeo · Expatistan · livingcost.org · Bestplaces</span>
+    </div>
+    <div class="arch">
+      <span class="tag">Archetype B</span>
+      <h4>Content &amp; community hubs</h4>
+      <p>Guides, forums, and expat networks. Broad topical coverage written by humans. Grow on editorial SEO and word of mouth. Monetize with ads, directories, memberships, and events.</p>
+      <span class="ex">InterNations · Expatica · Expat.com · International Living</span>
+    </div>
+    <div class="arch">
+      <span class="tag">Archetype C</span>
+      <h4>Service marketplaces</h4>
+      <p>Turn intent into a transaction. Match users to movers, insurers, or agents and take a lead fee. Narrow but high revenue per user. This is where the money in relocation actually is.</p>
+      <span class="ex">Sirelo · MoveHub · Unpakt · reallymoving · moveBuddha</span>
+    </div>
+    <div class="arch">
+      <span class="tag">Archetype D</span>
+      <h4>All-in-one planners &amp; AI roadmaps</h4>
+      <p>The newest wave, and the closest to your idea. Interactive tools and personalized roadmaps spanning visa, tax, cost, and healthcare. Small on traffic, sharp on product. Monetization still unproven.</p>
+      <span class="ex">WhereNext · Relocate.world · Expatsi · Nomad List</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. BIG LIST -->
+<section>
+  <div class="sechead"><span class="num">02</span><h2>The full field: 22 sites screened</h2></div>
+  <p>Scale figures are directional estimates in the style of Similarweb / Semrush public data (monthly visits), not audited numbers. Treat them as order-of-magnitude, not decimal-point. "est." marks a rougher estimate.</p>
+  <div class="tbl-scroll">
+    <table>
+      <thead>
+        <tr><th>Site</th><th>Archetype</th><th>Approx monthly visits</th><th>Primary job</th><th>How it earns</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="site">Numbeo</td><td><span class="cat-pill">Data engine</span></td><td class="num-cell">~5.0M</td><td class="muted-cell">Cost-of-living comparison</td><td class="muted-cell">Display ads</td></tr>
+        <tr><td class="site">Bestplaces</td><td><span class="cat-pill">Data engine</span></td><td class="num-cell">~1.9M</td><td class="muted-cell">US city livability + cost</td><td class="muted-cell">Ads</td></tr>
+        <tr><td class="site">Expatistan</td><td><span class="cat-pill">Data engine</span></td><td class="num-cell">~1.1M</td><td class="muted-cell">Cost + salary + schools DB</td><td class="muted-cell">Ads / affiliate</td></tr>
+        <tr><td class="site">livingcost.org</td><td><span class="cat-pill">Data engine</span></td><td class="num-cell">~0.4M est</td><td class="muted-cell">Cost calculator, 197 countries</td><td class="muted-cell">Ads</td></tr>
+        <tr><td class="site">MyLifeElsewhere</td><td><span class="cat-pill">Data engine</span></td><td class="num-cell">~137K</td><td class="muted-cell">Country vs country compare</td><td class="muted-cell">Ads</td></tr>
+        <tr><td class="site">Expatica</td><td><span class="cat-pill">Content hub</span></td><td class="num-cell">~1.2M</td><td class="muted-cell">Broad expat guides</td><td class="muted-cell">Ads / directory</td></tr>
+        <tr><td class="site">Expat.com</td><td><span class="cat-pill">Content hub</span></td><td class="num-cell">~2M est</td><td class="muted-cell">Forums, classifieds, guides</td><td class="muted-cell">Ads / listings</td></tr>
+        <tr><td class="site">International Living</td><td><span class="cat-pill">Content hub</span></td><td class="num-cell">~1M est</td><td class="muted-cell">Retire-overseas content</td><td class="muted-cell">Subscriptions / events</td></tr>
+        <tr><td class="site">InterNations</td><td><span class="cat-pill">Content hub</span></td><td class="num-cell">~1M est</td><td class="muted-cell">Expat network + events</td><td class="muted-cell">Membership</td></tr>
+        <tr><td class="site">Expat Exchange</td><td><span class="cat-pill">Content hub</span></td><td class="num-cell">~231K</td><td class="muted-cell">Forums + articles</td><td class="muted-cell">Ads</td></tr>
+        <tr><td class="site">Expat Focus</td><td><span class="cat-pill">Content hub</span></td><td class="num-cell">~200K est</td><td class="muted-cell">Guides + podcast + forums</td><td class="muted-cell">Ads / affiliate</td></tr>
+        <tr><td class="site">William Russell</td><td><span class="cat-pill">Content hub</span></td><td class="num-cell">~300K est</td><td class="muted-cell">Country guides (insurer-owned)</td><td class="muted-cell">Insurance lead-gen</td></tr>
+        <tr><td class="site">Sirelo</td><td><span class="cat-pill">Marketplace</span></td><td class="num-cell">~0.5M est</td><td class="muted-cell">Moving-quote comparison + reviews</td><td class="muted-cell">Mover lead fees</td></tr>
+        <tr><td class="site">MoveHub</td><td><span class="cat-pill">Marketplace</span></td><td class="num-cell">~0.5M est</td><td class="muted-cell">Guides + cost tools + quotes</td><td class="muted-cell">Mover lead fees</td></tr>
+        <tr><td class="site">moveBuddha</td><td><span class="cat-pill">Marketplace</span></td><td class="num-cell">~0.6M est</td><td class="muted-cell">Moving cost calc + guides (US)</td><td class="muted-cell">Mover lead fees</td></tr>
+        <tr><td class="site">Unpakt</td><td><span class="cat-pill">Marketplace</span></td><td class="num-cell">~0.3M est</td><td class="muted-cell">Book movers online (US)</td><td class="muted-cell">Booking commission</td></tr>
+        <tr><td class="site">reallymoving</td><td><span class="cat-pill">Marketplace</span></td><td class="num-cell">~0.4M est</td><td class="muted-cell">UK removals + services quotes</td><td class="muted-cell">Lead fees</td></tr>
+        <tr><td class="site">Nomad List</td><td><span class="cat-pill">AI / planner</span></td><td class="num-cell">~680K</td><td class="muted-cell">Nomad city picker + data + community</td><td class="muted-cell">Subscription</td></tr>
+        <tr><td class="site">WhereNext</td><td><span class="cat-pill">AI / planner</span></td><td class="num-cell">&lt;50K est</td><td class="muted-cell">32 relocation tools, no signup</td><td class="muted-cell">Unproven / early</td></tr>
+        <tr><td class="site">Relocate.world</td><td><span class="cat-pill">AI / planner</span></td><td class="num-cell">&lt;50K est</td><td class="muted-cell">AI visa/cost/risk roadmap</td><td class="muted-cell">Services / referrals</td></tr>
+        <tr><td class="site">Expatsi</td><td><span class="cat-pill">AI / planner</span></td><td class="num-cell">~100K est</td><td class="muted-cell">Move-abroad quiz + planning app</td><td class="muted-cell">Paid product / community</td></tr>
+        <tr><td class="site">RelocateMe</td><td><span class="cat-pill">AI / planner</span></td><td class="num-cell">~150K est</td><td class="muted-cell">Tech-relocation jobs + info</td><td class="muted-cell">Employer fees</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 3. THE MATRIX -->
+<section>
+  <div class="sechead"><span class="num">03</span><h2>The judging matrix</h2></div>
+  <p class="lead">Raw traffic answers "who is biggest," not "who should we learn from." Because you are building a hybrid decision tool for families, the matrix deliberately weights <strong>breadth of decisions covered</strong> and <strong>whether the site actually helps you decide and act</strong> as heavily as reach. Google reviews were dropped as a factor: content sites don't have them (they belong to movers with physical branches), so they would only measure the marketplace archetype.</p>
+  <div class="weights">
+    <div class="wt"><b>20%</b> <span>Reach &amp; authority</span> — traffic, backlinks, domain age</div>
+    <div class="wt"><b>20%</b> <span>Feature breadth</span> — how many relocation decisions it covers</div>
+    <div class="wt"><b>15%</b> <span>Data depth &amp; freshness</span> — coverage, structure, currency</div>
+    <div class="wt"><b>15%</b> <span>Decision utility</span> — tools &amp; personalization vs static text</div>
+    <div class="wt"><b>10%</b> <span>UX &amp; polish</span></div>
+    <div class="wt"><b>10%</b> <span>Trust &amp; transparency</span> — sourcing, methodology, reviews</div>
+    <div class="wt"><b>10%</b> <span>Monetization proof</span> — durable, demonstrated model</div>
+  </div>
+  <p class="muted-cell" style="font-size:14px;">Each factor scored 1–5. Weighted total out of 5.0. Top five starred. Note the deliberate tension: Numbeo has the most reach on earth here yet lands mid-pack because it covers one decision; WhereNext has almost no traffic yet ranks top-five because it nails the exact product shape you want. Read both signals.</p>
+  <div class="tbl-scroll">
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th class="rank">#</th><th>Site</th>
+          <th class="sc">Reach</th><th class="sc">Breadth</th><th class="sc">Data</th><th class="sc">Decide</th><th class="sc">UX</th><th class="sc">Trust</th><th class="sc">Money</th>
+          <th>Weighted total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="top5"><td class="rank">1</td><td class="site">Nomad List</td><td class="sc">3.5</td><td class="sc">3.5</td><td class="sc">4</td><td class="sc">4</td><td class="sc">4</td><td class="sc">3.5</td><td class="sc">3.5</td><td class="total">3.70 <span class="bar" style="width:74px"></span></td></tr>
+        <tr class="top5"><td class="rank">2</td><td class="site">Expatica</td><td class="sc">4.5</td><td class="sc">4</td><td class="sc">3.5</td><td class="sc">2.5</td><td class="sc">3.5</td><td class="sc">3.5</td><td class="sc">3.5</td><td class="total">3.65 <span class="bar" style="width:73px"></span></td></tr>
+        <tr class="top5"><td class="rank">3</td><td class="site">MoveHub</td><td class="sc">3.5</td><td class="sc">4</td><td class="sc">3.5</td><td class="sc">3</td><td class="sc">3.5</td><td class="sc">3.5</td><td class="sc">4</td><td class="total">3.58 <span class="bar" style="width:72px"></span></td></tr>
+        <tr class="top5"><td class="rank">4</td><td class="site">Numbeo</td><td class="sc">5</td><td class="sc">2.5</td><td class="sc">5</td><td class="sc">2.5</td><td class="sc">2</td><td class="sc">3.5</td><td class="sc">3.5</td><td class="total">3.53 <span class="bar" style="width:71px"></span></td></tr>
+        <tr class="top5"><td class="rank">4</td><td class="site">WhereNext</td><td class="sc">1.5</td><td class="sc">5</td><td class="sc">4</td><td class="sc">4.5</td><td class="sc">4.5</td><td class="sc">3.5</td><td class="sc">1.5</td><td class="total">3.53 <span class="bar" style="width:71px"></span></td></tr>
+        <tr><td class="rank">6</td><td class="site">InterNations</td><td class="sc">4</td><td class="sc">3</td><td class="sc">3</td><td class="sc">3</td><td class="sc">3.5</td><td class="sc">4</td><td class="sc">4.5</td><td class="total">3.50 <span class="bar" style="width:70px"></span></td></tr>
+        <tr><td class="rank">7</td><td class="site">Bestplaces</td><td class="sc">4</td><td class="sc">3</td><td class="sc">3.5</td><td class="sc">3</td><td class="sc">3</td><td class="sc">3</td><td class="sc">3</td><td class="total">3.28 <span class="bar" style="width:66px"></span></td></tr>
+        <tr><td class="rank">8</td><td class="site">Expatistan</td><td class="sc">3.5</td><td class="sc">3</td><td class="sc">4</td><td class="sc">3</td><td class="sc">3</td><td class="sc">3.5</td><td class="sc">2.5</td><td class="total">3.25 <span class="bar" style="width:65px"></span></td></tr>
+        <tr><td class="rank">8</td><td class="site">Intl Living</td><td class="sc">4</td><td class="sc">3.5</td><td class="sc">2.5</td><td class="sc">2.5</td><td class="sc">3</td><td class="sc">3</td><td class="sc">4</td><td class="total">3.25 <span class="bar" style="width:65px"></span></td></tr>
+        <tr><td class="rank">8</td><td class="site">Relocate.world</td><td class="sc">1.5</td><td class="sc">4</td><td class="sc">3.5</td><td class="sc">4.5</td><td class="sc">4</td><td class="sc">3</td><td class="sc">2.5</td><td class="total">3.25 <span class="bar" style="width:65px"></span></td></tr>
+        <tr><td class="rank">11</td><td class="site">Expat.com</td><td class="sc">4</td><td class="sc">3.5</td><td class="sc">3</td><td class="sc">2.5</td><td class="sc">2.5</td><td class="sc">3</td><td class="sc">3.5</td><td class="total">3.23 <span class="bar" style="width:64px"></span></td></tr>
+        <tr><td class="rank">12</td><td class="site">Sirelo</td><td class="sc">3</td><td class="sc">2</td><td class="sc">3</td><td class="sc">3.5</td><td class="sc">4</td><td class="sc">4</td><td class="sc">4</td><td class="total">3.18 <span class="bar" style="width:63px"></span></td></tr>
+        <tr><td class="rank">12</td><td class="site">moveBuddha</td><td class="sc">3</td><td class="sc">2.5</td><td class="sc">3</td><td class="sc">3.5</td><td class="sc">4</td><td class="sc">3.5</td><td class="sc">3.5</td><td class="total">3.18 <span class="bar" style="width:63px"></span></td></tr>
+        <tr><td class="rank">14</td><td class="site">Expatsi</td><td class="sc">1.5</td><td class="sc">3.5</td><td class="sc">2.5</td><td class="sc">4</td><td class="sc">4</td><td class="sc">3</td><td class="sc">3</td><td class="total">2.98 <span class="bar" style="width:60px"></span></td></tr>
+        <tr><td class="rank">15</td><td class="site">livingcost.org</td><td class="sc">2.5</td><td class="sc">2.5</td><td class="sc">4</td><td class="sc">2.5</td><td class="sc">3</td><td class="sc">3</td><td class="sc">2</td><td class="total">2.78 <span class="bar" style="width:56px"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 4. TOP 5 -->
+<section>
+  <div class="sechead"><span class="num">04</span><h2>The top five, and the one lesson each</h2></div>
+  <p class="lead">Together these five span all four archetypes, which is the point: your product has to borrow something different from each. One lesson per site, chosen to be the thing worth copying.</p>
+
+  <div class="dossier">
+    <div class="top">
+      <div>
+        <span class="rankbadge">RANK 01</span>
+        <h3>Nomad List</h3>
+        <div class="whatis">AI / planner · data + community + tools for a narrow audience</div>
+      </div>
+      <div class="score"><b>3.70</b><small>WEIGHTED</small></div>
+    </div>
+    <div class="body">
+      <p>The best-run business in the space, and the proof that a relocation product can be a real product, not a content farm. It picked one audience (remote workers), one job (where should I live), and built a filterable data experience across cost, internet, weather, and safety, wrapped in a paying community. Narrow by design, which is exactly why it works.</p>
+      <div class="lesson"><span class="eyebrow">Steal this</span><p>Depth beats breadth for a wedge. A filterable, opinionated data experience for one audience outperforms a shallow encyclopedia for everyone. Subscriptions are viable when the tool is genuinely useful and the community creates lock-in.</p></div>
+    </div>
+  </div>
+
+  <div class="dossier">
+    <div class="top">
+      <div>
+        <span class="rankbadge">RANK 02</span>
+        <h3>Expatica</h3>
+        <div class="whatis">Content hub · the broadest editorial coverage of expat life</div>
+      </div>
+      <div class="score"><b>3.65</b><small>WEIGHTED</small></div>
+    </div>
+    <div class="body">
+      <p>The reference point for SEO-driven relocation content: deep guides on visas, housing, healthcare, tax, and banking, organized by country, pulling over a million visits a month. It also quietly runs an International Schools Database as a sister property, showing how a spun-out vertical tool feeds the mothership.</p>
+      <div class="lesson"><span class="eyebrow">Steal this</span><p>Editorial SEO organized rigidly by country and topic is a durable traffic moat. But notice the ceiling: it is read-only. It tells you about tax; it never calculates yours. That unmet gap between "explains" and "computes" is your wedge.</p></div>
+    </div>
+  </div>
+
+  <div class="dossier">
+    <div class="top">
+      <div>
+        <span class="rankbadge">RANK 03</span>
+        <h3>MoveHub</h3>
+        <div class="whatis">Marketplace · the cleanest hybrid of content, tools and transaction</div>
+      </div>
+      <div class="score"><b>3.58</b><small>WEIGHTED</small></div>
+    </div>
+    <div class="body">
+      <p>The closest existing thing to a hybrid model that pays for itself. Free country guides and cost comparisons pull people in on organic search, then a moving-quote form converts that intent into paid mover leads. Information is the top of a funnel that ends in a transaction.</p>
+      <div class="lesson"><span class="eyebrow">Steal this</span><p>Every content page should have a transaction waiting at the bottom. This is the single most important monetization pattern for what you're building: content earns the traffic, the quote form earns the money.</p></div>
+    </div>
+  </div>
+
+  <div class="dossier">
+    <div class="top">
+      <div>
+        <span class="rankbadge">RANK 04</span>
+        <h3>Numbeo</h3>
+        <div class="whatis">Data engine · the largest relocation-adjacent site on the internet</div>
+      </div>
+      <div class="score"><b>3.53</b><small>WEIGHTED</small></div>
+    </div>
+    <div class="body">
+      <p>Roughly 5M visits a month and millions of backlinks off one idea, executed relentlessly: crowdsourced cost-of-living data on thousands of cities, turned into a near-infinite set of auto-generated "City A vs City B" comparison pages that own the long tail of relocation search. Ugly, dated interface. Does not matter. The data and the SEO structure are the moat.</p>
+      <div class="lesson"><span class="eyebrow">Steal this</span><p>Programmatic SEO off a structured data core is the growth engine of this entire category. One data model, thousands of pages, endless long-tail queries. Plus: crowdsourcing solves the freshness problem that would otherwise bankrupt you.</p></div>
+    </div>
+  </div>
+
+  <div class="dossier">
+    <div class="top">
+      <div>
+        <span class="rankbadge">RANK 04</span>
+        <h3>WhereNext</h3>
+        <div class="whatis">AI / planner · the product blueprint, low on scale, high on shape</div>
+      </div>
+      <div class="score"><b>3.53</b><small>WEIGHTED</small></div>
+    </div>
+    <div class="body">
+      <p>Ranks top-five on merit despite near-zero traffic, because it is the closest anyone has come to <em>your</em> spec: 32 interactive tools spanning cost, salary, tax, visa eligibility, healthcare, climate, and safety across 95 countries, all free and requiring no signup, built on institutional datasets. It shows the product is buildable. Its weakness (no proven monetization, no reach) is precisely the half you would add.</p>
+      <div class="lesson"><span class="eyebrow">Steal this</span><p>Interactive tools that return a personalized answer, with zero signup friction, are the modern shape of this category. This is your product blueprint. Their unsolved problem, turning free tools into revenue and traffic, is the exact problem this dossier is built to help you solve.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WATCHLIST -->
+<section>
+  <div class="sechead"><span class="num">04b</span><h2>Three more worth a specific steal</h2></div>
+  <div class="arch-grid">
+    <div class="arch">
+      <span class="tag">Monetization blueprint</span>
+      <h4>InterNations (#6)</h4>
+      <p>The membership and retention exemplar. Free tier for reach, paid "Albatross" tier plus real-world events create recurring revenue and belonging. If you want subscription income, this is the model to study, not ads.</p>
+    </div>
+    <div class="arch">
+      <span class="tag">Roadmap blueprint</span>
+      <h4>Relocate.world (#8)</h4>
+      <p>Turns scattered facts into a single personalized roadmap: visa pathways, timelines, costs, and risks generated from a profile. This "one plan, not fifty tabs" output is the emotional promise families actually pay for.</p>
+    </div>
+    <div class="arch">
+      <span class="tag">Trust blueprint</span>
+      <h4>Sirelo (#12)</h4>
+      <p>Narrow but disciplined: verified mover reviews plus a five-quote comparison. High trust and high monetization scores. Proof that reviews and a tight quote flow convert intent into money better than volume alone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WINNERS VS MIDDLE -->
+<section>
+  <div class="sechead"><span class="num">05</span><h2>Winners vs the mediocre middle</h2></div>
+  <p class="lead">You asked for best-five against worst-five. The worst sites are just broken or abandoned, so that contrast only teaches you to load fast and not look like 2009. The sharper, more actionable contrast is the top five against the <strong>mediocre middle</strong>: sites that get real traffic yet never break out because they do one thing and stop. Think dated forums (Expat Exchange), thin single-calculator pages, and generic "10 countries that will pay you to move" listicle farms.</p>
+  <div class="split">
+    <div class="col win">
+      <h4>What the top five do</h4>
+      <ul>
+        <li>Own a <strong>structured data asset</strong> and generate pages from it at scale.</li>
+        <li>Return a <strong>personalized answer</strong> (a number, a match, a plan), not just an article.</li>
+        <li>Build a <strong>path to a transaction</strong> into the experience.</li>
+        <li>Show <strong>freshness and sourcing</strong> ("2026 data", methodology, verified reviews).</li>
+        <li>Run a <strong>flywheel</strong>: crowdsourcing or community keeps data fresh and cost low.</li>
+        <li>Started from <strong>one sharp wedge</strong> and expanded outward.</li>
+      </ul>
+    </div>
+    <div class="col lose">
+      <h4>What the middle does</h4>
+      <ul>
+        <li>Re-bands <strong>generic content</strong> anyone can copy; no proprietary data.</li>
+        <li>Publishes <strong>read-only articles</strong>; the user still has to do the work.</li>
+        <li>Ends the page with <strong>nothing</strong>; traffic leaves and never converts.</li>
+        <li>Runs <strong>undated, unsourced</strong> content that quietly goes stale.</li>
+        <li>Requires <strong>manual updates</strong> that no one keeps up, so trust erodes.</li>
+        <li>Tried to <strong>cover everything</strong> shallowly and ranked for nothing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PATTERNS -->
+<section>
+  <div class="sechead"><span class="num">06</span><h2>Seven patterns the winners share</h2></div>
+  <p class="lead">Distilled from the contrast above. These are the principles to design around before touching a feature list.</p>
+
+  <div class="pat"><div class="pn">1</div><div>
+    <h4>A defensible data core, not borrowed content</h4>
+    <p>Numbeo's crowdsourced price database, Nomad List's metrics, Expatistan's schools index. The asset that competitors can't cheaply clone is the moat. Facts you scrape from anywhere are facts anyone can scrape from you.</p>
+    <span class="contrast">Middle fails here: content with no proprietary layer.</span>
+  </div></div>
+
+  <div class="pat"><div class="pn">2</div><div>
+    <h4>Programmatic SEO is the growth engine</h4>
+    <p>One data model becomes thousands of pages: "cost of living in Lisbon vs Berlin", "moving to Spain from the UK", "tax in Portugal for expats". This captures the long tail of relocation search that no hand-written blog can match. It is how Numbeo and livingcost cover 9,000+ cities.</p>
+    <span class="contrast">Middle fails here: a few dozen hand-made pages.</span>
+  </div></div>
+
+  <div class="pat"><div class="pn">3</div><div>
+    <h4>Tools that compute, not articles that explain</h4>
+    <p>The winners return a personalized output: a cost delta, a city match, a visa eligibility result, a roadmap. WhereNext and Relocate.world are entirely built on this. It is the difference between a reader and a user, and users convert.</p>
+    <span class="contrast">Middle fails here: read-only text.</span>
+  </div></div>
+
+  <div class="pat"><div class="pn">4</div><div>
+    <h4>Every page routes toward a transaction</h4>
+    <p>MoveHub's guides feed a quote form; William Russell's country guides feed insurance sign-ups; Sirelo's reviews feed mover leads. Information is the funnel, not the destination. This is what makes the free stuff pay for itself.</p>
+    <span class="contrast">Middle fails here: dead-end pages, no monetization bridge.</span>
+  </div></div>
+
+  <div class="pat"><div class="pn">5</div><div>
+    <h4>Freshness and sourcing sold as a feature</h4>
+    <p>"2026 data", visible methodology, "last verified March 2026", verified reviews. In a category where wrong tax or visa info is dangerous, provable currency is a trust product, not a footnote. It is also what earns backlinks and Google's confidence.</p>
+    <span class="contrast">Middle fails here: undated, anonymous, stale.</span>
+  </div></div>
+
+  <div class="pat"><div class="pn">6</div><div>
+    <h4>A flywheel keeps data fresh without a huge team</h4>
+    <p>Crowdsourcing (Numbeo), community (InterNations, Nomad List), user reviews (Sirelo). Users maintain the asset, which solves the fatal economics of manually updating cost, tax, and rental data for every country forever.</p>
+    <span class="contrast">Middle fails here: relies on staff updates that stop.</span>
+  </div></div>
+
+  <div class="pat"><div class="pn">7</div><div>
+    <h4>They won a wedge before they widened</h4>
+    <p>Numbeo = cost data. Sirelo = moving quotes. Nomad List = nomad city choice. Each became the best on the internet at one job, then expanded from strength. None launched as the everything-platform. This is the pattern most relevant to your risk.</p>
+    <span class="contrast">Middle fails here: broad and shallow from day one.</span>
+  </div></div>
+</section>
+
+<!-- 7. BUILD PRINCIPLES -->
+<section>
+  <div class="sechead"><span class="num">07</span><h2>What this means for your build</h2></div>
+  <p class="lead">Your feature list (moving cost, insurance, pets, schools, visas, rentals, cost of living, transport, healthcare, tax, VAT, home insurance) is the right <em>destination</em>. It is the wrong <em>launch</em>. Here is how the patterns translate into decisions.</p>
+
+  <div class="prin">
+    <div class="principle"><div class="lab">Principle 01 · Sequencing</div><h4>Launch one corridor and one killer calculator, not the world</h4><p>Pick a high-volume, high-intent corridor (for example UK to Spain/Portugal, or US to Portugal/Mexico) and one flagship tool: a family "true cost of moving" calculator that combines moving quote, rentals, cost of living, and healthcare into a single number. Be the best on earth at that one output. Expand corridors and modules from there.</p></div>
+
+    <div class="principle"><div class="lab">Principle 02 · Growth</div><h4>Build the data core so it generates pages automatically</h4><p>Model your data as structured records (country, city, cost basket, tax bands, visa rules, rental averages) so one dataset spawns thousands of comparison and "moving from X to Y" pages. This is your organic-traffic engine and it is non-negotiable. Design the schema before the UI.</p></div>
+
+    <div class="principle"><div class="lab">Principle 03 · Money</div><h4>Put a transaction at the bottom of every tool</h4><p>The calculator that estimates a move should hand off to real mover quotes, insurance quotes, an FX provider, and a visa service. That is both the utility (they can act now) and the revenue. Copy MoveHub's funnel from day one rather than bolting on monetization later.</p></div>
+
+    <div class="principle"><div class="lab">Principle 04 · Trust</div><h4>Make freshness and sourcing visible and structural</h4><p>Every data point carries a source and a "last updated" date. Ship a methodology page. Frame all outputs as indicative estimates with clear disclaimers, because tax, visa, and healthcare guidance that reads as advice is a real liability. This protects you legally and wins Google and backlinks.</p></div>
+
+    <div class="principle"><div class="lab">Principle 05 · Economics</div><h4>Design a flywheel or you will drown in maintenance</h4><p>"Everything, everywhere, current" is unmaintainable by a team. Lean on authoritative datasets and APIs where they exist, and add user contributions and reviews where they don't. If users don't help keep the data alive, the data dies, and so does the trust.</p></div>
+
+    <div class="principle"><div class="lab">Principle 06 · Wedge output</div><h4>Sell the roadmap, not the raw data</h4><p>Families don't want fifty browser tabs; they want one plan. Relocate.world's personalized roadmap is the emotional product. Package your tools' outputs into a single, shareable, printable family relocation plan. That is the thing worth paying for and the thing worth sharing.</p></div>
+  </div>
+</section>
+
+<!-- 8. MONETIZATION -->
+<section>
+  <div class="sechead"><span class="num">08</span><h2>Since money model is undecided: the stack that fits</h2></div>
+  <p class="lead">You said monetization is open. The evidence points to a clear answer for a family relocation platform. Relocation has unusually high revenue-per-user because the adjacent purchases (moving, insurance, currency) are large and commissioned. Lead a lead-gen stack; add subscription only once the tools earn loyalty.</p>
+  <div class="stack">
+    <div class="rev"><span class="rk">PRIMARY</span><h4>Lead-gen &amp; referral</h4><p>International moving quotes, health and home insurance, currency transfer, visa and legal services. The highest-value events in a move, and providers pay well for qualified intent.</p><span class="val">Highest revenue per user</span></div>
+    <div class="rev"><span class="rk">SECONDARY</span><h4>Premium plan</h4><p>Advanced tools, the full personalized roadmap, saved scenarios, document checklists, and priority support. Introduce once free tools prove they retain users, InterNations-style.</p><span class="val">Recurring, higher margin</span></div>
+    <div class="rev"><span class="rk">TERTIARY</span><h4>Programmatic display</h4><p>The Numbeo model. Low value per visit but scales passively with the programmatic-SEO traffic engine. A floor, not a strategy.</p><span class="val">Passive, scales with traffic</span></div>
+  </div>
+  <p style="margin-top:20px;">The blended target: content and tools earn traffic at near-zero marginal cost via programmatic SEO, moving and insurance leads monetize high-intent users immediately, and a premium roadmap converts the committed few into recurring revenue. That stack is derived directly from what the top five actually do.</p>
+</section>
+
+<!-- 9. ROADMAP -->
+<section>
+  <div class="sechead"><span class="num">09</span><h2>A phased path that respects the wedge rule</h2></div>
+  <div class="phase"><div class="ph">PHASE 1<b>Wedge</b></div><p>One corridor, one flagship "true cost of moving" calculator, one lead-gen partner for mover quotes. Structured data schema built to scale. Goal: rank for "moving from X to Y" and prove the quote funnel converts.</p></div>
+  <div class="phase"><div class="ph">PHASE 2<b>Deepen</b></div><p>Add the high-value modules for that corridor: rentals, cost of living, healthcare, visa eligibility. Add insurance and FX referrals. Ship the shareable family roadmap. Layer in user contributions to keep data fresh.</p></div>
+  <div class="phase"><div class="ph">PHASE 3<b>Widen</b></div><p>Clone the corridor playbook to new country pairs, letting programmatic SEO compound. Add schools, pets, transport, tax detail. Introduce the premium plan once retention is proven.</p></div>
+  <div class="phase"><div class="ph">PHASE 4<b>Platform</b></div><p>Now become the all-in-one platform you originally described, backed by a data moat, an SEO engine, a monetization funnel, and a maintenance flywheel that can actually carry global breadth. Reach the destination from a position of strength, not from a blank slate.</p></div>
+</section>
+
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <b>Methodology &amp; caveats.</b> Sites identified via web research across four archetypes (data engines, content/community hubs, service marketplaces, all-in-one planners). Traffic figures are directional estimates in the style of public Similarweb / Semrush data (monthly visits) and should be read as order-of-magnitude; those marked "est." are rougher. The judging matrix scores seven weighted factors (reach, feature breadth, data depth, decision utility, UX, trust, monetization) 1–5, weighted to reward the hybrid, decision-tool model relevant to a family relocation platform, so it is not a pure popularity ranking. Google reviews were excluded as a factor because they don't exist for content and data sites. This is competitive intelligence to inform product strategy, not investment, legal, or financial advice.<br><br>
+    <b>Prepared as a build-planning input · relocation decision platform · 2026</b>
+    <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.2);">
+      <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+      <span style="color: var(--color-text-dim);">|</span>
+      <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+      <span style="color: var(--color-text-dim);">|</span>
+      <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+      <span style="color: var(--color-text-dim);">|</span>
+      <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "relocation-decision-platform",
+  "version": "1.0.0",
+  "description": "Relocation Decision Platform",
+  "main": "app.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

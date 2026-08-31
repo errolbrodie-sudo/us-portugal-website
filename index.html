@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ReloPlan - The data-driven family relocation decision platform for the US-to-Portugal corridor. Compute true relocation budgets, visa timelines, and custom check-lists.">
+  <title>ReloPlan | Relocation Decision Platform (US to Portugal)</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js" defer></script>
+  <style>
+    :root {
+      --color-bg: #EAE3DD !important;
+    }
+    body, html {
+      background-color: #EAE3DD !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="app-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">Relo<span>Plan</span></a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" class="nav-link" style="font-weight: 600; color: var(--color-primary); text-decoration: none; margin-right: 16px;">Embassy & Consulates</a>
+        <a href="shipping-report.html#top-5-moving-companies" target="_blank" rel="noopener" class="btn btn-secondary">Get Mover Quotes</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle Menu" aria-expanded="false" popovertarget="mobile-menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Popover -->
+  <div id="mobile-menu" popover class="mobile-nav-popover">
+    <button class="nav-close" aria-label="Close Menu" popovertarget="mobile-menu" popovertargetaction="hide">&times;</button>
+    <nav class="mobile-nav">
+      <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="font-weight: 600; color: var(--color-primary); text-decoration: none; margin-bottom: 12px; display: block;">Embassy & Consulates</a>
+      <a href="shipping-report.html#top-5-moving-companies" target="_blank" rel="noopener" class="btn btn-primary" popovertarget="mobile-menu" popovertargetaction="hide">Get Quotes</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="ambient-glow" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <span class="section-tag-hero">US to Portugal Move</span>
+        <h1 class="hero-title">
+          Your family's move<br>
+          <span class="gradient-text">Simplified</span>
+        </h1>
+        <p class="hero-subtitle">
+          Bypass the chaos of fifty tabs. Estimate your shipping, rentals, school costs, and healthcare in one transparent dashboard, and generate your custom D7/Digital Nomad visa roadmap.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--color-text-dim); margin-top: -12px; margin-bottom: 24px; font-weight: 500; font-family: 'Outfit', sans-serif;">Last Updated: August 31, 2026</p>
+      </div>
+    </section>
+
+    <!-- Flagship Calculator (The Wedge) -->
+    <section id="estimator" class="estimator-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Flagship Tool</span>
+          <h2 class="section-title">Cost of Relocation Calculator</h2>
+          <p class="section-subtitle">Toggle your household parameters below. Our formulas fetch localized rent metrics, private school fees, moving costs, and visa filing expenses.</p>
+        </div>
+
+        <div class="estimator-grid">
+          <!-- Controls Panel -->
+          <div class="estimator-controls card glassmorphism">
+            <form id="calculator-form">
+              
+              <!-- Origin US City -->
+              <div class="form-group">
+                <legend class="group-label">1. Current Origin Hub (US)</legend>
+                <div class="radio-cards select-grid">
+                  <label class="radio-card">
+                    <input type="radio" name="origin-city" value="nyc" checked>
+                    <div class="card-content">
+                      <span class="card-title">New York City</span>
+                      <span class="card-desc">East Coast benchmark</span>
+                    </div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="origin-city" value="sfo">
+                    <div class="card-content">
+                      <span class="card-title">San Francisco</span>
+                      <span class="card-desc">West Coast benchmark</span>
+                    </div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="origin-city" value="aus">
+                    <div class="card-content">
+                      <span class="card-title">Austin</span>
+                      <span class="card-desc">Central hub benchmark</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Destination Portugal Region -->
+              <div class="form-group">
+                <legend class="group-label">2. Target Destination Region (Portugal)</legend>
+                <div class="radio-cards select-grid">
+                  <label class="radio-card">
+                    <input type="radio" name="destination-region" value="lisbon" checked>
+                    <div class="card-content">
+                      <span class="card-title">Lisbon Metro</span>
+                      <span class="card-desc">Capital vibes & premium pricing</span>
+                    </div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="destination-region" value="porto">
+                    <div class="card-content">
+                      <span class="card-title">Porto / North</span>
+                      <span class="card-desc">Rich culture & moderate rents</span>
+                    </div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="destination-region" value="algarve">
+                    <div class="card-content">
+                      <span class="card-title">Algarve Coast</span>
+                      <span class="card-desc">Sunny coastal & expat friendly</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Family & Household -->
+              <div class="form-group">
+                <legend class="group-label">3. Relocating Household Size</legend>
+                <div class="timeline-tabs">
+                  <label class="tab-label">
+                    <input type="radio" name="family-size" value="single" checked>
+                    <span class="tab-button">Single Expat</span>
+                  </label>
+                  <label class="tab-label">
+                    <input type="radio" name="family-size" value="couple">
+                    <span class="tab-button">Couple</span>
+                  </label>
+                  <label class="tab-label">
+                    <input type="radio" name="family-size" value="family">
+                    <span class="tab-button">Family (3-4)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Rental Property Needs -->
+              <div class="form-group">
+                <legend class="group-label">4. Desired Housing Standard</legend>
+                <div class="radio-cards select-grid">
+                  <label class="radio-card">
+                    <input type="radio" name="housing-type" value="t1" checked>
+                    <div class="card-content">
+                      <span class="card-title">T1 / T2 Apartment</span>
+                      <span class="card-desc">Cozy 1-2 bedrooms flat</span>
+                    </div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="housing-type" value="t3">
+                    <div class="card-content">
+                      <span class="card-title">T3 Family Flat</span>
+                      <span class="card-desc">Spacious 3 bedrooms apartment</span>
+                    </div>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="housing-type" value="villa">
+                    <div class="card-content">
+                      <span class="card-title">Detached Villa</span>
+                      <span class="card-desc">Stand-alone family home with yard</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Extra Variables (Sliders / Checkboxes) -->
+              <div class="form-group">
+                <span class="group-label">5. Schooling & Moving Cargo</span>
+                <div class="checkbox-grid">
+                  <label class="checkbox-custom">
+                    <input type="checkbox" name="calc-addon" value="international-school">
+                    <span class="checkbox-box"></span>
+                    <div class="checkbox-content">
+                      <span class="addon-title">International Schooling</span>
+                      <span class="addon-desc">Requires private English-curriculum fees</span>
+                    </div>
+                  </label>
+                  
+                  <label class="checkbox-custom">
+                    <input type="checkbox" name="calc-addon" value="full-shipping">
+                    <span class="checkbox-box"></span>
+                    <div class="checkbox-content">
+                      <span class="addon-title">Full Shipping Container</span>
+                      <span class="addon-desc">Relocating large household furniture by sea</span>
+                    </div>
+                  </label>
+
+                  <label class="checkbox-custom">
+                    <input type="checkbox" name="calc-addon" value="pet-relocation" checked>
+                    <span class="checkbox-box"></span>
+                    <div class="checkbox-content">
+                      <span class="addon-title">Relocating with Pets</span>
+                      <span class="addon-desc">Requires USDA health certificates and pet shipping</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Price & Summary Panel -->
+          <div class="estimator-summary card glassmorphism" aria-live="polite">
+            <h3 class="summary-title">Move Budget Breakdown</h3>
+            
+            <div class="summary-details">
+              <div class="detail-row">
+                <span>
+                  <a href="shipping-report.html" target="_blank" rel="opener" class="insurance-report-link">Shipping & Relocation Setup (Average)</a>
+                  <br>
+                  <span id="summary-setup-subtext" style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Based on: Single Expat + T1/T2</span>
+                </span>
+                <span id="summary-setup">$2,500</span>
+              </div>
+              <div class="detail-row">
+                <span><a href="rent-report.html" target="_blank" rel="opener" class="insurance-report-link">Estimated Target Monthly Rent</a></span>
+                <span id="summary-rent">$2,275/mo</span>
+              </div>
+              <div class="detail-row">
+                <span>
+                  <a href="insurance-report.html" target="_blank" rel="opener" class="insurance-report-link">Private Expat Health Insurance</a>
+                  <br>
+                  <span id="summary-insurance-subtext" style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Basic services for Single Expat</span>
+                </span>
+                <span id="summary-insurance">$63/mo</span>
+              </div>
+              <div class="detail-row">
+                <span><a href="visa-report.html" target="_blank" rel="opener" class="insurance-report-link">Visa Processing & NIF Setups</a></span>
+                <span id="summary-visa">$450</span>
+              </div>
+              <div class="detail-row">
+                <span>
+                  <a href="education-report.html" target="_blank" rel="opener" class="insurance-report-link">Education</a>
+                  <br>
+                  <span id="summary-education-subtext" style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">One child at international school</span>
+                </span>
+                <span id="summary-education">$1,217/mo</span>
+              </div>
+              <div class="detail-row">
+                <span>
+                  <a href="pet-report.html" target="_blank" rel="opener" class="insurance-report-link">
+                    Pet Relocation & Compliance<br>
+                    <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">(DIY Estimate per pet)</span>
+                  </a>
+                </span>
+                <span id="summary-pet">$0</span>
+              </div>
+            </div>
+
+            <div class="price-block">
+              <div class="price-label">Estimated Initial Move Budget</div>
+              <div class="price-sublabel">(includes 1 month rent and one month rent deposit – may vary according to contractual agreement)</div>
+              <div class="price-value" id="initial-budget">$3,250</div>
+              <div class="timeline-value">Estimated Local Monthly Expenses: <span id="monthly-running">$1,920/mo</span></div>
+            </div>
+
+            <div class="summary-cta">
+              <button type="button" id="generate-roadmap-btn" class="btn btn-primary btn-block">
+                Generate Family Relocation Roadmap
+              </button>
+              <p class="disclaimer">Calculations are indicative estimates based on current 2026 crowdsourced data indexes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Roadmap Checklist Section -->
+    <section id="roadmap" class="roadmap-section hidden-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Your Action Plan</span>
+          <h2 class="section-title">Personalized Relocation Roadmap</h2>
+          <p class="section-subtitle">Based on your household profile, here is your chronological milestone checklist for moving to Portugal.</p>
+          <div style="margin-top: 20px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: oklch(0.98 0.01 75 / 0.65); padding: 12px 24px; border-radius: 50px; border: 1px solid var(--color-border); box-shadow: 0 4px 15px oklch(0 0 0 / 0.05);">
+            <label for="move-date-input" style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-white);">What date do you plan to move?</label>
+            <input type="date" id="move-date-input" style="padding: 6px 12px; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-bg); font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--color-text-white); cursor: pointer;">
+          </div>
+        </div>
+
+        <div class="roadmap-wrapper card glassmorphism">
+          <div class="roadmap-timeline" id="roadmap-timeline-container">
+            <!-- Populated dynamically via JS -->
+          </div>
+          
+          <div class="roadmap-actions" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn btn-outline" onclick="window.print()">Print Action Plan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Flywheel Contribution Simulation Dialog -->
+  <dialog id="contribution-dialog" class="success-dialog glassmorphism">
+    <form method="dialog" id="contribution-form" class="dialog-content">
+      <h2>Contribute Local Rental Prices</h2>
+      <p>Help keep our database fresh. Submit local lease metrics for Portugal.</p>
+      <div class="form-control-group text-left" style="margin-top: 15px;">
+        <label for="contrib-region">Portugal Region</label>
+        <select id="contrib-region" style="background: oklch(0.98 0.01 75 / 0.65); border: 1px solid var(--color-border); padding: 10px; color: var(--color-text-white);">
+          <option value="lisbon">Lisbon Metro</option>
+          <option value="porto">Porto / North</option>
+          <option value="algarve">Algarve</option>
+        </select>
+      </div>
+      <div class="form-control-group text-left" style="margin-top: 15px;">
+        <label for="contrib-rent">Monthly Rent Paid (€)</label>
+        <input type="number" id="contrib-rent" placeholder="1200" required style="background: oklch(0.98 0.01 75 / 0.65); border: 1px solid var(--color-border); padding: 10px; color: var(--color-text-white);">
+      </div>
+      <div style="display: flex; gap: 15px; margin-top: 24px; justify-content: center;">
+        <button type="button" class="btn btn-outline" id="close-contrib-btn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit Local Data</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="app-footer" style="padding: 40px 0 30px; border-top: 1px solid var(--color-border); margin-top: 60px; text-align: center;">
+    <div class="container footer-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+      <div class="footer-heading" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-text-white); margin-bottom: -4px;">Portugal Resources</div>
+      <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500;">
+        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-dim); margin: 0;">&copy; 2026 ReloPlan Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="top-nav.js"></script>
+</body>
+</html>

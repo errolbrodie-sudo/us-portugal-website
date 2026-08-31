@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portugal Education System & Schooling Guide - Comprehensive comparison of public, private, international, and boarding schools in Lisbon, Porto, and the Algarve.">
+  <title>Education System & Schooling Guide | Portugal Corridor</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-bg: #EAE3DD;
+      --color-card-bg: oklch(0.98 0.01 75 / 0.85);
+      --color-border: oklch(0.35 0.02 75 / 0.15);
+      --color-primary: oklch(0.48 0.12 75);
+      --color-secondary: oklch(0.42 0.11 180);
+      --color-text-dark: oklch(0.18 0.01 75);
+      --color-text-muted: oklch(0.35 0.02 75);
+      --color-text-dim: oklch(0.5 0.02 75);
+      --border-radius-lg: 24px;
+      --border-radius-md: 16px;
+    }
+    
+    <u>, </u>::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text-dark);
+      line-height: 1.62;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .back-link {
+      display: block;
+      margin: 0 auto 24px auto;
+      width: fit-content;
+      color: var(--color-secondary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--color-text-muted);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--color-text-dim);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* Section Cards */
+    section {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px oklch(0 0 0 / 0.04);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      border-bottom: 1.5px solid var(--color-border);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    thead th {
+      background: var(--color-primary);
+      color: white;
+      font-weight: 600;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tbody td {
+      padding: 16px 20px;
+      border-top: 1px solid var(--color-border);
+      vertical-align: middle;
+      color: var(--color-text-muted);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .font-semibold {
+      font-weight: 600;
+      color: var(--color-text-dark);
+    }
+
+    /* Comparison Filters */
+    .filter-panel {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+
+    .filter-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+
+    select, input[type="number"] {
+      padding: 8px 12px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: white;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--color-text-dark);
+    }
+
+    /* School Card grid */
+    .school-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .school-card {
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .school-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--color-primary);
+    }
+
+    .school-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      border-bottom: 1px dashed var(--color-border);
+      padding-bottom: 12px;
+    }
+
+    .school-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .school-badge {
+      background: var(--color-secondary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .school-details p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .pros-cons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+      background: rgba(255, 255, 255, 0.4);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .pro-col {
+      color: green;
+      font-size: 0.9rem;
+    }
+
+    .con-col {
+      color: oklch(0.55 0.15 20);
+      font-size: 0.9rem;
+    }
+
+    /* Calculator style */
+    .calc-container {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+
+    .calc-group {
+      margin-bottom: 16px;
+    }
+
+    .result-block {
+      background: var(--color-primary);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .result-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      section {
+        padding: 24px;
+      }
+      .pros-cons-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header>
+
+      <h1>Portuguese Education System & Schooling Guide</h1>
+      <p class="subtitle">A complete logistical blueprint mapping school types, regional hubs (Lisbon, Porto, Algarve), curriculum models, and enrolment requirements for US expatriates.</p>
+      <p class="last-updated" id="last-updated-label">Last Updated: Loading...</p>
+    </header>
+
+    <!-- Executive Summary -->
+    <section>
+      <h2>The Educational Landscape in Portugal</h2>
+      <p>
+        Portugal offers a robust, highly structured education system that welcomes foreign residents. When moving from the United States, parents can choose between <strong>public schools</strong> (taught exclusively in Portuguese), <strong>private local schools</strong> (often bilingual but following the Portuguese curriculum), and <strong>international schools</strong> (offering British GCSE/A-Levels, American diplomas, or the International Baccalaureate).
+      </p>
+      <p>
+        Under Portuguese law, education is <strong>compulsory from age 6 to 18</strong> (Grade 1 through Grade 12). The school year runs from mid-September to late June, divided into three terms.
+      </p>
+    </section>
+
+    <!-- Education Levels Table -->
+    <section>
+      <h2>Education Levels & Duration</h2>
+      <p>
+        The table below outlines the stages of the Portuguese national education system, corresponding entry ages, and the certifications awarded:
+      </p>
+      <div class="table-container">
+        <table id="levels-table">
+          <thead>
+            <tr>
+              <th>Education Cycle</th>
+              <th>Typical Entry Age</th>
+              <th>Duration</th>
+              <th>Qualification Received</th>
+            </tr>
+          </thead>
+          <tbody id="levels-table-body">
+            <tr>
+              <td colspan="4" style="text-align:center; padding:20px;">Loading levels...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- School Types Comparison -->
+    <section>
+      <h2>School Types & Comparisons</h2>
+      <p>
+        Understanding the core distinctions, financial demands, and curriculum paths is critical before selecting a school type:
+      </p>
+
+      <h3>1. Public Schools (Escolas Públicas)</h3>
+      <ul>
+        <li><strong>Language & Curriculum:</strong> 100% Portuguese language; follows the Ministry of Education's national curriculum.</li>
+        <li><strong>Fees & Costs:</strong> Tuition-free for residents. Minor fees apply for books, cafeteria lunches, and extra-curricular activities (typically $100–$200 annually).</li>
+        <li><strong>Admissions:</strong> Zoned strictly by home or workspace address. Allocation is handled via the Portal das Matrículas.</li>
+        <li><strong>Pros & Cons:</strong>
+          <ul>
+            <li><u>Pros:</u> Complete cultural and language immersion; no tuition burden; neighborhood socialization.</li>
+            <li><u>Cons:</u> Severe language barrier initially for older children; larger class sizes; administrative resources can vary.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>2. Private Schools (Escolas Privadas)</h3>
+      <ul>
+        <li><strong>Language & Curriculum:</strong> Mainly Portuguese, but with stronger English language instruction. Follows the national curriculum.</li>
+        <li><strong>Fees & Costs:</strong> Moderate pricing, ranging from $4,400 to $8,800 annually.</li>
+        <li><strong>Admissions:</strong> Require private interviews, cognitive testing, and registration fees.</li>
+        <li><strong>Pros & Cons:</strong>
+          <ul>
+            <li><u>Pros:</u> Smaller class sizes than public schools; enhanced extra-curricular offerings; faster administrative support.</li>
+            <li><u>Cons:</u> Still requires Portuguese fluency; additional costs for uniforms, materials, and enrollment.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>3. Bilingual & International Schools</h3>
+      <ul>
+        <li><strong>Language & Curriculum:</strong> Primary instruction in English (or French/German). Follows International Baccalaureate (IB), British Cambridge (IGCSE/A-Levels), or US high school curricula.</li>
+        <li><strong>Fees & Costs:</strong> Premium tier, ranging from $7,700 to $26,200 annually.</li>
+        <li><strong>Admissions:</strong> Competitive applications, transcripts, language competency testing, and parent interviews.</li>
+        <li><strong>Pros & Cons:</strong>
+          <ul>
+            <li><u>Pros:</u> Seamless continuity for US students; English instruction; international peer network; global college readiness.</li>
+            <li><u>Cons:</u> High financial burden; limited Portuguese immersion; potential waitlists.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>4. Boarding Schools</h3>
+      <ul>
+        <li><strong>Language & Curriculum:</strong> English language teaching; British or IB curricula.</li>
+        <li><strong>Fees & Costs:</strong> Full package including boarding, dining, and academic tuition ranges from $21,800 to $38,200 annually.</li>
+        <li><strong>Admissions:</strong> Strict transcripts check, letters of reference, entry assessments, and trial stays.</li>
+        <li><strong>Pros & Cons:</strong>
+          <ul>
+            <li><u>Pros:</u> Premium facilities, structured boarding support, extensive networks.</li>
+            <li><u>Cons:</u> Very high financial cost; distance from family.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- School Comparison Filter Panel -->
+    <section>
+      <h2>School Directory & Regional Comparisons</h2>
+      <p>
+        Filter leading private and international schools across Lisbon, Porto, and the Algarve regions:
+      </p>
+
+      <div class="filter-panel">
+        <div class="filter-title">Filter Directory</div>
+        <div class="filter-group">
+          <label class="filter-item">
+            Region:
+            <select id="filter-region">
+              <option value="all">All Regions</option>
+              <option value="lisbon">Lisbon Metro</option>
+              <option value="porto">Porto & North</option>
+              <option value="algarve">Algarve Coast</option>
+            </select>
+          </label>
+          <label class="filter-item">
+            School Type:
+            <select id="filter-type">
+              <option value="all">All Types</option>
+              <option value="international">Day International</option>
+              <option value="bilingual">Bilingual</option>
+              <option value="boarding">Boarding Option</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="school-grid" id="schools-card-container">
+        <!-- Rendered dynamically -->
+        <p style="text-align:center; padding:40px;">Loading schools directory...</p>
+      </div>
+    </section>
+
+    <!-- Interactive Cost Calculator -->
+    <section>
+      <h2>Interactive Annual Education Cost Calculator</h2>
+      <p>
+        Estimate your total annual out-of-pocket educational expenses based on school type, grade level, and number of children:
+      </p>
+
+      <div class="calc-container">
+        <div class="calc-group">
+          <label for="calc-school-type">School Type Pathway</label>
+          <select id="calc-school-type">
+            <option value="public">Public School (Tuition-Free)</option>
+            <option value="private">Private Local School</option>
+            <option value="bilingual">Bilingual School</option>
+            <option value="international">Day International School</option>
+            <option value="boarding">Boarding School</option>
+          </select>
+        </div>
+        <div class="calc-group">
+          <label for="calc-children-count">Number of Relocating Children</label>
+          <input type="number" id="calc-children-count" value="1" min="1" max="6">
+        </div>
+        <div class="calc-group">
+          <label for="calc-include-addons">
+            <input type="checkbox" id="calc-include-addons" style="width:16px; height:16px; margin-right:8px; cursor:pointer;" checked>
+            Include uniform, books, and registration fees
+          </label>
+        </div>
+
+        <div class="result-block">
+          <div>Estimated Total Annual Cost (USD):</div>
+          <div class="result-value" id="calc-annual-cost-result">$0</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enrollment and Zoning Requirements -->
+    <section>
+      <h2>Residency, Enrolment & Timelines</h2>
+      
+      <h3>1. Registration Timeline</h3>
+      <p>
+        <strong>Public & Private Local Schools:</strong> The national enrolment window open dates are regulated by the Ministry of Education, typically starting <strong>between April and July</strong> for the subsequent school year. Matrículas are submitted online through the <strong>Portal das Matrículas</strong>.<br>
+        <strong>International Schools:</strong> Operate on independent rolling admissions, but applications should ideally be filed <strong>between October and January</strong> of the prior year due to high occupancy rates.
+      </p>
+
+      <h3>2. School Zoning (Public System)</h3>
+      <p>
+        Public school allocation is prioritized by geography:
+      </p>
+      <ul>
+        <li><strong>Zoning Criteria:</strong> Priority is determined by the child's registered address (proven by a tax portal printout or parish certificate the official certificate of residence called the Atestado de Residência issued by the civil bureaucratic council, the Junta de Freguesia) or the parents' workplace address.</li>
+        <li><strong>Preference List:</strong> Parents select up to 5 school preferences in order. If the zoned school is full, children are redirected to adjacent schools in the municipality.</li>
+      </ul>
+
+      <h3>3. Residency & Visa Considerations</h3>
+      <p>
+        US citizens must have a legal residency visa (e.g. D7, D8, or Golden Visa) to reside in Portugal. Enrolment in an international or private school requires a NIF (Tax Number). For public school registration, it is mandatory to a valid residence card or biometric booking confirmation (After receiving a D4/D5 study visa and arriving in Portugal, students must register in person with the AIMA (Agência para a Integração, Migrações e Asilo, formerly SEF) to convert their entry visa into a formal Student Residence Permit (Título de Residência). During a Biometric Appointment, the student’s fingerprints, digital photograph, and digital signature are taken.).
+      </p>
+    </section>
+
+    <!-- Document Checklists -->
+    <section>
+      <h2>Required Enrolment Documents Checklist</h2>
+      <p>
+        Prepare this dossier of physical records before submitting your application.
+      </p>
+      
+      <h3>Dossier Checklist</h3>
+      <ul>
+        <li><strong>Child's Valid US Passport</strong> (must have a valid entry stamp or residence card).</li>
+        <li><strong>Parents' Valid US Passports</strong> and residence permits.</li>
+        <li><strong>Child's Portuguese NIF Number</strong> (Fiscal Number).</li>
+        <li><strong>Parents' Portuguese NIF Numbers</strong>.</li>
+        <li><strong>Recent School Transcripts / Reports</strong> (minimum of the last 2 academic years).</li>
+        <li><strong>Apostilled & Translated Academic records</strong> (mandatory for public schools to determine equivalence level under Portuguese law).</li>
+        <li><strong>Detailed Vaccination Record</strong> (bulletin de vacinas), indicating the child is up-to-date with Portuguese vaccination schedules (especially the tetanus vaccine).</li>
+        <li><strong>Two Passport-Sized Photographs</strong> of the child.</li>
+        <li><strong>Medical Statement</strong> confirming the child is fit to participate in sports.</li>
+      </ul>
+    </section>
+
+    <!-- Education FAQ Section -->
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Are public schools in Portugal completely tuition-free for children of foreign residents? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Yes. Children of legal foreign residents are entitled to free public education from Grade 1 through Grade 12. Parents only pay nominal fees for school meals, textbooks, and extra-curricular activities.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">What is the difference between an IB Diploma and a British A-Level curriculum in Portugal? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          The International Baccalaureate (IB) Diploma offers a broad, 6-subject holistic curriculum including a mandatory research essay and community service. British A-Levels allow students to specialize deeply in 3 or 4 subjects. Both credentials are fully recognized by US and European universities.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Will my child need an apostilled academic transcript to enroll in a Portuguese school? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          For public schools and local private schools, official US report cards and transcripts must be Hague Apostilled and officially translated into Portuguese for grade equivalence validation (<em>equivalência escolar</em>). International schools typically accept standard English transcripts directly.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">At what age is schooling compulsory in Portugal, and when does the academic year start? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Education is mandatory for children between ages 6 and 18. The Portuguese academic year begins in mid-September and concludes in late June, divided into three terms (Trimesters).
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Do international schools in Portugal follow the same enrollment deadlines as public schools? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          No. Public school registration windows are regulated nationally between April and July via the <em>Portal das Matrículas</em>. International schools operate on rolling year-round admissions, though early filing (October to January) is recommended due to limited seat availability.
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section>
+      <h2>Official Resources & Disclaimer</h2>
+      <p>
+        Verify requirements and guidelines from official bodies:
+      </p>
+      <ul>
+        <li><strong>Portuguese Ministry of Education (Direção-Geral da Educação):</strong> <a href="https://www.dge.mec.pt" target="_blank">https://www.dge.mec.pt</a> - Handles all curriculum benchmarks and equivalences.</li>
+        <li><strong>Portal das Matrículas (Enrolment Portal):</strong> <a href="https://www.bemvindo.app/life/enrolling-child-school" target="_blank">https://www.bemvindo.app/life/enrolling-child-school</a> - Official system to register public and private school entries.</li>
+        <li><strong>US Embassy in Lisbon (Education Guide):</strong> <a href="https://pt.usembassy.gov" target="_blank">https://pt.usembassy.gov</a> - Practical guidance for American families moving to Portugal.</li>
+      </ul>
+      <p style="font-size:0.85rem; color:var(--color-text-dim); margin-top:24px; border-top:1px solid var(--color-border); padding-top:12px;">
+        <strong>Regulatory Disclaimer:</strong> Educational regulations, curriculum formats, enrolment deadlines, and zoning limits are governed by municipal councils and the Portuguese Ministry of Education. Requirements are subject to change in accordance with local legislation.
+      </p>
+    </section>
+
+  </div>
+
+  <script>
+    let educationData = null;
+
+    // Load data from education-data.json
+    async function loadEducationData() {
+      try {
+        const response = await fetch('education-data.json');
+        educationData = await response.json();
+        document.getElementById('last-updated-label').innerText = `Last Updated: ${educationData.lastUpdated}`;
+        
+        renderLevels();
+        renderSchools();
+        calculateCost();
+      } catch (error) {
+        console.error('Error fetching education data:', error);
+        document.getElementById('levels-table-body').innerHTML = `
+          <tr>
+            <td colspan="4" style="text-align:center; color:red;">Failed to load levels data.</td>
+          </tr>`;
+      }
+    }
+
+    // Render education levels table
+    function renderLevels() {
+      if (!educationData) return;
+      const tbody = document.getElementById('levels-table-body');
+      tbody.innerHTML = '';
+      
+      educationData.levels.forEach(lvl => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="font-semibold">${lvl.name}</td>
+          <td>${lvl.ages}</td>
+          <td>${lvl.duration}</td>
+          <td>${lvl.qualification}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Render schools cards
+    function renderSchools() {
+      if (!educationData) return;
+      const container = document.getElementById('schools-card-container');
+      container.innerHTML = '';
+
+      const regionFilter = document.getElementById('filter-region').value;
+      const typeFilter = document.getElementById('filter-type').value;
+
+      const filteredSchools = educationData.schools.filter(school => {
+        const matchesRegion = (regionFilter === 'all' || school.region === regionFilter);
+        const matchesType = (typeFilter === 'all' || school.type === typeFilter);
+        return matchesRegion && matchesType;
+      });
+
+      if (filteredSchools.length === 0) {
+        container.innerHTML = `<p style="text-align:center; padding:40px; color:var(--color-text-dim);">No schools match selected filters.</p>`;
+        return;
+      }
+
+      filteredSchools.forEach(school => {
+        const card = document.createElement('div');
+        card.className = 'school-card';
+        card.innerHTML = `
+          <div class="school-header">
+            <span class="school-name">${school.name}</span>
+            <span class="school-badge">${school.type}</span>
+          </div>
+          <div class="school-details">
+            <p><strong>Region:</strong> ${school.region.charAt(0).toUpperCase() + school.region.slice(1)}</p>
+            <p><strong>Curriculum:</strong> ${school.curriculum}</p>
+            <p><strong>Instruction Language:</strong> ${school.languages}</p>
+            <p><strong>Admissions Guide:</strong> ${school.admissions}</p>
+            <p><strong>Estimated Annual Fees:</strong> ${school.fees}</p>
+          </div>
+          <div class="pros-cons-grid">
+            <div class="pro-col">
+              <strong>✓ Pros</strong>
+              <p>${school.pros}</p>
+            </div>
+            <div class="con-col">
+              <strong>✗ Cons</strong>
+              <p>${school.cons}</p>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Calculate dynamic cost estimates
+    function calculateCost() {
+      if (!educationData) return;
+      const type = document.getElementById('calc-school-type').value;
+      const children = parseInt(document.getElementById('calc-children-count').value) || 1;
+      const includeAddons = document.getElementById('calc-include-addons').checked;
+
+      const costs = educationData.costAverages[type];
+      let totalPerChild = 0;
+
+      if (includeAddons) {
+        // Complete annual: (monthly tuition * 10) + uniforms + books + registration
+        totalPerChild = (costs.tuition * 10) + costs.uniforms + costs.books + costs.registration;
+      } else {
+        // Just tuition
+        totalPerChild = costs.tuition * 10;
+      }
+
+      const totalValue = totalPerChild * children;
+      document.getElementById('calc-annual-cost-result').innerText = `$${totalValue.toLocaleString()}`;
+    }
+
+    // Attach listeners
+    document.getElementById('filter-region').addEventListener('change', renderSchools);
+    document.getElementById('filter-type').addEventListener('change', renderSchools);
+
+    document.getElementById('calc-school-type').addEventListener('change', calculateCost);
+    document.getElementById('calc-children-count').addEventListener('input', calculateCost);
+    document.getElementById('calc-include-addons').addEventListener('change', calculateCost);
+
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      if (answer.style.display === 'none' || !answer.style.display) {
+        answer.style.display = 'block';
+        element.querySelector('span').innerText = '▲';
+      } else {
+        answer.style.display = 'none';
+        element.querySelector('span').innerText = '▼';
+      }
+    }
+
+    // Run on startup
+    loadEducationData();
+  </script>
+
+  <!-- Footer -->
+  <footer class="app-footer" style="padding: 40px 0 30px; border-top: 1px solid var(--color-border); margin-top: 60px; text-align: center;">
+    <div class="container footer-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+      <div class="footer-heading" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: -4px;">Portugal Resources</div>
+      <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500;">
+        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-dim); margin: 0;">&copy; 2026 ReloPlan Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="top-nav.js"></script>
+  <script src="toc.js"></script>
+</body>
+</html>
+
+
+

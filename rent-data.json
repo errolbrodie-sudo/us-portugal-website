@@ -1,0 +1,23 @@
+{
+  "lastUpdated": "August 31, 2026",
+  "regions": {
+    "lisbon": {
+      "name": "Lisbon Metro",
+      "t1": { "low": 900, "medium": 1200, "high": 1800 },
+      "t3": { "low": 1700, "medium": 2200, "high": 3200 },
+      "villa": { "low": 2800, "medium": 3800, "high": 5500 }
+    },
+    "porto": {
+      "name": "Porto / North",
+      "t1": { "low": 700, "medium": 900, "high": 1400 },
+      "t3": { "low": 1200, "medium": 1600, "high": 2400 },
+      "villa": { "low": 2000, "medium": 2800, "high": 4200 }
+    },
+    "algarve": {
+      "name": "Algarve Coast",
+      "t1": { "low": 750, "medium": 950, "high": 1500 },
+      "t3": { "low": 1300, "medium": 1750, "high": 2600 },
+      "villa": { "low": 2200, "medium": 3200, "high": 4800 }
+    }
+  }
+}

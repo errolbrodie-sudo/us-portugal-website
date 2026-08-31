@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portugal Monthly Rental Estimates & Tenancy Guide - Detailed analysis of rents in Lisbon, Porto, and the Algarve with legal requirements.">
+  <title>Monthly Rental Estimates & Tenancy Guide | Portugal</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-bg: #EAE3DD;
+      --color-card-bg: oklch(0.98 0.01 75 / 0.85);
+      --color-border: oklch(0.35 0.02 75 / 0.15);
+      --color-primary: oklch(0.48 0.12 75);
+      --color-secondary: oklch(0.42 0.11 180);
+      --color-text-dark: oklch(0.18 0.01 75);
+      --color-text-muted: oklch(0.35 0.02 75);
+      --color-text-dim: oklch(0.5 0.02 75);
+      --border-radius-lg: 24px;
+      --border-radius-md: 16px;
+    }
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text-dark);
+      line-height: 1.62;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--color-secondary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--color-text-muted);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--color-text-dim);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* Section Cards */
+    section {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px oklch(0 0 0 / 0.04);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      border-bottom: 1.5px solid var(--color-border);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Filters Panel */
+    .filter-panel {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+
+    .filter-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+
+    .filter-item input[type="checkbox"],
+    .filter-item input[type="radio"] {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    thead th {
+      background: var(--color-primary);
+      color: white;
+      font-weight: 600;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tbody td {
+      padding: 16px 20px;
+      border-top: 1px solid var(--color-border);
+      vertical-align: middle;
+      color: var(--color-text-muted);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .price-value {
+      font-weight: 700;
+      color: var(--color-text-dark);
+    }
+
+    .region-badge {
+      display: inline-block;
+      background: var(--color-secondary);
+      color: white;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      section {
+        padding: 24px;
+      }
+      .filter-group {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header>
+
+      <h1>Portugal Monthly Rental Estimates</h1>
+      <p class="subtitle">An interactive comparative analysis of rental housing cost metrics for Lisbon, Porto (North), and the Algarve Coast.</p>
+      <p class="last-updated" id="last-updated-label">Last Updated: Loading...</p>
+    </header>
+
+    <!-- Interactive Cost Explorer -->
+    <section>
+      <h2>Interactive Rental Estimator</h2>
+      <p>
+        Use the filters below to adjust the monthly rental price ranges based on property specifications. All rates are shown in USD ($) and represent current market averages.
+      </p>
+
+      <div class="filter-panel">
+        <div class="filter-title">Adjust Rental Parameters & Filters</div>
+        <div class="filter-group">
+          <label class="filter-item">
+            <input type="radio" name="furnished" value="unfurnished" checked> Unfurnished (Baseline)
+          </label>
+          <label class="filter-item">
+            <input type="radio" name="furnished" value="furnished"> Furnished (+15%)
+          </label>
+        </div>
+        <div class="filter-group">
+          <label class="filter-item">
+            <input type="radio" name="location" value="centre" checked> City Centre / Prime Area
+          </label>
+          <label class="filter-item">
+            <input type="radio" name="location" value="suburbs"> Suburbs / Outer Area (-20%)
+          </label>
+        </div>
+        <div class="filter-group">
+          <label class="filter-item">
+            <input type="checkbox" id="filter-pool"> Swimming Pool (+10%)
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" id="filter-view"> Sea View (+15%)
+          </label>
+          <label class="filter-item">
+            <input type="checkbox" id="filter-parking"> Reserved Parking (+5%)
+          </label>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table id="rental-estimates-table">
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Property Type</th>
+              <th>Low Estimate</th>
+              <th>Medium Estimate</th>
+              <th>High Estimate</th>
+            </tr>
+          </thead>
+          <tbody id="rental-table-body">
+            <tr>
+              <td colspan="5" style="text-align: center; padding: 40px; color: var(--color-text-dim);">Loading database data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-dim); margin-top: 10px;">
+        *Note: The figures shown above are estimates and can vary significantly by micro-location, exact neighborhood, structural age, general property condition, available amenities, and lease seasonality.
+      </p>
+    </section>
+
+    <!-- Rental Requirements & Legal Info -->
+    <section>
+      <h2>Rental Requirements and Legal Information</h2>
+      <p>
+        Renting a residential property in Portugal involves navigating distinct local legal norms, customs, and administrative processes. Expatriates must be prepared for the following requirements.
+      </p>
+
+      <h3>Lisbon Metro Region</h3>
+      <ul>
+        <li><strong>Security Deposit:</strong> Customarily <strong>1 to 2 months' rent</strong>, held by the landlord against physical property damage.</li>
+        <li><strong>Advance Rent:</strong> Commonly <strong>2 to 3 months' upfront rent</strong> is required upon signing the lease agreement.</li>
+        <li><strong>Guarantor (Fiador):</strong> Landlords typically request a Portuguese guarantor (fiador) who acts as a co-signer. For foreign tenants without a local tax history:
+          <ul>
+            <li><strong>Alternatives:</strong> Offering a higher advance payment (typically 4 to 6 months of rent upfront), providing a bank guarantee (<em>garantia bancária</em>), or presenting corporate proof of steady international income.</li>
+          </ul>
+        </li>
+        <li><strong>Tenancy Preparation Costs:</strong> Drafted by estate agents or legal representatives. Customarily, the landlord pays for the contract drafting, but tenants must register their NIF. Stamp duty (<em>Imposto de Selo</em>), equivalent to 10% of one month's rent, is paid to the tax office (AT), usually by the landlord.</li>
+      </ul>
+
+      <h3>Porto & North Region</h3>
+      <ul>
+        <li><strong>Security Deposit:</strong> Typically <strong>1 to 2 months' rent</strong> is standard.</li>
+        <li><strong>Advance Rent:</strong> Standard practice is <strong>1 to 2 months' upfront rent</strong>.</li>
+        <li><strong>Guarantor (Fiador) & Alternatives:</strong> A guarantor is highly preferred. If not available, landlords are usually receptive to <strong>3 to 4 months of upfront rent</strong> or official bank guarantees.</li>
+        <li><strong>Tenancy Costs:</strong> The landlord covers broker coordination fees, but contract registration must be validated on the Tax Portal (Portal das Finanças).</li>
+      </ul>
+
+      <h3>Algarve Coast</h3>
+      <ul>
+        <li><strong>Security Deposit:</strong> Typically <strong>2 months' rent</strong>, especially for high-end coastal villas.</li>
+        <li><strong>Advance Rent:</strong> High-season dependencies mean landlords often ask for <strong>3 to 6 months of advance rent</strong> for long-term leases starting before summer.</li>
+        <li><strong>Guarantor & Alternatives:</strong> Guarantors are rarely accessible for expats. Landlords routinely accept advanced upfront rent blocks (often 6 months) as security.</li>
+        <li><strong>Tenancy Costs:</strong> Property management services typically manage the legal drafting, covered by the landlord's administrative fees.</li>
+      </ul>
+
+      <h3>Standard Lease Process Overview</h3>
+      <ol>
+        <li><strong>Presenting a Portuguese NIF:</strong> Mandatory for signing any residential contract.</li>
+        <li><strong>Property Viewings & Reservation Deposit:</strong> Expats often pay a reservation fee (equivalent to one month's rent) to secure a property while documentation is reviewed.</li>
+        <li><strong>Drafting the Contract (Contrato de Arrendamento):</strong> Leases must be in writing and contain details of the landlord, tenant, property registration (Caderneta Predial), and license of use (Licença de Utilização).</li>
+        <p style="margin-top: 8px; margin-bottom: 8px;"><strong>Note:</strong> A purely English-language rental contract is not officially recognized for legal registration with Portuguese tax authorities, but it is legal to use a bilingual contract (Portuguese and English side-by-side), where the Portuguese text serves as the legally binding version.</p>
+        <li><strong>Signing & Registration:</strong> Once signed, the landlord must register the contract on the Portuguese Tax Portal within 30 days and pay the stamp duty. This registered contract is necessary for your residency visa application.</li>
+      </ol>
+
+      <p style="font-size: 0.85rem; color: var(--color-text-dim); margin-top: 24px; border-top: 1px solid var(--color-border); padding-top: 12px;">
+        <strong>Regulatory Disclaimer:</strong> Tenancy requirements, local customs, and legal norms can vary widely between landlords or rental agencies. All rules are subject to change in accordance with local Portuguese civil and tenancy laws.
+      </p>
+    </section>
+
+    <!-- Rental FAQ Section -->
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Do I need a Portuguese guarantor (fiador) to rent an apartment as an American? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          While Portuguese landlords traditionally prefer a local guarantor (<em>fiador</em>), foreign expats without local tax history can routinely bypass this requirement by offering extra advance rent (typically 4 to 6 months upfront) or obtaining a bank guarantee (<em>garantia bancária</em>).
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Can I sign a rental lease remotely from the United States before moving to Portugal? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Yes. Many expats sign long-term lease agreements remotely using digital signature platforms. Your lease must be officially registered on the Portuguese Tax Portal (<em>Portal das Finanças</em>) to be accepted by VFS and Portuguese consulates for visa processing.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">What are Caderneta Predial and Licença de Utilização, and why are they needed for my visa? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          The <em>Caderneta Predial</em> is the official tax registration document of the property, and the <em>Licença de Utilização</em> confirms the property is legally designated for residential use. Portuguese consulates require these numbers in your lease contract to verify housing validity.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">How much deposit and advance rent should I expect to pay upfront? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Standard legal leases usually request 1 to 2 months of security deposit (<em>caução</em>) plus 1 to 2 months of advance rent. For expats without local credit history, total upfront cash required can equal 3 to 6 months of rent.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Are utility bills (electricity, water, internet) included in long-term Portuguese leases? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          For standard 12-month residential leases, utilities are generally <strong>not included</strong>. Tenants must set up service accounts with local providers (e.g., EDP for electricity, local water utility, MEO/NOS/Vodafone for fiber internet) using their Portuguese NIF.
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    let rentalData = null;
+
+    // Load data from rent-data.json
+    async function loadRentalData() {
+      try {
+        const response = await fetch('rent-data.json');
+        rentalData = await response.json();
+        document.getElementById('last-updated-label').innerText = `Last Updated: ${rentalData.lastUpdated}`;
+        renderTable();
+      } catch (error) {
+        console.error('Error fetching rental data:', error);
+        document.getElementById('rental-table-body').innerHTML = `
+          <tr>
+            <td colspan="5" style="text-align: center; padding: 40px; color: red;">Failed to load rental database. Please ensure rent-data.json exists.</td>
+          </tr>`;
+      }
+    }
+
+    // Calculate dynamic price based on active filters
+    function getAdjustedPrice(baseValue) {
+      let multiplier = 1.0;
+
+      // Furnished vs Unfurnished
+      const furnishedVal = document.querySelector('input[name="furnished"]:checked').value;
+      if (furnishedVal === 'furnished') {
+        multiplier += 0.15;
+      }
+
+      // Location Centre vs Suburbs
+      const locationVal = document.querySelector('input[name="location"]:checked').value;
+      if (locationVal === 'suburbs') {
+        multiplier -= 0.20;
+      }
+
+      // Addons
+      if (document.getElementById('filter-pool').checked) multiplier += 0.10;
+      if (document.getElementById('filter-view').checked) multiplier += 0.15;
+      if (document.getElementById('filter-parking').checked) multiplier += 0.05;
+
+      return Math.round(baseValue * multiplier);
+    }
+
+    // Render table rows
+    function renderTable() {
+      if (!rentalData) return;
+      const tbody = document.getElementById('rental-table-body');
+      tbody.innerHTML = '';
+
+      const regionKeys = ['lisbon', 'porto', 'algarve'];
+      const propertyKeys = [
+        { key: 't1', label: 'T1/T2 Apartment' },
+        { key: 't3', label: 'T3 Family Apartment' },
+        { key: 'villa', label: 'Detached Villa' }
+      ];
+
+      regionKeys.forEach(regKey => {
+        const region = rentalData.regions[regKey];
+        propertyKeys.forEach(prop => {
+          const prices = region[prop.key];
+          
+          const adjustedLow = getAdjustedPrice(prices.low);
+          const adjustedMedium = getAdjustedPrice(prices.medium);
+          const adjustedHigh = getAdjustedPrice(prices.high);
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>
+              <span class="region-badge">${region.name}</span>
+            </td>
+            <td class="font-semibold">${prop.label}</td>
+            <td class="price-value">$${adjustedLow.toLocaleString()}</td>
+            <td class="price-value">$${adjustedMedium.toLocaleString()}</td>
+            <td class="price-value">$${adjustedHigh.toLocaleString()}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      });
+    }
+
+    // Attach listeners
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('change', renderTable);
+    });
+
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      if (answer.style.display === 'none' || !answer.style.display) {
+        answer.style.display = 'block';
+        element.querySelector('span').innerText = '▲';
+      } else {
+        answer.style.display = 'none';
+        element.querySelector('span').innerText = '▼';
+      }
+    }
+
+    // Run on startup
+    loadRentalData();
+  </script>
+
+  <!-- Footer -->
+  <footer class="app-footer" style="padding: 40px 0 30px; border-top: 1px solid var(--color-border); margin-top: 60px; text-align: center;">
+    <div class="container footer-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+      <div class="footer-heading" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: -4px;">Portugal Resources</div>
+      <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500;">
+        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-dim); margin: 0;">&copy; 2026 ReloPlan Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="top-nav.js"></script>
+  <script src="toc.js"></script>
+</body>
+</html>
+

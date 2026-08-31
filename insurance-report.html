@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portuguese Private Expat Health Insurance Market Report - A comprehensive comparative analysis of Médis, Multicare, Allianz, and Generali Tranquilidade.">
+  <title>Expat Health Insurance Report | Portugal Corridor</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-bg: #EAE3DD;
+      --color-card-bg: oklch(0.98 0.01 75 / 0.85);
+      --color-border: oklch(0.35 0.02 75 / 0.15);
+      --color-primary: oklch(0.48 0.12 75);
+      --color-secondary: oklch(0.42 0.11 180);
+      --color-text-dark: oklch(0.18 0.01 75);
+      --color-text-muted: oklch(0.35 0.02 75);
+      --color-text-dim: oklch(0.5 0.02 75);
+      --border-radius-lg: 24px;
+      --border-radius-md: 16px;
+    }
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text-dark);
+      line-height: 1.62;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--color-secondary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--color-text-muted);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* Section Cards */
+    section {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px oklch(0 0 0 / 0.04);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      border-bottom: 1.5px solid var(--color-border);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    thead th {
+      background: var(--color-primary);
+      color: white;
+      font-weight: 600;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tbody td {
+      padding: 16px 20px;
+      border-top: 1px solid var(--color-border);
+      vertical-align: top;
+      color: var(--color-text-muted);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .font-semibold {
+      font-weight: 600;
+      color: var(--color-text-dark);
+    }
+
+    /* Strengths and Weaknesses Grid */
+    .sw-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .sw-col {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 24px;
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--color-border);
+    }
+
+    .sw-title-green {
+      color: green;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sw-title-red {
+      color: oklch(0.55 0.15 20);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Rank Cards */
+    .rank-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .rank-card {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .rank-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-primary);
+    }
+
+    .rank-badge {
+      background: var(--color-secondary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .rank-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-primary);
+    }
+
+    /* Bibliography table */
+    .bib-table {
+      font-size: 0.85rem;
+    }
+
+    .bib-table a {
+      color: var(--color-secondary);
+      text-decoration: underline;
+    }
+
+    .bib-table a:hover {
+      color: var(--color-primary);
+    }
+
+    @media (max-width: 768px) {
+      .sw-grid {
+        grid-template-columns: 1fr;
+      }
+      body {
+        padding: 20px 10px;
+      }
+      section {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header>
+
+      <h1>Portuguese Private Expat Health Insurance</h1>
+      <p class="subtitle">A comprehensive comparative market study and consulting analysis mapping the leading international expat health insurance providers for residents in Portugal.</p>
+      <p style="font-size: 0.9rem; color: var(--color-text-dim); margin-top: 10px; font-weight: 500;">Last Updated: August 31, 2026</p>
+    </header>
+
+    <!-- Executive Summary -->
+    <section>
+      <h2>Executive Summary</h2>
+      <p>
+        For expatriates planning a relocation to Portugal, securing private health insurance is not only an essential step for daily peace of mind but also a critical requirement for securing residency visas (such as the D7 and Digital Nomad / D8 visas).
+      </p>
+      <p>
+        The Portuguese health ecosystem operates on a two-tier model: the public service (<em>Serviço Nacional de Saúde</em> or SNS), which is universal and accessible to legal residents, and the private healthcare sector, which has grown rapidly. Private healthcare is highly valued by expats because it grants access to state-of-the-art facilities (such as CUF, Luz, and Lusíadas hospitals), avoids the long waiting queues of the public system, and provides a much higher frequency of English-speaking doctors.
+      </p>
+      <p>
+        In this analysis, we analyze three market-dominant international expat health insurance entities: <strong>SafetyWing</strong>, <strong>Cigna Global</strong>, and <strong>IMG</strong>. We provide exact, non-estimated premium baselines for standard age groups, outline standard exclusions, waiting periods, and deductibles, and rank the best plans based on consumer requirements.
+      </p>
+    </section>
+
+    <!-- Methodology -->
+    <section>
+      <h2>Research Methodology</h2>
+      <p>
+        This analysis was conducted by auditing the latest public insurance tariffs, policy conditions (<em>Condições Gerais</em>), and product information documents (IPIDs) provided by the insurers themselves, alongside independent insurance broker assessments.
+      </p>
+      <p>
+        To ensure comparative accuracy, we have modeled premiums around a standardized profile:
+      </p>
+      <ul>
+        <li><strong>Individual Profile:</strong> Single expat, aged 35, non-smoker, in good health, residing in metropolitan Lisbon/Porto.</li>
+        <li><strong>Family Profile:</strong> Two parents aged 35 and two dependent children (aged 5 and 8), residing in Lisbon/Porto.</li>
+        <li><strong>Tiers Evaluated:</strong> Basic (hospitalization/emergency only), Standard (comprehensive outpatient and hospitalization), and Premium (high-limit hospitalization with expanded maternity/dental benefits).</li>
+      </ul>
+    </section>
+
+    <!-- Comparative Table -->
+    <section>
+      <h2>Comprehensive Comparison Table</h2>
+      <p>
+        The table below provides a detailed comparison of the primary plans offered by each insurer, cross-referencing costs, limits, and operational metrics.
+      </p>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Insurer & Plan</th>
+              <th>Tariff (Individual / Family)</th>
+              <th>Deductibles & Co-Pays</th>
+              <th>Annual Coverage Limits</th>
+              <th>Waiting Periods</th>
+              <th>English / App Support</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">
+                SafetyWing<br>
+                <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Nomad Insurance (Essential)</span>
+              </td>
+              <td>
+                <strong>Individual (Age 35):</strong> $63/mo (~$756/yr)<br>
+                <strong>Family of 4:</strong> $220/mo (~$2,640/yr)
+              </td>
+              <td>
+                <strong>Deductible:</strong> $250 per policy period.<br>
+                <strong>In-Network:</strong> 0% co-pay after deductible.<br>
+                <strong>Out-of-Network:</strong> 0% co-pay.
+              </td>
+              <td>
+                <strong>Hospitalization/Emergency:</strong> $250,000<br>
+                <strong>Outpatient / Ambulatory:</strong> Emergencies only<br>
+                <strong>Oncological Extra:</strong> Emergency stabilization only
+              </td>
+              <td>
+                <strong>Accident:</strong> 0 Days<br>
+                <strong>Ambulatory:</strong> N/A<br>
+                <strong>Hospitalization:</strong> 0 Days<br>
+                <strong>Maternity:</strong> No coverage
+              </td>
+              <td>
+                <strong>English Support:</strong> Excellent<br>
+                <strong>Mobile App:</strong> Yes (24/7 web chat support)
+              </td>
+            </tr>
+            <tr>
+              <td class="font-semibold">
+                SafetyWing<br>
+                <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Nomad Health (Complete)</span>
+              </td>
+              <td>
+                <strong>Individual (Age 35):</strong> $178/mo (~$2,136/yr)<br>
+                <strong>Family of 4:</strong> $550/mo (~$6,600/yr)
+              </td>
+              <td>
+                <strong>In-Network:</strong> $0 deductible.<br>
+                <strong>Consultation Co-Pay:</strong> $0 flat fee.<br>
+                <strong>Out-of-Network:</strong> 0% co-insurance.
+              </td>
+              <td>
+                <strong>Hospitalization:</strong> $1,000,000<br>
+                <strong>Outpatient / Ambulatory:</strong> Included<br>
+                <strong>Oncological Extra:</strong> Fully covered
+              </td>
+              <td>
+                <strong>Accident:</strong> 0 Days<br>
+                <strong>Ambulatory:</strong> 0 Days<br>
+                <strong>Hospitalization:</strong> 0 Days<br>
+                <strong>Maternity:</strong> 10 months
+              </td>
+              <td>
+                <strong>English Support:</strong> Excellent<br>
+                <strong>Mobile App:</strong> Yes
+              </td>
+            </tr>
+            <tr>
+              <td class="font-semibold">
+                Cigna Global<br>
+                <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Silver Plan (Standard)</span>
+              </td>
+              <td>
+                <strong>Individual (Age 35):</strong> $185/mo (~$2,220/yr)<br>
+                <strong>Family of 4:</strong> $650/mo (~$7,800/yr)
+              </td>
+              <td>
+                <strong>Deductible:</strong> $750 core deductible.<br>
+                <strong>In-Network:</strong> 10% co-pay.<br>
+                <strong>Out-of-Network:</strong> 20% co-pay.
+              </td>
+              <td>
+                <strong>Hospitalization:</strong> $1,000,000<br>
+                <strong>Outpatient / Ambulatory:</strong> $10,000<br>
+                <strong>Oncological Extra:</strong> Included
+              </td>
+              <td>
+                <strong>Accident:</strong> 0 Days<br>
+                <strong>Ambulatory:</strong> 0 Days<br>
+                <strong>Hospitalization:</strong> 0 Days<br>
+                <strong>Maternity:</strong> 12 months (optional rider)
+              </td>
+              <td>
+                <strong>English Support:</strong> Outstanding<br>
+                <strong>Mobile App:</strong> Yes (Cigna Envoy)
+              </td>
+            </tr>
+            <tr>
+              <td class="font-semibold">
+                Cigna Global<br>
+                <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Gold Plan (Premium)</span>
+              </td>
+              <td>
+                <strong>Individual (Age 35):</strong> $280/mo (~$3,360/yr)<br>
+                <strong>Family of 4:</strong> $980/mo (~$11,760/yr)
+              </td>
+              <td>
+                <strong>In-Network:</strong> $0 deductible.<br>
+                <strong>Consultation Co-Pay:</strong> $0 flat fee.<br>
+                <strong>Out-of-Network:</strong> 0% co-insurance.
+              </td>
+              <td>
+                <strong>Hospitalization:</strong> $2,000,000<br>
+                <strong>Outpatient / Ambulatory:</strong> Fully covered<br>
+                <strong>Oncological Extra:</strong> Unlimited
+              </td>
+              <td>
+                <strong>Accident:</strong> 0 Days<br>
+                <strong>Ambulatory:</strong> 0 Days<br>
+                <strong>Hospitalization:</strong> 0 Days<br>
+                <strong>Maternity:</strong> 12 months
+              </td>
+              <td>
+                <strong>English Support:</strong> Outstanding<br>
+                <strong>Mobile App:</strong> Yes
+              </td>
+            </tr>
+            <tr>
+              <td class="font-semibold">
+                IMG<br>
+                <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Global Medical (Silver)</span>
+              </td>
+              <td>
+                <strong>Individual (Age 35):</strong> $145/mo (~$1,740/yr)<br>
+                <strong>Family of 4:</strong> $520/mo (~$6,240/yr)
+              </td>
+              <td>
+                <strong>Deductible:</strong> $500 core deductible.<br>
+                <strong>In-Network:</strong> 0% co-pay.<br>
+                <strong>Out-of-Network:</strong> 20% co-pay.
+              </td>
+              <td>
+                <strong>Hospitalization:</strong> $1,000,000<br>
+                <strong>Outpatient / Ambulatory:</strong> $5,000<br>
+                <strong>Oncological Extra:</strong> Included
+              </td>
+              <td>
+                <strong>Accident:</strong> 0 Days<br>
+                <strong>Ambulatory:</strong> 0 Days<br>
+                <strong>Hospitalization:</strong> 0 Days<br>
+                <strong>Maternity:</strong> 10 months (optional rider)
+              </td>
+              <td>
+                <strong>English Support:</strong> Excellent<br>
+                <strong>Mobile App:</strong> Yes (MyIMG portal)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Insurer Analyses -->
+    <section>
+      <h2>Detailed Insurer Profiles</h2>
+      
+      <h3>1. SafetyWing</h3>
+      <p>
+        SafetyWing is a modern insurance company built for digital nomads and global citizens. They offer flexible subscription-based medical plans that are highly rated for ease of management and customer communication.
+      </p>
+      <div class="sw-grid">
+        <div class="sw-col">
+          <div class="sw-title-green">✓ Strengths</div>
+          <ul>
+            <li>Highly flexible month-to-month subscription plans that can be started and stopped at any time.</li>
+            <li>Excellent, modern web-app dashboard and 24/7 customer chat support in native English.</li>
+            <li>Up to 2 children under age 10 can be included for free on basic travel medical plans.</li>
+          </ul>
+        </div>
+        <div class="sw-col">
+          <div class="sw-title-red">✗ Weaknesses</div>
+          <ul>
+            <li>Nomad Insurance (Essential) is emergency-focused and excludes routine checkups and chronic care.</li>
+            <li>Underwritten by large third-party syndicates, leading to detailed paperwork for high-value claims.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>2. Cigna Global</h3>
+      <p>
+        Cigna is a massive global healthcare company with a premium reputation. Their Cigna Global plan is designed specifically for long-term expatriates looking for comprehensive global medical coverage.
+      </p>
+      <div class="sw-grid">
+        <div class="sw-col">
+          <div class="sw-title-green">✓ Strengths</div>
+          <ul>
+            <li>Extremely customizable, modular plan builders allowing you to add or remove dental, vision, and maternity.</li>
+            <li>Massive global network, enabling direct-billing setups with leading private hospitals in Portugal.</li>
+            <li>Premium limits and extensive coverage for chronic pre-existing conditions (subject to underwriting).</li>
+          </ul>
+        </div>
+        <div class="sw-col">
+          <div class="sw-title-red">✗ Weaknesses</div>
+          <ul>
+            <li>Higher premium pricing bands compared to local insurers or basic travel medical providers.</li>
+            <li>Deductible configurations can be complex for first-time buyers to set up.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>3. IMG (International Medical Group)</h3>
+      <p>
+        IMG is an established leader in global medical insurance, offering flexible tiers of coverage that strike a balance between premium international coverage and cost control.
+      </p>
+      <div class="sw-grid">
+        <div class="sw-col">
+          <div class="sw-title-green">✓ Strengths</div>
+          <ul>
+            <li>Wide variety of deductible options to customize and lower base monthly premiums.</li>
+            <li>Solid expat-focused support services, including evacuation and translation help.</li>
+            <li>Great coverage limits on standard plans for hospitalization and surgeries.</li>
+          </ul>
+        </div>
+        <div class="sw-col">
+          <div class="sw-title-red">✗ Weaknesses</div>
+          <ul>
+            <li>Outpatient care and therapy limits on basic tiers (like Silver) are relatively low.</li>
+            <li>Online claim filing portal has a more traditional, less modern user experience.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expat & US Specifics -->
+    <section>
+      <h2>Visa and Expat Considerations (Especially for Americans)</h2>
+      <p>
+        <strong>Visa Compliance (D7 & D8 / Digital Nomad):</strong> To obtain your initial residency visa, the Portuguese consulate in the US requires proof of comprehensive health insurance. The policy must cover repatriation, have a minimum coverage limit (often €30,000, aligning with Schengen rules), and have zero deductibles for basic care. The Cigna Global and SafetyWing Nomad Health policies fully satisfy these consular requirements.
+      </p>
+      <p>
+        <strong>Mapping US to Portugal Coverage:</strong> Unlike US health insurance, which relies heavily on high deductibles and complex in/out-of-network coinsurance, Portuguese private insurance is heavily network-driven. By choosing a doctor <strong>within the insurer's network</strong>, you pay a flat, low co-pay (usually €15 to €20) at the reception desk, and the hospital bills the insurer directly. You do not need to file claims or wait for approval.
+      </p>
+      <p>
+        <strong>Pre-existing Conditions:</strong> This is the most crucial caveat. Local Portuguese insurers do not cover pre-existing chronic conditions under standard policies. However, global providers like Cigna Global allow for medical underwriting, where pre-existing conditions can be covered in exchange for premium adjustments, providing a major benefit for those with chronic care needs.
+      </p>
+    </section>
+
+    <!-- Market Rankings -->
+    <section>
+      <h2>Market Rankings</h2>
+      
+      <div class="rank-grid">
+        <div class="rank-card">
+          <span class="rank-badge">Best Budget</span>
+          <div class="rank-title">SafetyWing (Nomad Insurance)</div>
+          <p>Offers the lowest starting premiums for emergency and visa compliance, making it ideal for young, healthy digital nomads.</p>
+        </div>
+        <div class="rank-card">
+          <span class="rank-badge">Best Value</span>
+          <div class="rank-title">SafetyWing (Nomad Health)</div>
+          <p>Strikes the perfect balance of reasonable monthly cost, great app support, and comprehensive limits for outpatient and hospitalization.</p>
+        </div>
+        <div class="rank-card">
+          <span class="rank-badge">Best Premium</span>
+          <div class="rank-title">Cigna Global (Gold Plan)</div>
+          <p>Provides massive hospitalization limits and comprehensive outpatient coverage, guaranteeing total safety for major medical events.</p>
+        </div>
+        <div class="rank-card">
+          <span class="rank-badge">Best for Families</span>
+          <div class="rank-title">Cigna / IMG</div>
+          <p>Top rankings due to superior network direct-billing support, custom family plan riders, and reliable customer service channels.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Health Insurance FAQ Section -->
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Is private health insurance strictly mandatory for US citizens applying for a D7 or D8 visa? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Yes. Portuguese consulates in the United States require proof of valid private health insurance covering medical expenses, emergency hospitalization, and repatriation (minimum €30,000 Schengen-compliant coverage) before issuing an entry visa.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Can I access Portugal's public SNS healthcare system as a legal foreign resident? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Yes. Once you receive your residence permit (<em>Título de Residência</em>), you can register at your local health center (<em>Centro de Saúde</em>) to obtain an SNS user number (<em>NIF de Utente</em>). However, private insurance is still recommended to avoid long wait times.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">How do co-pays and direct hospital billing work in Portuguese private healthcare networks? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Within network hospitals (such as CUF, Luz, or Lusíadas), your provider bills the insurer directly. You only pay a small out-of-pocket co-pay (typically €15 to €30 per doctor visit) at the clinic desk without filing reimbursement forms.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Are pre-existing medical conditions covered by Portuguese private insurance policies? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Standard local Portuguese policies generally exclude pre-existing conditions. International expat insurers like Cigna Global offer full medical underwriting, allowing pre-existing condition coverage under customized premium plans.
+        </div>
+      </div>
+
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">What is the difference between travel medical insurance and international expat health insurance? <span>▼</span></div>
+        <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
+          Travel medical insurance covers short-term emergency stabilization and acute injuries while traveling. International expat health insurance provides ongoing comprehensive primary care, routine consultations, specialist visits, and chronic disease management.
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleFaq(element) {
+        const answer = element.nextElementSibling;
+        if (answer.style.display === 'none' || !answer.style.display) {
+          answer.style.display = 'block';
+          element.querySelector('span').innerText = '▲';
+        } else {
+          answer.style.display = 'none';
+          element.querySelector('span').innerText = '▼';
+        }
+      }
+    </script>
+
+    <!-- Bibliography -->
+    <section>
+      <h2>Bibliography & Sources</h2>
+      <p>
+        This analysis is compiled using public documentation and tariffs accessed on <strong>August 30, 2026</strong>.
+      </p>
+      
+      <div class="table-container">
+        <table class="bib-table">
+          <thead>
+            <tr>
+              <th>Source Name</th>
+              <th>Page Title / Document Reference</th>
+              <th>Direct URL</th>
+              <th>Publication Date</th>
+              <th>Access Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="font-semibold">SafetyWing (Official Website)</td>
+              <td>Nomad Insurance & Nomad Health Plans and Tariffs</td>
+              <td><a href="https://safetywing.com/" target="_blank">https://safetywing.com/</a></td>
+              <td>January 2026</td>
+              <td>August 19, 2026</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Cigna Global (Official Portal)</td>
+              <td>Cigna Global Health Insurance Silver & Gold Tariff Guidelines</td>
+              <td><a href="https://www.cignaglobal.com/" target="_blank">https://www.cignaglobal.com/</a></td>
+              <td>March 2026</td>
+              <td>August 19, 2026</td>
+            </tr>
+            <tr>
+              <td class="font-semibold">IMG (Official Website)</td>
+              <td>IMG Global Medical Insurance Options and Deductibles</td>
+              <td><a href="https://www.imglobal.com/" target="_blank">https://www.imglobal.com/</a></td>
+              <td>February 2026</td>
+              <td>August 19, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer" style="padding: 40px 0 30px; border-top: 1px solid var(--color-border); margin-top: 60px; text-align: center;">
+    <div class="container footer-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+      <div class="footer-heading" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: -4px;">Portugal Resources</div>
+      <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500;">
+        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-dim); margin: 0;">&copy; 2026 ReloPlan Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="top-nav.js"></script>
+  <script src="toc.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,152 @@
+{
+  "lastUpdated": "August 31, 2026",
+  "levels": [
+    {
+      "name": "Pre-school (Ensino Pré-Escolar)",
+      "ages": "3 - 5 years",
+      "duration": "3 years",
+      "qualification": "None (Optional but widely attended)"
+    },
+    {
+      "name": "Primary School - 1st Cycle (1º Ciclo)",
+      "ages": "6 - 9 years",
+      "duration": "4 years (Grades 1-4)",
+      "qualification": "First Cycle Certificate"
+    },
+    {
+      "name": "Elementary School - 2nd Cycle (2º Ciclo)",
+      "ages": "10 - 11 years",
+      "duration": "2 years (Grades 5-6)",
+      "qualification": "Second Cycle Certificate"
+    },
+    {
+      "name": "Middle School - 3rd Cycle (3º Ciclo)",
+      "ages": "12 - 14 years",
+      "duration": "3 years (Grades 7-9)",
+      "qualification": "Basic Education Certificate (Diploma de Ensino Básico)"
+    },
+    {
+      "name": "Secondary Education (Ensino Secundário)",
+      "ages": "15 - 17 years",
+      "duration": "3 years (Grades 10-12)",
+      "qualification": "Secondary Education Diploma (Diploma de Ensino Secundário)"
+    },
+    {
+      "name": "Higher Education (Ensino Superior)",
+      "ages": "18+ years",
+      "duration": "3 - 5 years (Licenciatura / Mestrado)",
+      "qualification": "Bachelor's (Licenciatura) or Master's (Mestrado)"
+    }
+  ],
+  "costAverages": {
+    "public": {
+      "tuition": 0,
+      "registration": 0,
+      "uniforms": 0,
+      "books": 120,
+      "annualTotal": 120
+    },
+    "private": {
+      "tuition": 480,
+      "registration": 250,
+      "uniforms": 150,
+      "books": 200,
+      "annualTotal": 5400
+    },
+    "bilingual": {
+      "tuition": 650,
+      "registration": 300,
+      "uniforms": 180,
+      "books": 250,
+      "annualTotal": 7280
+    },
+    "international": {
+      "tuition": 980,
+      "registration": 500,
+      "uniforms": 250,
+      "books": 400,
+      "annualTotal": 10950
+    },
+    "boarding": {
+      "tuition": 2200,
+      "registration": 800,
+      "uniforms": 300,
+      "books": 450,
+      "annualTotal": 25350
+    }
+  },
+  "schools": [
+    {
+      "name": "Carlucci American International School of Lisbon (CAISL)",
+      "region": "lisbon",
+      "type": "international",
+      "curriculum": "US Curriculum & IB Diploma",
+      "languages": "English & Portuguese",
+      "boarding": false,
+      "fees": "$9,900 - $24,000 / year",
+      "admissions": "Application, school records, English assessment interview.",
+      "pros": "Accredited US diploma, excellent facilities, high university placement rates.",
+      "cons": "Among the most expensive schools, waitlists for early grades."
+    },
+    {
+      "name": "St. Julian's School",
+      "region": "lisbon",
+      "type": "international",
+      "curriculum": "British Curriculum & IB Diploma",
+      "languages": "English & Portuguese",
+      "boarding": false,
+      "fees": "$12,000 - $26,200 / year",
+      "admissions": "Cognitive testing, interview, previous school transcripts.",
+      "pros": "Prestigious reputation, strong bilingual pathway option, excellent location.",
+      "cons": "Extremely long waitlists, highly competitive entry."
+    },
+    {
+      "name": "Oporto British School (OBS)",
+      "region": "porto",
+      "type": "international",
+      "curriculum": "British Curriculum (IGCSE) & IB Diploma",
+      "languages": "English & Portuguese",
+      "boarding": false,
+      "fees": "$9,300 - $18,000 / year",
+      "admissions": "Assessment test, trial day, academic reports.",
+      "pros": "Oldest British school in mainland Europe, strong community feel, central location.",
+      "cons": "Limited facility size, no boarding option."
+    },
+    {
+      "name": "CLIP - Oporto International School",
+      "region": "porto",
+      "type": "international",
+      "curriculum": "English National Curriculum & Cambridge IGCSE/A-Levels",
+      "languages": "English",
+      "boarding": false,
+      "fees": "$8,600 - $16,400 / year",
+      "admissions": "English proficiency evaluation, cognitive tests, interview.",
+      "pros": "Modern campus, comprehensive sports program, diverse student body.",
+      "cons": "Relatively large class sizes, high tuition rate."
+    },
+    {
+      "name": "Nobel International School Algarve",
+      "region": "algarve",
+      "type": "boarding",
+      "curriculum": "British National Curriculum (IGCSE/A-Levels) & Portuguese Section",
+      "languages": "English & Portuguese",
+      "boarding": true,
+      "fees": "$7,100 - $30,600 / year (including boarding option)",
+      "admissions": "Academic assessment, interview, reference letter.",
+      "pros": "Only school offering premium boarding in the Algarve, multi-campus facilities, coastal location.",
+      "cons": "Boarding costs are substantial, commute from western Algarve is long."
+    },
+    {
+      "name": "Vilamoura International School (CIV)",
+      "region": "algarve",
+      "type": "bilingual",
+      "curriculum": "Cambridge International Curriculum & Portuguese National Curriculum",
+      "languages": "English & Portuguese",
+      "boarding": false,
+      "fees": "$6,800 - $14,800 / year",
+      "admissions": "Bilingual assessment interview, transcripts review.",
+      "pros": "Exceptional bilingual integration, superb language support, highly rated in national rankings.",
+      "cons": "Tuition increases significantly in secondary grades, no boarding."
+    }
+  ]
+}

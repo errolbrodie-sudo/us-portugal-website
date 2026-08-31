@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="US to Portugal Residency, Visa, and NIF Guide - A detailed chronological checklist for D7 and D8 residency visas.">
+  <title>Residency Visa & NIF Walkthrough | US to Portugal</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --color-bg: #EAE3DD;
+      --color-card-bg: oklch(0.98 0.01 75 / 0.85);
+      --color-border: oklch(0.35 0.02 75 / 0.15);
+      --color-primary: oklch(0.48 0.12 75);
+      --color-secondary: oklch(0.42 0.11 180);
+      --color-text-dark: oklch(0.18 0.01 75);
+      --color-text-muted: oklch(0.35 0.02 75);
+      --color-text-dim: oklch(0.5 0.02 75);
+      --border-radius-lg: 24px;
+      --border-radius-md: 16px;
+    }
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text-dark);
+      line-height: 1.62;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header styling */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--color-secondary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    
+    .back-link:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--color-text-muted);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--color-text-dim);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* Section Cards */
+    section {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px oklch(0 0 0 / 0.04);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      border-bottom: 1.5px solid var(--color-border);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+      color: var(--color-text-muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Interactive Calculator */
+    .calc-container {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-text-dark);
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: white;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--color-text-dark);
+    }
+
+    .result-block {
+      background: var(--color-primary);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .result-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    /* Checklist block */
+    .checklist-list {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      border-bottom: 1px dashed var(--color-border);
+      color: var(--color-text-muted);
+    }
+
+    .checklist-checkbox {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    /* FAQ accordion */
+    .faq-item {
+      margin-bottom: 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 16px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+    }
+
+    p a {
+      color: var(--color-secondary);
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    p a:hover {
+      color: var(--color-primary);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      section {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header>
+
+      <h1>US Citizen Residency & Visa Guide</h1>
+      <p class="subtitle">A comprehensive checklist and chronological guide to obtaining a NIF, opening a bank account, and securing a residency visa (D7/D8) for Portugal.</p>
+      <div style="margin-top: 16px;">
+        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="display: inline-block; background: var(--color-primary); color: white; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">Find Your Portuguese Consulate</a>
+      </div>
+      <p class="last-updated" id="last-updated-label">Last Updated: Loading...</p>
+    </header>
+
+    <!-- Chronological Steps -->
+    <section>
+      <h2>Step-by-Step Residency Walkthrough</h2>
+      <p>
+        For US citizens, the transition to Portuguese residency takes place in two distinct phases: <strong>Phase 1 (Consular Application in the US)</strong> and <strong>Phase 2 (Biometrics Registration in Portugal)</strong>.
+      </p>
+      <p style="color: red; font-weight: 600; margin-top: 10px;">Incomplete Files: Portugal's immigration authority (AIMA) requires all applications and renewals to be complete at the time of submission. Missing documents can lead to immediate rejection rather than a chance to update later.</p>
+      
+      <h3>Phase 1: US-Based Consulate Processing</h3>
+      <p style="margin-bottom: 12px; font-weight: 500; color: var(--color-text-muted);">Need to locate your official regional consular jurisdiction or VFS application hub? Check our directory to <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Find the Consulate Serving Your State</a>.</p>
+      <ol>
+        <li><strong>Present a Portuguese NIF (Tax ID):</strong> Essential for signing leases, banking, and utilities. You can get this via virtual fiscal representatives.</li>
+        <li><strong>Open a Portuguese Bank Account:</strong> Mandatory for demonstrating self-sufficiency. Deposit required funds before booking your consulate interview.</li>
+        <li><strong>Secure 12-Month Accommodation:</strong> Landlords must register lease contracts with the tax office (AT) to qualify as visa proof.</li>
+        <li><strong>Request FBI Background Check:</strong> Must be apostilled (state-level certification) and translated into Portuguese.</li>
+        <li><strong>Book VFS Global Appointment:</strong> VFS is the official visa-processing partner for the Portuguese government in the US. <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Find Your Portuguese Consulate</a> to confirm VFS jurisdiction.</li>
+        <li><strong>Consular Interview:</strong> Present your complete physical dossier at your regional VFS hub.</li>
+      </ol>
+
+      <p id="visa-resources" style="margin-top: 30px; margin-bottom: 20px;">Looking for more information or simply assistance in your visa applications? <a href="https://bordr.com/" target="_blank" rel="noopener">Bordr</a> and <a href="https://anchorless.io/portugal" target="_blank" rel="noopener">Anchorless</a> offer excellent resources, offering reliable guidance, practical advice, and up-to-date information to help you plan your move with confidence.</p>
+
+      <p id="dgav-notification" style="margin-top: 16px; font-size: 0.95rem; color: var(--color-text-muted);"><strong>Portuguese Border Notification (DGAV):</strong> For pet travel, border notification must be submitted to the Directorate-General for Food and Veterinary (DGAV) at least 48 hours prior to entry.</p>
+
+      <h3>Phase 2: In-Country Resident Registration</h3>
+      <ol>
+        <li><strong>Arrive in Portugal:</strong> Travel using the temporary double-entry visa stamped in your passport (valid for 120 days).</li>
+        <li><strong>Register Local Address:</strong> Obtain <strong>Atestado de Residência</strong> from your local parish office (<strong>Junta de Freguesia</strong>).</li>
+        <li><strong>Attend biometrics appointment:</strong> Meet with immigration officers at <strong>AIMA</strong> (formerly SEF) office in Portugal to register fingerprint records.</li>
+        <li><strong>Receive Residency Card (Título de Residência):</strong> Mailed to your registered address (valid for 2 years initially).</li>
+      </ol>
+    </section>
+
+    <!-- Financial Eligibility Calculator -->
+    <section>
+      <h2>Interactive Visa Income Calculator</h2>
+      <p>
+        Residency visa approval depends on meeting mandatory minimum income limits. Use the calculator below to evaluate your threshold based on dependents.
+      </p>
+
+      <div class="calc-container">
+        <div class="form-group">
+          <label for="visa-type-select">Select Visa Pathway</label>
+          <select id="visa-type-select">
+            <option value="d7">D7 Visa (Passive Income - Pension, Dividends, Rental)</option>
+            <option value="d8">D8 Visa (Digital Nomad - Remote Work Salary)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="spouse-checkbox">
+            <input type="checkbox" id="spouse-checkbox" style="width:16px; height:16px; margin-right:8px; cursor:pointer;">
+            Including Relocating Spouse / Partner (+50%)
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="dependents-count">Number of Dependent Children (+30% each)</label>
+          <input type="number" id="dependents-count" value="0" min="0" max="10">
+        </div>
+
+        <div class="result-block">
+          <div id="calc-methodology-label">Required Monthly Income (EUR):</div>
+          <div class="result-value" id="monthly-threshold-result">€920</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Document Checklist -->
+    <section>
+      <h2>Document Dossier Checklist</h2>
+      <p>
+        Check off the items below to prepare your visa application package.
+      </p>
+      
+      <div id="checklist-container">
+        <ul class="checklist-list" id="dynamic-checklist">
+          <!-- Rendered dynamically -->
+          <li style="padding:20px; text-align:center;">Loading checklist data...</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Expat Requirements FAQ -->
+    <section>
+      <h2>Visa & NIF Requirements Details</h2>
+      
+      <h3>1. Visa Eligibility & Paths</h3>
+      <ul>
+        <li><strong>D7 Visa:</strong> Intended for retirees, passive income earners, and self-sufficient individuals. Income must be passive (e.g. social security, rental income, investments).</li>
+        <li><strong>D8 Digital Nomad Visa:</strong> Intended for active remote workers, freelancers, or business owners. Requires proof of monthly remote wages equal to at least 4x the current Portuguese minimum wage.</li>
+      </ul>
+
+      <h3>2. Obtaining a NIF (Tax Number) & Bank Account</h3>
+      <ul>
+        <li><strong>NIF:</strong> Your <strong>Número de Identificação Fiscal</strong> is required for all legal actions. US citizens can obtain it online using virtual legal proxy services (like <a href="https://bordr.com/" target="_blank" rel="noopener">Bordr</a> or <a href="https://anchorless.io/portugal" target="_blank" rel="noopener">Anchorless</a>) for approx. $80–$150.</li>
+        <li><strong>Bank Account:</strong> You must open a <a href="https://anchorless.io/portugal" target="_blank" rel="noopener">Portuguese bank account</a> (such as Millennium BCP, Novo Banco, or ActivoBank) to deposit visa qualification savings. This requires a NIF, proof of US employment, and physical identification.</li>
+      </ul>
+
+      <h3>3. Accommodation & Insurance Requirements</h3>
+      <ul>
+        <li><strong>Lease Length:</strong> Portuguese consulates in the US require a registered lease contract of <strong>at least 12 months</strong> or a deed showing home ownership. Shared apartments or short-term sublets are generally rejected.</li>
+        <li><strong>Health Insurance:</strong> Must cover repatriation, emergency care, and have €0 deductibles. Coverage must begin before consulate filing.</li>
+      </ul>
+
+      <h3>4. Legal Counsel & Processing Costs</h3>
+      <ul>
+        <li><strong>Legal Counsel:</strong> Legal representation is <strong>optional but highly recommended</strong> to navigate consulate nuances and coordinate local biometrics slots.</li>
+        <li><strong>Consular & Administrative Fees:</strong> Consulate application fee is approx. $100. VFS processing fees are approx. $50. NIF and bank setup proxies total $150–$300.</li>
+        <li><strong>Processing Times:</strong> Consulate phase: 60 to 90 days. Biometrics bi-annual scheduling phase: 60 to 120 days.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Can I apply for my residency visa after arriving in Portugal? <span>▼</span></div>
+        <div class="faq-answer" style="display:none;">
+          No. US citizens must obtain their entry residency visa (D7/D8) at their regional consulate in the United States <strong>prior</strong> to traveling. Arriving in Portugal on a standard tourist passport waiver does not permit conversion to local residency.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">What happens if my visa application is denied? <span>▼</span></div>
+        <div class="faq-answer" style="display:none;">
+          The most common reason for denial is insufficient passive income proof or an invalid accommodation lease (e.g. lease under 12 months). You can appeal the consular decision or correct the documents and submit a new application.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Do my children need separate NIF numbers and bank accounts? <span>▼</span></div>
+        <div class="faq-answer" style="display:none;">
+          Children require separate NIF numbers (which can be requested under parent sponsorship). They do not require separate bank accounts; parents can show total family funds in a joint Portuguese account.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">What is the minimum physical stay requirement in Portugal to maintain residency status? <span>▼</span></div>
+        <div class="faq-answer" style="display:none;">
+          To maintain temporary residency (D7/D8), permit holders must not be absent from Portugal for more than 6 consecutive months or 8 non-consecutive months during each 2-year validity period, unless justified by professional or emergency circumstances.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Can I work remotely for a US employer while living in Portugal on a D8 Digital Nomad Visa? <span>▼</span></div>
+        <div class="faq-answer" style="display:none;">
+          Yes. The D8 Digital Nomad visa is specifically designed for remote workers and freelancers employed by entities outside Portugal. You must demonstrate monthly remote earnings equal to at least 4 times the Portuguese national minimum wage (€3,680/month).
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section>
+      <h2>Official Resources & Disclaimer</h2>
+      <p>
+        Verify rules and consult official portals:
+      </p>
+      <ul>
+        <li><strong>AIMA (Immigration Agency):</strong> <a href="https://aima.gov.pt" target="_blank">https://aima.gov.pt</a> - General guidelines for residency cards and biometric appointments in Portugal.</li>
+        <li><strong>Ministry of Foreign Affairs:</strong> <a href="https://vistos.mne.gov.pt" target="_blank">https://vistos.mne.gov.pt</a> - Official visa pathways, documents checklists, and updates.</li>
+        <li><strong>VFS Global:</strong> <a href="https://visa.vfsglobal.com/usa/en/prt" target="_blank">https://visa.vfsglobal.com/usa/en/prt</a> - Portal to schedule appointments and submit physical visa applications.</li>
+        <li><strong>US Consular Jurisdiction Directory:</strong> <a href="portuguese-embassy-consulates-usa.html" target="_blank">Portuguese Embassy, Consulates & Visa Application Centres in the USA</a> - Interactive state-by-state jurisdiction lookup.</li>
+      </ul>
+      <p style="font-size:0.85rem; color:var(--color-text-dim); margin-top:24px; border-top:1px solid var(--color-border); padding-top:12px;">
+        <strong>Regulatory Disclaimer:</strong> Expatriate visa rules, financial income requirements, and consulate processing checklists are subject to change in accordance with Portuguese immigration law.
+      </p>
+    </section>
+
+  </div>
+
+  <script>
+    let visaData = null;
+
+    // Load data from visa-data.json
+    async function loadVisaData() {
+      try {
+        const response = await fetch('visa-data.json');
+        visaData = await response.json();
+        document.getElementById('last-updated-label').innerText = `Last Updated: ${visaData.lastUpdated}`;
+        
+        renderChecklist();
+        calculateThreshold();
+      } catch (error) {
+        console.error('Error fetching visa data:', error);
+        document.getElementById('dynamic-checklist').innerHTML = `
+          <li style="padding:20px; text-align:center; color:red;">Failed to load checklist database. Ensure visa-data.json exists.</li>`;
+      }
+    }
+
+    // Render document checklist
+    function renderChecklist() {
+      if (!visaData) return;
+      const list = document.getElementById('dynamic-checklist');
+      list.innerHTML = '';
+      
+      visaData.checklist.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'checklist-item';
+        li.innerHTML = `
+          <input type="checkbox" class="checklist-checkbox">
+          <span>${item}</span>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    // Calculate dynamic required income threshold
+    function calculateThreshold() {
+      if (!visaData) return;
+      const type = document.getElementById('visa-type-select').value;
+      const includeSpouse = document.getElementById('spouse-checkbox').checked;
+      const kidsCount = parseInt(document.getElementById('dependents-count').value) || 0;
+
+      const baseWage = visaData.minWages.portugal;
+      let multiplier = 1.0;
+
+      if (type === 'd7') {
+        // D7: Base is 100% min wage
+        let total = baseWage;
+        if (includeSpouse) total += (baseWage * 0.5);
+        total += (baseWage * 0.3 * kidsCount);
+        
+        document.getElementById('calc-methodology-label').innerText = 'Required Monthly Passive Income (EUR):';
+        document.getElementById('monthly-threshold-result').innerText = `€${Math.round(total).toLocaleString()}`;
+      } else {
+        // D8: Base is 400% min wage (4x min wage)
+        let baseD8 = baseWage * 4;
+        let total = baseD8;
+        if (includeSpouse) total += (baseWage * 0.5); // spouse adds 50% of the base wage
+        total += (baseWage * 0.3 * kidsCount); // kids add 30% of the base wage
+        
+        document.getElementById('calc-methodology-label').innerText = 'Required Monthly Remote Income (EUR):';
+        document.getElementById('monthly-threshold-result').innerText = `€${Math.round(total).toLocaleString()}`;
+      }
+    }
+
+    // Toggle FAQ accordion
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const arrow = el.querySelector('span');
+      if (answer.style.display === 'none') {
+        answer.style.display = 'block';
+        arrow.innerText = '▲';
+      } else {
+        answer.style.display = 'none';
+        arrow.innerText = '▼';
+      }
+    }
+
+    // Attach listeners
+    document.getElementById('visa-type-select').addEventListener('change', calculateThreshold);
+    document.getElementById('spouse-checkbox').addEventListener('change', calculateThreshold);
+    document.getElementById('dependents-count').addEventListener('input', calculateThreshold);
+
+    // Run on startup
+    loadVisaData();
+  </script>
+
+  <!-- Footer -->
+  <footer class="app-footer" style="padding: 40px 0 30px; border-top: 1px solid var(--color-border); margin-top: 60px; text-align: center;">
+    <div class="container footer-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+      <div class="footer-heading" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: -4px;">Portugal Resources</div>
+      <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500;">
+        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+        <span style="color: var(--color-text-dim);">|</span>
+        <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--color-text-dim); margin: 0;">&copy; 2026 ReloPlan Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="top-nav.js"></script>
+  <script src="toc.js"></script>
+</body>
+</html>
