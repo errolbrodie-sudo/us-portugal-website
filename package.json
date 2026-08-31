@@ -4,10 +4,10 @@
   "description": "Relocation Decision Platform",
   "main": "app.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite"
+    "build": "vite",
+    "dev": "vite"
   },
-  "devDependencies": {
+  "dependencies": {
     "vite": "^5.0.0"
   }
 }
