@@ -20,16 +20,51 @@
     body, html {
       background-color: #EAE3DD !important;
     }
+    
+    /* Hardcoded Top Category Navigation Bar */
+    .static-top-nav-bar {
+      width: 100%;
+      background: #C0DDD5;
+      border-bottom: 1px solid rgba(13, 92, 70, 0.25);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      padding: 8px 12px;
+      margin-bottom: 24px;
+    }
+    .static-top-nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 14px;
+    }
+    .static-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #072b22;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(13, 92, 70, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+    .static-nav-btn:hover {
+      background: #0d5c46;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(13, 92, 70, 0.2);
+    }
   </style>
 </head>
 <body>
-  <!-- 1. The nav bar wrapper comes FIRST -->
-  <div class="top-site-nav-wrapper"></div>
 
-  <!-- Injected Global Top Navigation (Required by top-nav.js) -->
-  <div class="top-site-nav-wrapper"></div>
-
-  <!-- Navigation -->
+  <!-- Header / Logo Section -->
   <header class="app-header">
     <div class="container nav-wrapper">
       <a href="/" class="logo">Relo<span>Plan</span></a>
@@ -42,6 +77,18 @@
       </button>
     </div>
   </header>
+
+  <!-- Navigation Buttons Bar Directly Below Logo -->
+  <nav class="static-top-nav-bar" aria-label="Categories Navigation">
+    <div class="static-top-nav-container">
+      <a href="/visa-report.html" target="_blank" class="static-nav-btn"><span>🛂</span> <span>Residency Visas & NIF</span></a>
+      <a href="/shipping-report.html" target="_blank" class="static-nav-btn"><span>📦</span> <span>Shipping & Freight</span></a>
+      <a href="/rent-report.html" target="_blank" class="static-nav-btn"><span>🔑</span> <span>Rental Housing</span></a>
+      <a href="/insurance-report.html" target="_blank" class="static-nav-btn"><span>🏥</span> <span>Health Insurance</span></a>
+      <a href="/education-report.html" target="_blank" class="static-nav-btn"><span>🎓</span> <span>Education & Schools</span></a>
+      <a href="/pet-report.html" target="_blank" class="static-nav-btn"><span>🐾</span> <span>Pets</span></a>
+    </div>
+  </nav>
 
   <!-- Mobile Navigation Popover -->
   <div id="mobile-menu" popover class="mobile-nav-popover">
@@ -357,6 +404,5 @@
     </div>
   </footer>
 
-  <script type="module" src="/top-nav.js"></script>
 </body>
 </html>
