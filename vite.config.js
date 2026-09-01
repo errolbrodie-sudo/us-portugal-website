@@ -17,10 +17,8 @@ export default defineConfig({
         rent: resolve(__dirname, 'rent-report.html'),
         shipping: resolve(__dirname, 'shipping-report.html'),
         terms: resolve(__dirname, 'terms.html'),
-        visa: resolve(__dirname, 'visa-report.html'),
-      },
-    },
-  },
-});
-  },
+        visa: resolve(__dirname, 'visa-report.html')
+      }
+    }
+  }
 });
