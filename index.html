@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js" defer></script>
   <style>
     :root {
       --color-bg: #EAE3DD !important;
@@ -23,14 +23,19 @@
   </style>
 </head>
 <body>
+  <!-- 1. The nav bar wrapper comes FIRST -->
+  <div class="top-site-nav-wrapper"></div>
+
+  <!-- Injected Global Top Navigation (Required by top-nav.js) -->
+  <div class="top-site-nav-wrapper"></div>
 
   <!-- Navigation -->
   <header class="app-header">
     <div class="container nav-wrapper">
-      <a href="#" class="logo">Relo<span>Plan</span></a>
+      <a href="/" class="logo">Relo<span>Plan</span></a>
       <nav class="main-nav" aria-label="Primary Navigation">
-        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" class="nav-link" style="font-weight: 600; color: var(--color-primary); text-decoration: none; margin-right: 16px;">Embassy & Consulates</a>
-        <a href="shipping-report.html#top-5-moving-companies" target="_blank" rel="noopener" class="btn btn-secondary">Get Mover Quotes</a>
+        <a href="/portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" class="nav-link" style="font-weight: 600; color: var(--color-primary); text-decoration: none; margin-right: 16px;">Embassy & Consulates</a>
+        <a href="/shipping-report.html#top-5-moving-companies" target="_blank" rel="noopener" class="btn btn-secondary">Get Mover Quotes</a>
       </nav>
       <button class="nav-toggle" aria-label="Toggle Menu" aria-expanded="false" popovertarget="mobile-menu">
         <span class="hamburger"></span>
@@ -42,8 +47,8 @@
   <div id="mobile-menu" popover class="mobile-nav-popover">
     <button class="nav-close" aria-label="Close Menu" popovertarget="mobile-menu" popovertargetaction="hide">&times;</button>
     <nav class="mobile-nav">
-      <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="font-weight: 600; color: var(--color-primary); text-decoration: none; margin-bottom: 12px; display: block;">Embassy & Consulates</a>
-      <a href="shipping-report.html#top-5-moving-companies" target="_blank" rel="noopener" class="btn btn-primary" popovertarget="mobile-menu" popovertargetaction="hide">Get Quotes</a>
+      <a href="/portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="font-weight: 600; color: var(--color-primary); text-decoration: none; margin-bottom: 12px; display: block;">Embassy & Consulates</a>
+      <a href="/shipping-report.html#top-5-moving-companies" target="_blank" rel="noopener" class="btn btn-primary" popovertarget="mobile-menu" popovertargetaction="hide">Get Quotes</a>
     </nav>
   </div>
 
@@ -224,31 +229,31 @@
             <div class="summary-details">
               <div class="detail-row">
                 <span>
-                  <a href="shipping-report.html" target="_blank" rel="opener" class="insurance-report-link">Shipping & Relocation Setup (Average)</a>
+                  <a href="/shipping-report.html" target="_blank" rel="opener" class="insurance-report-link">Shipping & Relocation Setup (Average)</a>
                   <br>
                   <span id="summary-setup-subtext" style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Based on: Single Expat + T1/T2</span>
                 </span>
                 <span id="summary-setup">$2,500</span>
               </div>
               <div class="detail-row">
-                <span><a href="rent-report.html" target="_blank" rel="opener" class="insurance-report-link">Estimated Target Monthly Rent</a></span>
+                <span><a href="/rent-report.html" target="_blank" rel="opener" class="insurance-report-link">Estimated Target Monthly Rent</a></span>
                 <span id="summary-rent">$2,275/mo</span>
               </div>
               <div class="detail-row">
                 <span>
-                  <a href="insurance-report.html" target="_blank" rel="opener" class="insurance-report-link">Private Expat Health Insurance</a>
+                  <a href="/insurance-report.html" target="_blank" rel="opener" class="insurance-report-link">Private Expat Health Insurance</a>
                   <br>
                   <span id="summary-insurance-subtext" style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">Basic services for Single Expat</span>
                 </span>
                 <span id="summary-insurance">$63/mo</span>
               </div>
               <div class="detail-row">
-                <span><a href="visa-report.html" target="_blank" rel="opener" class="insurance-report-link">Visa Processing & NIF Setups</a></span>
+                <span><a href="/visa-report.html" target="_blank" rel="opener" class="insurance-report-link">Visa Processing & NIF Setups</a></span>
                 <span id="summary-visa">$450</span>
               </div>
               <div class="detail-row">
                 <span>
-                  <a href="education-report.html" target="_blank" rel="opener" class="insurance-report-link">Education</a>
+                  <a href="/education-report.html" target="_blank" rel="opener" class="insurance-report-link">Education</a>
                   <br>
                   <span id="summary-education-subtext" style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">One child at international school</span>
                 </span>
@@ -256,7 +261,7 @@
               </div>
               <div class="detail-row">
                 <span>
-                  <a href="pet-report.html" target="_blank" rel="opener" class="insurance-report-link">
+                  <a href="/pet-report.html" target="_blank" rel="opener" class="insurance-report-link">
                     Pet Relocation & Compliance<br>
                     <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-dim);">(DIY Estimate per pet)</span>
                   </a>
@@ -338,20 +343,20 @@
     <div class="container footer-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
       <div class="footer-heading" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-text-white); margin-bottom: -4px;">Portugal Resources</div>
       <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500;">
-        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
+        <a href="/portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+        <a href="/terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+        <a href="/disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+        <a href="/affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+        <a href="/contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
       </div>
       <p style="font-size: 0.85rem; color: var(--color-text-dim); margin: 0;">&copy; 2026 ReloPlan Platform. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="top-nav.js"></script>
+  <script type="module" src="/top-nav.js"></script>
 </body>
 </html>

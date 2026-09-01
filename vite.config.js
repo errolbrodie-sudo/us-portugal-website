@@ -15,9 +15,12 @@ export default defineConfig({
         embassy: resolve(__dirname, 'portuguese-embassy-consulates-usa.html'),
         platforms: resolve(__dirname, 'relocation-platforms-competitive-dossier.html'),
         rent: resolve(__dirname, 'rent-report.html'),
+        shipping: resolve(__dirname, 'shipping-report.html'),
         terms: resolve(__dirname, 'terms.html'),
         visa: resolve(__dirname, 'visa-report.html'),
       },
     },
+  },
+});
   },
 });
