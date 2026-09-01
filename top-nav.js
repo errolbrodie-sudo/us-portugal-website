@@ -24,10 +24,6 @@
     styleEl.id = 'top-nav-injected-styles';
     styleEl.textContent = `
       .top-site-nav-wrapper {
-        position: sticky !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
         z-index: 10000 !important;
         width: 100% !important;
         background: #C0DDD5 !important;
@@ -36,18 +32,31 @@
         font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
       }
 
+      /* Sticky on secondary pages; in-flow below header on the home landing page */
+      body:not(.is-home-page) .top-site-nav-wrapper {
+        position: sticky !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+      }
+
+      body.is-home-page .top-site-nav-wrapper {
+        position: relative !important;
+        margin: 0 auto !important;
+      }
+
       .top-site-nav-container {
         max-width: 1280px !important;
         margin: 0 auto !important;
-        padding: 6px 12px !important;
+        padding: 8px 12px !important;
         display: flex !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
         scrollbar-width: none !important;
         -ms-overflow-style: none !important;
-        justify-content: space-between !important;
+        justify-content: center !important;
         align-items: center !important;
-        gap: 6px 8px !important;
+        gap: 8px 12px !important;
       }
 
       .top-site-nav-container::-webkit-scrollbar {
@@ -58,12 +67,12 @@
         display: inline-flex !important;
         align-items: center !important;
         gap: 5px !important;
-        font-size: 0.8rem !important;
+        font-size: 0.85rem !important;
         font-weight: 600 !important;
         color: #072b22 !important;
         background: rgba(255, 255, 255, 0.65) !important;
         border: 1px solid rgba(13, 92, 70, 0.25) !important;
-        padding: 4px 10px !important;
+        padding: 5px 12px !important;
         border-radius: 20px !important;
         text-decoration: none !important;
         transition: all 0.2s ease !important;
@@ -107,94 +116,35 @@
     document.head.appendChild(styleEl);
   }
 
-  // Cross-tab communication channel
-  let navChannel = null;
-  if (typeof BroadcastChannel !== 'undefined') {
-    try {
-      navChannel = new BroadcastChannel('reloplan_nav_channel');
-    } catch (e) {
-      console.warn('BroadcastChannel error:', e);
-    }
-  }
-
-  // Determine current page filename safely
+  // Determine current page filename
   let currentFile = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/').pop() || 'index.html';
   if (!currentFile.endsWith('.html') && currentFile !== '') {
     currentFile += '.html';
   }
   const isHomePage = currentFile === 'index.html' || currentFile === '';
 
-  // Focus channel handler
-  if (isHomePage && navChannel) {
-    navChannel.onmessage = (event) => {
-      if (event.data && event.data.type === 'FOCUS_PRIMARY_PAGE') {
-        window.focus();
-        navChannel.postMessage({ type: 'PRIMARY_PAGE_FOCUSED' });
-      }
-    };
-  }
-
   function handleReturnToDashboard(e) {
     if (e) e.preventDefault();
-
-    try {
-      if (window.opener && !window.opener.closed) {
-        try {
-          window.opener.focus();
-        } catch (err) {
-          console.warn('Unable to focus opener:', err);
-        }
-        window.close();
-        return false;
-      }
-    } catch (err) {
-      console.warn('Opener window check error:', err);
-    }
-
-    if (navChannel) {
-      let primaryFound = false;
-      const handleChannelMsg = (event) => {
-        if (event.data && event.data.type === 'PRIMARY_PAGE_FOCUSED') {
-          primaryFound = true;
-          window.close();
-        }
-      };
-
-      navChannel.addEventListener('message', handleChannelMsg);
-      navChannel.postMessage({ type: 'FOCUS_PRIMARY_PAGE' });
-
-      setTimeout(() => {
-        navChannel.removeEventListener('message', handleChannelMsg);
-        if (!primaryFound) {
-          window.location.href = '/index.html';
-        }
-      }, 250);
-      return false;
-    }
-
     window.location.href = '/index.html';
-    return false;
   }
 
   window.handleReturnToDashboard = handleReturnToDashboard;
 
   function initTopNav() {
-    // Avoid double rendering if buttons already exist inside
     if (document.querySelector('.top-site-nav-container')) return;
 
     injectTopNavStyles();
 
-    // Find existing wrapper or create one
+    if (isHomePage) {
+      document.body.classList.add('is-home-page');
+    }
+
+    // Create navigation element
     let navWrapper = document.querySelector('.top-site-nav-wrapper');
     if (!navWrapper) {
       navWrapper = document.createElement('nav');
       navWrapper.className = 'top-site-nav-wrapper';
-      navWrapper.setAttribute('aria-label', 'Sticky Top Navigation');
-      if (document.body.firstChild) {
-        document.body.insertBefore(navWrapper, document.body.firstChild);
-      } else {
-        document.body.appendChild(navWrapper);
-      }
+      navWrapper.setAttribute('aria-label', 'Top Navigation');
     }
 
     const navContainer = document.createElement('div');
@@ -202,9 +152,7 @@
 
     // Filter pages
     const displayPages = TOP_PAGES.filter(page => {
-      if (isHomePage) {
-        return !page.isReturn;
-      }
+      if (isHomePage) return !page.isReturn;
       return page.href.replace('/', '') !== currentFile;
     });
 
@@ -224,13 +172,23 @@
     navWrapper.innerHTML = '';
     navWrapper.appendChild(navContainer);
 
-    // Bind return handler to standard back links on subpages
-    if (!isHomePage) {
-      document.querySelectorAll('.back-btn, .back-link, a[href="index.html"], a[href="/index.html"]').forEach(link => {
-        if (!link.classList.contains('top-site-nav-link')) {
-          link.addEventListener('click', handleReturnToDashboard);
-        }
-      });
+    // Landing page: Place directly below <header class="app-header"> (Logo section)
+    if (isHomePage) {
+      const appHeader = document.querySelector('.app-header');
+      if (appHeader && appHeader.parentNode) {
+        appHeader.parentNode.insertBefore(navWrapper, appHeader.nextSibling);
+      } else if (document.body.firstChild) {
+        document.body.insertBefore(navWrapper, document.body.firstChild);
+      } else {
+        document.body.appendChild(navWrapper);
+      }
+    } else {
+      // Secondary pages: Stick directly at top of body
+      if (document.body.firstChild) {
+        document.body.insertBefore(navWrapper, document.body.firstChild);
+      } else {
+        document.body.appendChild(navWrapper);
+      }
     }
   }
 
