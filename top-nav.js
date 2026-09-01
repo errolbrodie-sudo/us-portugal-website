@@ -8,13 +8,13 @@
   'use strict';
 
   const TOP_PAGES = [
-    { title: '← Return to Budget Dashboard', href: 'index.html', icon: '🏠', isReturn: true },
-    { title: 'Residency Visas & NIF', href: 'visa-report.html', icon: '🛂' },
-    { title: 'Shipping & Freight', href: 'shipping-report.html', icon: '📦' },
-    { title: 'Rental Housing', href: 'rent-report.html', icon: '🔑' },
-    { title: 'Health Insurance', href: 'insurance-report.html', icon: '🏥' },
-    { title: 'Education & Schools', href: 'education-report.html', icon: '🎓' },
-    { title: 'Pets', href: 'pet-report.html', icon: '🐾' }
+    { title: '← Return to Budget Dashboard', href: '/index.html', icon: '🏠', isReturn: true },
+    { title: 'Residency Visas & NIF', href: '/visa-report.html', icon: '🛂' },
+    { title: 'Shipping & Freight', href: '/shipping-report.html', icon: '📦' },
+    { title: 'Rental Housing', href: '/rent-report.html', icon: '🔑' },
+    { title: 'Health Insurance', href: '/insurance-report.html', icon: '🏥' },
+    { title: 'Education & Schools', href: '/education-report.html', icon: '🎓' },
+    { title: 'Pets', href: '/pet-report.html', icon: '🐾' }
   ];
 
   function injectTopNavStyles() {
@@ -107,7 +107,7 @@
     document.head.appendChild(styleEl);
   }
 
-  // BroadcastChannel for cross-tab primary page navigation & focusing
+  // Cross-tab communication channel
   let navChannel = null;
   if (typeof BroadcastChannel !== 'undefined') {
     try {
@@ -117,13 +117,15 @@
     }
   }
 
-  // Determine current page filename
-  const currentPath = window.location.pathname;
-  let currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-  if (!currentFile || currentFile === '') currentFile = 'index.html';
+  // Determine current page filename safely
+  let currentFile = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/').pop() || 'index.html';
+  if (!currentFile.endsWith('.html') && currentFile !== '') {
+    currentFile += '.html';
+  }
+  const isHomePage = currentFile === 'index.html' || currentFile === '';
 
-  // Listen on primary page (index.html) for focus requests from secondary tabs
-  if (currentFile === 'index.html' && navChannel) {
+  // Focus channel handler
+  if (isHomePage && navChannel) {
     navChannel.onmessage = (event) => {
       if (event.data && event.data.type === 'FOCUS_PRIMARY_PAGE') {
         window.focus();
@@ -135,13 +137,12 @@
   function handleReturnToDashboard(e) {
     if (e) e.preventDefault();
 
-    // 1. Check if original primary window (opener) is open
     try {
       if (window.opener && !window.opener.closed) {
         try {
           window.opener.focus();
         } catch (err) {
-          console.warn('Unable to focus opener window:', err);
+          console.warn('Unable to focus opener:', err);
         }
         window.close();
         return false;
@@ -150,10 +151,8 @@
       console.warn('Opener window check error:', err);
     }
 
-    // 2. BroadcastChannel check for open primary page tab in any window
     if (navChannel) {
       let primaryFound = false;
-
       const handleChannelMsg = (event) => {
         if (event.data && event.data.type === 'PRIMARY_PAGE_FOCUSED') {
           primaryFound = true;
@@ -167,91 +166,71 @@
       setTimeout(() => {
         navChannel.removeEventListener('message', handleChannelMsg);
         if (!primaryFound) {
-          window.open('index.html', '_blank', 'opener');
+          window.location.href = '/index.html';
         }
       }, 250);
       return false;
     }
 
-    // 3. Fallback: Open primary page in a new window if not open
-    window.open('index.html', '_blank', 'opener');
+    window.location.href = '/index.html';
     return false;
   }
 
   window.handleReturnToDashboard = handleReturnToDashboard;
 
   function initTopNav() {
-    if (document.querySelector('.top-site-nav-wrapper')) return;
+    // Avoid double rendering if buttons already exist inside
+    if (document.querySelector('.top-site-nav-container')) return;
 
     injectTopNavStyles();
 
-    // Filter pages for top bar
-    const displayPages = TOP_PAGES.filter(page => {
-      if (currentFile === 'index.html') {
-        return !page.isReturn;
-      }
-      return page.href !== currentFile;
-    });
-
-    // Build Top Navigation Bar HTML
-    const navWrapper = document.createElement('nav');
-    navWrapper.className = 'top-site-nav-wrapper';
-    navWrapper.setAttribute('aria-label', 'Sticky Top Navigation');
-
-    const navContainer = document.createElement('div');
-    navContainer.className = 'top-site-nav-container';
-
-    displayPages.forEach(page => {
-      const a = document.createElement('a');
-      a.className = `top-site-nav-link ${page.isReturn ? 'return-link' : ''}`;
-      a.href = page.href;
-      
-      if (page.isReturn) {
-        a.addEventListener('click', handleReturnToDashboard);
-      } else {
-        a.target = '_blank';
-        a.rel = 'opener';
-      }
-      
-      a.innerHTML = `<span>${page.icon}</span> <span>${page.title}</span>`;
-      navContainer.appendChild(a);
-    });
-
-    navWrapper.appendChild(navContainer);
-
-    // Bind return handler to all return links in the body/footer of secondary pages
-    if (currentFile !== 'index.html') {
-      document.querySelectorAll('.back-btn, .back-link, a[href="index.html"]').forEach(link => {
-        if (!link.classList.contains('top-site-nav-link')) {
-          link.addEventListener('click', handleReturnToDashboard);
-        }
-      });
-    }
-
-    // Position top links section:
-    // On primary page (index.html), move below Logo section above "US to Portugal Move" text (.section-tag-hero)
-    if (currentFile === 'index.html') {
-      const heroTag = document.querySelector('.section-tag-hero');
-      const appHeader = document.querySelector('.app-header');
-
-      if (heroTag && heroTag.parentNode) {
-        navWrapper.style.borderRadius = '14px';
-        navWrapper.style.marginBottom = '28px';
-        heroTag.parentNode.insertBefore(navWrapper, heroTag);
-      } else if (appHeader && appHeader.parentNode) {
-        appHeader.parentNode.insertBefore(navWrapper, appHeader.nextSibling);
-      } else if (document.body.firstChild) {
-        document.body.insertBefore(navWrapper, document.body.firstChild);
-      } else {
-        document.body.appendChild(navWrapper);
-      }
-    } else {
-      // On secondary pages, keep at the very top of document body
+    // Find existing wrapper or create one
+    let navWrapper = document.querySelector('.top-site-nav-wrapper');
+    if (!navWrapper) {
+      navWrapper = document.createElement('nav');
+      navWrapper.className = 'top-site-nav-wrapper';
+      navWrapper.setAttribute('aria-label', 'Sticky Top Navigation');
       if (document.body.firstChild) {
         document.body.insertBefore(navWrapper, document.body.firstChild);
       } else {
         document.body.appendChild(navWrapper);
       }
+    }
+
+    const navContainer = document.createElement('div');
+    navContainer.className = 'top-site-nav-container';
+
+    // Filter pages
+    const displayPages = TOP_PAGES.filter(page => {
+      if (isHomePage) {
+        return !page.isReturn;
+      }
+      return page.href.replace('/', '') !== currentFile;
+    });
+
+    displayPages.forEach(page => {
+      const a = document.createElement('a');
+      a.className = `top-site-nav-link ${page.isReturn ? 'return-link' : ''}`;
+      a.href = page.href;
+
+      if (page.isReturn) {
+        a.addEventListener('click', handleReturnToDashboard);
+      }
+
+      a.innerHTML = `<span>${page.icon}</span> <span>${page.title}</span>`;
+      navContainer.appendChild(a);
+    });
+
+    navWrapper.innerHTML = '';
+    navWrapper.appendChild(navContainer);
+
+    // Bind return handler to standard back links on subpages
+    if (!isHomePage) {
+      document.querySelectorAll('.back-btn, .back-link, a[href="index.html"], a[href="/index.html"]').forEach(link => {
+        if (!link.classList.contains('top-site-nav-link')) {
+          link.addEventListener('click', handleReturnToDashboard);
+        }
+      });
     }
   }
 
