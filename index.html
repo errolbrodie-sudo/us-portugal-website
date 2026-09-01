@@ -20,6 +20,46 @@
     body, html {
       background-color: #EAE3DD !important;
     }
+
+    /* Landing Page Category Navigation Bar */
+    .hero-category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 12px;
+      background: #C0DDD5;
+      padding: 10px 16px;
+      border-radius: 50px;
+      border: 1px solid rgba(13, 92, 70, 0.25);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      margin: 10px auto 32px auto;
+      max-width: fit-content;
+    }
+
+    .hero-category-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #072b22;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(13, 92, 70, 0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .hero-category-btn:hover {
+      background: #0d5c46;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(13, 92, 70, 0.2);
+    }
   </style>
 </head>
 <body>
@@ -38,18 +78,6 @@
     </div>
   </header>
 
-  <!-- Navigation Buttons Bar Directly Below Logo -->
-  <div id="relo-landing-nav" style="display: block !important; width: 100% !important; background: #C0DDD5 !important; border-bottom: 1px solid rgba(13, 92, 70, 0.25) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.08) !important; padding: 10px 16px !important; margin: 0 0 28px 0 !important; position: relative !important; z-index: 999 !important;">
-    <div style="max-width: 1280px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 14px;">
-      <a href="/visa-report.html" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #072b22; background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(13, 92, 70, 0.25); padding: 6px 14px; border-radius: 20px; text-decoration: none; font-family: 'Outfit', sans-serif;"><span>🛂</span> <span>Residency Visas & NIF</span></a>
-      <a href="/shipping-report.html" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #072b22; background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(13, 92, 70, 0.25); padding: 6px 14px; border-radius: 20px; text-decoration: none; font-family: 'Outfit', sans-serif;"><span>📦</span> <span>Shipping & Freight</span></a>
-      <a href="/rent-report.html" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #072b22; background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(13, 92, 70, 0.25); padding: 6px 14px; border-radius: 20px; text-decoration: none; font-family: 'Outfit', sans-serif;"><span>🔑</span> <span>Rental Housing</span></a>
-      <a href="/insurance-report.html" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #072b22; background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(13, 92, 70, 0.25); padding: 6px 14px; border-radius: 20px; text-decoration: none; font-family: 'Outfit', sans-serif;"><span>🏥</span> <span>Health Insurance</span></a>
-      <a href="/education-report.html" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #072b22; background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(13, 92, 70, 0.25); padding: 6px 14px; border-radius: 20px; text-decoration: none; font-family: 'Outfit', sans-serif;"><span>🎓</span> <span>Education & Schools</span></a>
-      <a href="/pet-report.html" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #072b22; background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(13, 92, 70, 0.25); padding: 6px 14px; border-radius: 20px; text-decoration: none; font-family: 'Outfit', sans-serif;"><span>🐾</span> <span>Pets</span></a>
-    </div>
-  </div>
-
   <!-- Mobile Navigation Popover -->
   <div id="mobile-menu" popover class="mobile-nav-popover">
     <button class="nav-close" aria-label="Close Menu" popovertarget="mobile-menu" popovertargetaction="hide">&times;</button>
@@ -64,6 +92,17 @@
     <section class="hero-section">
       <div class="ambient-glow" aria-hidden="true"></div>
       <div class="container hero-content">
+
+        <!-- Navigation Buttons Bar Below Header, Above Title Tag -->
+        <nav class="hero-category-nav" aria-label="Quick Category Guides">
+          <a href="/visa-report.html" target="_blank" class="hero-category-btn"><span>🛂</span> <span>Residency Visas & NIF</span></a>
+          <a href="/shipping-report.html" target="_blank" class="hero-category-btn"><span>📦</span> <span>Shipping & Freight</span></a>
+          <a href="/rent-report.html" target="_blank" class="hero-category-btn"><span>🔑</span> <span>Rental Housing</span></a>
+          <a href="/insurance-report.html" target="_blank" class="hero-category-btn"><span>🏥</span> <span>Health Insurance</span></a>
+          <a href="/education-report.html" target="_blank" class="hero-category-btn"><span>🎓</span> <span>Education & Schools</span></a>
+          <a href="/pet-report.html" target="_blank" class="hero-category-btn"><span>🐾</span> <span>Pets</span></a>
+        </nav>
+
         <span class="section-tag-hero">US to Portugal Move</span>
         <h1 class="hero-title">
           Your family's move<br>
