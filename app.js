@@ -451,7 +451,7 @@ I would like to be connected to vetted moving companies and visa legal experts t
   // Load dynamic rent data from JSON database
   async function loadDynamicRentData() {
     try {
-      const response = await fetch('rent-data.json');
+      const response = await fetch('/rent-data.json');
       const data = await response.json();
       if (data && data.regions) {
         RENT_MATRIX = {
@@ -481,7 +481,7 @@ I would like to be connected to vetted moving companies and visa legal experts t
   // Load dynamic visa data from JSON database
   async function loadDynamicVisaData() {
     try {
-      const response = await fetch('visa-data.json');
+      const response = await fetch('/visa-data.json');
       const data = await response.json();
       if (data && data.fees) {
         VISA_PROCESSING = {
@@ -533,7 +533,7 @@ I would like to be connected to vetted moving companies and visa legal experts t
   // Load dynamic education school fees from education-data.json for all non-boarding schools
   async function loadEducationReportSchoolData() {
     try {
-      const response = await fetch('education-data.json');
+      const response = await fetch('/education-data.json');
       const data = await response.json();
       if (data && data.schools) {
         // Filter for all schools listed that do not include boarding
