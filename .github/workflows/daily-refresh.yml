@@ -4,7 +4,7 @@ on:
   schedule:
     # Runs at 01:00 AM UTC every day
     - cron: '0 1 * * *'
-  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Run daily update script
         run: node scripts/daily-update.js
@@ -35,4 +35,6 @@ jobs:
             git commit -m "chore: automated daily data & date refresh [skip ci]"
             git pull --rebase origin master
             git push origin master
+          else
+            console.log("No changes detected.")
           fi

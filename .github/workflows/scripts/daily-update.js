@@ -13,10 +13,14 @@ const todayFormatted = new Date().toLocaleDateString('en-US', {
   timeZone: 'UTC'
 });
 
-console.log(`[Daily Refresh] Running daily update for: ${todayFormatted}`);
+console.log(`[Daily Refresh] Updating platform data for: ${todayFormatted}`);
 
-// 1. Update JSON files in public/
+// 1. Update all JSON files in public/
 const publicDir = path.resolve(__dirname, '../public');
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true });
+}
+
 const dataFiles = [
   'shipping-data.json',
   'pet-data.json',
@@ -33,14 +37,20 @@ dataFiles.forEach(file => {
       const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
       content.lastUpdated = todayFormatted;
       fs.writeFileSync(filePath, JSON.stringify(content, null, 2) + '\n', 'utf8');
-      console.log(`✔ Updated JSON: ${file}`);
+      console.log(`✔ Updated JSON timestamp: ${file}`);
     } catch (err) {
       console.error(`✖ Error processing ${file}:`, err.message);
+    }
+  } else {
+    // If insurance-data.json doesn't exist yet, create a minimal valid one
+    if (file === 'insurance-data.json') {
+      fs.writeFileSync(filePath, JSON.stringify({ lastUpdated: todayFormatted }, null, 2) + '\n', 'utf8');
+      console.log(`✔ Created missing ${file}`);
     }
   }
 });
 
-// 2. Update all HTML files in project root directly
+// 2. Update every single HTML file in project root
 const rootDir = path.resolve(__dirname, '..');
 const htmlFiles = fs.readdirSync(rootDir).filter(file => file.endsWith('.html'));
 
@@ -49,17 +59,20 @@ htmlFiles.forEach(file => {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     
-    // Matches "Last Updated: August 31, 2026", "Last Updated: Loading...", etc.
-    const updatedContent = content.replace(
-      /Last Updated:\s*(?:[A-Za-z]+\s+\d{1,2},\s*\d{4}|Loading\.\.\.)/g,
-      `Last Updated: ${todayFormatted}`
-    );
+    // Comprehensive regex: matches "Last Updated: ..." regardless of inner spans/tags or dates
+    const dateRegex = /(Last Updated:\s*(?:<[^>]+>)*)([^<,\n\r]+(?:\s+\d{1,2},\s*\d{4}|Loading\.\.\.))/gi;
+
+    const updatedContent = content.replace(dateRegex, (match, prefix) => {
+      return `${prefix}${todayFormatted}`;
+    });
 
     if (content !== updatedContent) {
       fs.writeFileSync(filePath, updatedContent, 'utf8');
-      console.log(`✔ Updated HTML date in: ${file}`);
+      console.log(`✔ Updated date in HTML: ${file}`);
+    } else {
+      console.log(`ℹ No date pattern found in: ${file}`);
     }
   } catch (err) {
-    console.error(`✖ Error updating ${file}:`, err.message);
+    console.error(`✖ Error updating HTML file ${file}:`, err.message);
   }
 });
