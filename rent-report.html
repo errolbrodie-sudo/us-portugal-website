@@ -410,7 +410,7 @@
     // Load data from rent-data.json
     async function loadRentalData() {
       try {
-        const response = await fetch('rent-data.json');
+        const response = await fetch('/rent-data.json');
         rentalData = await response.json();
         document.getElementById('last-updated-label').innerText = `Last Updated: ${rentalData.lastUpdated}`;
         renderTable();

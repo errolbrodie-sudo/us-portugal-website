@@ -621,7 +621,7 @@
     // Load data from education-data.json
     async function loadEducationData() {
       try {
-        const response = await fetch('education-data.json');
+        const response = await fetch('/education-data.json');
         educationData = await response.json();
         document.getElementById('last-updated-label').innerText = `Last Updated: ${educationData.lastUpdated}`;
         

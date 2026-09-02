@@ -436,7 +436,7 @@
     // Load data from visa-data.json
     async function loadVisaData() {
       try {
-        const response = await fetch('visa-data.json');
+        const response = await fetch('/visa-data.json');
         visaData = await response.json();
         document.getElementById('last-updated-label').innerText = `Last Updated: ${visaData.lastUpdated}`;
         
