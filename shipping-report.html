@@ -25,7 +25,7 @@
       --border-radius-md: 16px;
     }
     
-    <strong>, </strong>::before, *::after {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -44,26 +44,10 @@
       margin: 0 auto;
     }
 
-    /* Header styling */
     header {
       text-align: center;
       margin-bottom: 60px;
       position: relative;
-    }
-
-    .back-link {
-      display: block;
-      margin: 0 auto 24px auto;
-      width: fit-content;
-      color: var(--color-secondary);
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-    }
-    
-    .back-link:hover {
-      opacity: 0.8;
-      text-decoration: underline;
     }
 
     h1 {
@@ -82,7 +66,6 @@
       margin: 0 auto;
     }
 
-    /* Section Cards */
     section {
       background: var(--color-card-bg);
       border: 1px solid var(--color-border);
@@ -126,7 +109,6 @@
       margin-bottom: 8px;
     }
 
-    /* Comparison Table */
     .table-container {
       overflow-x: auto;
       margin: 30px 0;
@@ -168,7 +150,6 @@
       color: var(--color-text-dark);
     }
 
-    /* Company Profiles */
     .company-profile {
       background: rgba(255, 255, 255, 0.3);
       padding: 24px;
@@ -223,16 +204,14 @@
   </style>
 </head>
 <body>
-  <!-- 1. The nav bar wrapper comes FIRST -->
+  <!-- Top navigation bar element -->
   <div class="top-site-nav-wrapper"></div>
 
-  <div class="container">
-    
+  <main class="container">
     <header>
-
       <h1>US to Portugal Shipping & Relocation Guide</h1>
       <p class="subtitle">A definitive logistical reference mapping costs, insurance, and Portuguese customs guidelines.</p>
-      <p style="font-size: 0.9rem; color: var(--color-text-dim); margin-top: 10px; font-weight: 500;">Last Updated: August 31, 2026</p>
+      <p id="shipping-last-updated" style="font-size: 0.9rem; color: var(--color-text-dim); margin-top: 10px; font-weight: 500;">Last Updated: Loading...</p>
     </header>
 
     <!-- Moving Process -->
@@ -247,7 +226,7 @@
         <li><strong>Securing Consular Documentation:</strong> Apply for your <strong>Certificado de Bagagem</strong> (Baggage Certificate) at the local Portuguese consulate in the US.</li>
         <li><strong>Packing & Pick-up:</strong> Have professional packers wrap and secure items (crucial for insurance validity).</li>
         <li><strong>Transit:</strong> Goods are shipped via sea container (typical East Coast transit: 4–6 weeks; West Coast: 7–10 weeks).</li>
-        <li><strong>Customs Clearance in Portugal:</strong> Your designated customs broker submits your Baggage Certificate, NIF, and visa documentation to the <strong>Autoridade Tributária e Aduaneira</strong> (known as AT or Finanças is the public agency in Portugal under the Ministry of Finance responsible for managing taxes, enforcing customs rules, and collecting state revenues).</li>
+        <li><strong>Customs Clearance in Portugal:</strong> Your designated customs broker submits your Baggage Certificate, NIF, and visa documentation to the <strong>Autoridade Tributária e Aduaneira</strong>.</li>
         <li><strong>Delivery & Unpacking:</strong> Container is transported to your Portuguese residence, unloaded, and unpacked.</li>
       </ol>
     </section>
@@ -261,7 +240,6 @@
 
       <h3>Detailed Company Reviews & SEO Profiles</h3>
 
-      <!-- Company 1 -->
       <div class="company-profile">
         <div class="company-title">1. Relocately - Best Digital Relocation Platform</div>
         <p>A comprehensive digital relocation platform providing transatlantic moving quote comparisons alongside visa and housing support.</p>
@@ -281,7 +259,6 @@
         </div>
       </div>
 
-      <!-- Company 2 -->
       <div class="company-profile">
         <div class="company-title">2. Sirelo - Best Quote Aggregator Platform</div>
         <p>Compare international moving quotes from vetted expat moving companies using Sirelo's global database.</p>
@@ -301,7 +278,6 @@
         </div>
       </div>
 
-      <!-- Company 3 -->
       <div class="company-profile">
         <div class="company-title">3. ReloAdvisor - Best Expat Resource & Lead Network</div>
         <p>ReloAdvisor international moving reviews, relocation planners, and moving company rate matches.</p>
@@ -338,70 +314,8 @@
               <th>Typical Ocean Transit</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="font-semibold">Single Expat + T1/T2</td>
-              <td>Shared container (LCL, 100–300 cu ft)</td>
-              <td>$1,500 – $3,500</td>
-              <td>$2,500</td>
-              <td>8 – 12 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Single Expat + T3</td>
-              <td>Shared container / U-Box</td>
-              <td>$3,500 – $5,500</td>
-              <td>$4,500</td>
-              <td>6 – 10 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Single Expat + Detached Villa</td>
-              <td>20ft Dedicated Container (FCL)</td>
-              <td>$5,500 – $8,500</td>
-              <td>$7,000</td>
-              <td>5 – 8 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Couple + T1/T2</td>
-              <td>Shared container / U-Box</td>
-              <td>$3,500 – $5,500</td>
-              <td>$4,500</td>
-              <td>6 – 10 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Couple + T3</td>
-              <td>20ft Dedicated Container (FCL)</td>
-              <td>$5,500 – $8,500</td>
-              <td>$7,000</td>
-              <td>5 – 8 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Couple + Detached Villa</td>
-              <td>2 to 3-Bedroom Home (20ft / Shared 40ft)</td>
-              <td>$7,000 – $12,000</td>
-              <td>$9,500</td>
-              <td>6 – 9 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Family + T1/T2</td>
-              <td>20ft Dedicated Container (FCL)</td>
-              <td>$5,500 – $8,500</td>
-              <td>$7,000</td>
-              <td>5 – 8 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Family + T3</td>
-              <td>2 to 3-Bedroom Home (20ft / Shared 40ft)</td>
-              <td>$7,000 – $12,000</td>
-              <td>$9,500</td>
-              <td>6 – 9 Weeks</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Family + Detached Villa</td>
-              <td>40ft Dedicated Container (FCL)</td>
-              <td>$8,500 – $14,000</td>
-              <td>$11,250</td>
-              <td>5 – 8 Weeks</td>
-            </tr>
+          <tbody id="volume-pricing-tbody">
+            <!-- Populated dynamically via shipping-data.json -->
           </tbody>
         </table>
       </div>
@@ -410,9 +324,7 @@
       </p>
 
       <h3>2. Sea Freight vs. Air Freight</h3>
-      <p>
-        Choosing between ocean containers and flight cargo involves trading off speed against costs:
-      </p>
+      <p>Choosing between ocean containers and flight cargo involves trading off speed against costs:</p>
       <div class="table-container">
         <table>
           <thead>
@@ -423,19 +335,8 @@
               <th>Recommended For</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="font-semibold">Sea Freight (Full Container Load (FCL) / Less than Container Load (LCL))</td>
-              <td>5 – 10 Weeks</td>
-              <td>Volume-based (cubic meters/feet)</td>
-              <td><strong>Highly Recommended</strong> for bulk household furniture, books, appliances, and large moves.</td>
-            </tr>
-            <tr>
-              <td class="font-semibold">Air Freight</td>
-              <td>3 – 10 Days</td>
-              <td>Weight-based (chargeable kg)</td>
-              <td>Recommended only for critical personal effects, immediate clothing, documents, and high-value items.</td>
-            </tr>
+          <tbody id="freight-modes-tbody">
+            <!-- Populated dynamically via shipping-data.json -->
           </tbody>
         </table>
       </div>
@@ -450,7 +351,7 @@
       <ul>
         <li><strong>All-Risk Insurance:</strong> Covers physical loss or damage from any external cause (theft, fire, rough seas, breakage). Only available if the company professionally packs your goods. Cost: <strong>1.5% to 3%</strong> of the total declared value.</li>
         <li><strong>Total Loss Only (TLO):</strong> Only pays out if the entire vessel sinks, catches fire, or is lost completely. Cost: <strong>1.0% to 1.5%</strong> of declared value. Recommended for self-packed containers.</li>
-        <li><strong>Exclusions:</strong> Pre-existing damage, mold or mildew caused by climate during transit, owner-packed breakages (if you packed the boxes yourself), and values of high-risk items like jewelry, cash, and fine art (which require custom riders).</li>
+        <li><strong>Exclusions:</strong> Pre-existing damage, mold or mildew caused by climate during transit, owner-packed breakages, and high-risk items like jewelry, cash, and fine art.</li>
       </ul>
     </section>
 
@@ -462,9 +363,7 @@
       </p>
       
       <h3>1. Duty-Free Eligibility</h3>
-      <p>
-        To avoid paying Portugal's steep customs duties and 23% VAT on your belongings, you must demonstrate:
-      </p>
+      <p>To avoid paying Portugal's steep customs duties and 23% VAT on your belongings, you must demonstrate:</p>
       <ul>
         <li>You have resided outside of the European Union (in the US) for at least <strong>12 consecutive months</strong>.</li>
         <li>You have owned and used the household goods for at least <strong>6 months</strong> prior to shipping.</li>
@@ -472,21 +371,19 @@
       </ul>
 
       <h3>2. Required Documentation</h3>
-      <p>
-        Your customs broker will require:
-      </p>
+      <p>Your customs broker will require:</p>
       <ol>
         <li><strong>Certificado de Bagagem (Baggage Certificate):</strong> Issued by the Portuguese Consulate in the US representing your state of residence.</li>
-        <li><strong>Detailed Packing Inventory:</strong> A itemized list in Portuguese indicating categories (e.g. <strong>livros</strong>, <strong>vestuário</strong>, <strong>louça</strong>) and serial numbers of electronics.</li>
+        <li><strong>Detailed Packing Inventory:</strong> An itemized list in Portuguese indicating categories and serial numbers.</li>
         <li><strong>NIF (Portuguese Fiscal Number):</strong> The local tax ID.</li>
-        <li><strong>Atestado de Residência:</strong> A certificate from the local parish (<strong>Junta de Freguesia</strong>) in Portugal proving your local address.</li>
+        <li><strong>Atestado de Residência:</strong> Certificate from the local parish (Junta de Freguesia) in Portugal.</li>
         <li><strong>Proof of U.S. Residence:</strong> Tax returns, utility bills, or lease contracts covering the last 12 months.</li>
       </ol>
 
       <h3>3. Prohibited & Restricted Items</h3>
       <ul>
         <li><strong>Prohibited:</strong> Narcotics, illegal weapons, counterfeits, and raw meat/agricultural soils.</li>
-        <li><strong>Restricted (require permits):</strong> Firearms (strictly regulated), plants and seeds (require phytosanitary certificates), prescription medication (limit 3-month supply with prescription), and alcohol/tobacco (subject to excise duties).</li>
+        <li><strong>Restricted:</strong> Firearms, plants and seeds, prescription medication (limit 3-month supply), and alcohol/tobacco.</li>
       </ul>
     </section>
 
@@ -496,19 +393,19 @@
       
       <h3>1. Hidden Costs to Anticipate</h3>
       <ul>
-        <li><strong>Packing Services:</strong> Expect to add $800 – $2,000 for professional packing, which is mandatory to qualify for All-Risk insurance coverage.</li>
+        <li><strong>Packing Services:</strong> Expect to add $800 – $2,000 for professional packing.</li>
         <li><strong>Storage:</strong> Temporary storage at ports or warehouses runs $150 – $400/month.</li>
         <li><strong>Customs Broker Fees:</strong> Brokerage processing fees are usually $300 – $600.</li>
         <li><strong>Port Handling Charges (THC):</strong> Destination port fees in Lisbon or Leixões can add $400 – $800 per container.</li>
-        <li><strong>Delivery Access Surcharges:</strong> Narrow Portuguese streets may require a shuttle service (transferring goods to a smaller truck), adding $300 – $800.</li>
-        <li><strong>Visa-Related Expenses:</strong> Consular application fees, translation services, NIF representation, and document legalization run $800 – $1,500.</li>
+        <li><strong>Delivery Access Surcharges:</strong> Narrow Portuguese streets may require a shuttle service, adding $300 – $800.</li>
+        <li><strong>Visa-Related Expenses:</strong> Consular fees, translation, NIF representation, and document legalization run $800 – $1,500.</li>
       </ul>
 
       <h3>2. Practical Cost-Saving Tips</h3>
       <ul>
-        <li><strong>Declutter First:</strong> Shipping rates are volume-dependent. Selling non-essential heavy items in the US is often cheaper than shipping them.</li>
-        <li><strong>Book Off-Peak:</strong> Avoid moving during peak summer (June to August) and late Q4 when container shipping rates spike.</li>
-        <li><strong>Utilize Less than Container Load (LCL) / Pallets:</strong> If you don't have large furniture, ship goods on shrink-wrapped pallets (Less than Container Load (LCL)). It is far cheaper than Full Container Load (FCL).</li>
+        <li><strong>Declutter First:</strong> Shipping rates are volume-dependent. Selling non-essential heavy items is often cheaper.</li>
+        <li><strong>Book Off-Peak:</strong> Avoid moving during peak summer (June to August) and late Q4.</li>
+        <li><strong>Utilize Less than Container Load (LCL) / Pallets:</strong> If you don't have large furniture, ship on shrink-wrapped pallets.</li>
       </ul>
     </section>
 
@@ -533,92 +430,117 @@
       <div class="faq-item" style="margin-bottom: 16px;">
         <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Will standard American 110V household appliances work in Portugal's 230V electrical grid? <span>▼</span></div>
         <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
-          No. Portugal operates on a 230V, 50Hz electrical system (Type C/F plugs). American 110V heating appliances (hairdryers, coffee makers, microwaves) will burn out unless plugged into expensive step-down transformers. Electronics like laptops, phones, and TVs usually support dual voltage (100–240V) and only require cheap plug adapters.
+          No. Portugal operates on a 230V, 50Hz electrical system (Type C/F plugs). American 110V heating appliances will burn out unless plugged into step-down transformers. Electronics like laptops, phones, and TVs usually support dual voltage (100–240V).
         </div>
       </div>
 
       <div class="faq-item" style="margin-bottom: 16px;">
         <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">What items are strictly prohibited or subject to customs taxes when importing household goods to Portugal? <span>▼</span></div>
         <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
-          Prohibited items include illegal drugs, weapons, counterfeits, and uninspected agricultural foods/soils. Restricted items like alcohol, tobacco, and new commercial items (owned under 6 months) are subject to standard Portuguese VAT (23%) and import excise duties.
+          Prohibited items include illegal drugs, weapons, counterfeits, and uninspected agricultural foods/soils. Restricted items like alcohol, tobacco, and new commercial items (owned under 6 months) are subject to standard Portuguese VAT (23%) and import duties.
         </div>
       </div>
 
       <div class="faq-item" style="margin-bottom: 16px;">
         <div class="faq-question" onclick="toggleFaq(this)" style="font-weight: 600; cursor: pointer; padding: 12px; background: rgba(255,255,255,0.4); border-radius: 8px; border: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">Do I need marine insurance for my container shipment, and what does it cover? <span>▼</span></div>
         <div class="faq-answer" style="display:none; padding: 12px; background: rgba(255,255,255,0.2); border-radius: 0 0 8px 8px; font-size: 0.95rem; margin-top: 4px;">
-          Yes. Marine insurance is strongly recommended for ocean transit. Full All-Risk marine insurance covers physical loss, water damage, theft, and total loss during transit (typically costing 1.5% to 3% of declared cargo value). Note that All-Risk coverage usually requires professional packing by accredited movers.
+          Yes. Full All-Risk marine insurance covers physical loss, water damage, theft, and total loss during transit (typically costing 1.5% to 3% of declared cargo value). Note that All-Risk coverage usually requires professional packing by accredited movers.
         </div>
       </div>
     </section>
 
-    <script>
-      function toggleFaq(element) {
-        const answer = element.nextElementSibling;
-        if (answer.style.display === 'none' || !answer.style.display) {
-          answer.style.display = 'block';
-          element.querySelector('span').innerText = '▲';
-        } else {
-          answer.style.display = 'none';
-          element.querySelector('span').innerText = '▼';
-        }
-      }
-    </script>
-
     <!-- Resources -->
     <section>
       <h2>Official Portuguese Government Resources</h2>
-      <p>
-        Consult official portals to verify rules and download application templates:
-      </p>
+      <p>Consult official portals to verify rules and download application templates:</p>
       <ul>
-        <li><strong>Portuguese Customs Authority (AT):</strong> <a href="https://www.portaldasfinancas.gov.pt" target="_blank">https://www.portaldasfinancas.gov.pt</a> - Handles all import clearance and VAT relief procedures.</li>
+        <li><strong>Portuguese Customs Authority (AT):</strong> <a href="https://www.portaldasfinancas.gov.pt" target="_blank">https://www.portaldasfinancas.gov.pt</a> - Handles import clearance and VAT relief.</li>
         <li><strong>DGAV (Portuguese Vet Authority):</strong> <a href="https://www.dgav.pt/" target="_blank">https://www.dgav.pt/</a> - Access border notification templates and pet entry guidelines.</li>
-        <li><strong>Schengen Visa Portal:</strong> <a href="https://visa.vfsglobal.com/usa/en/prt" target="_blank">https://visa.vfsglobal.com/usa/en/prt</a> - Official partner for Portuguese visa filings and document submissions.</li>
-        <li><strong>US Consular Jurisdiction Directory:</strong> <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener">Find the Consulate Serving Your State</a> - Directory of Portuguese Embassy, regional Consulates, and VFS centres.</li>
+        <li><strong>Schengen Visa Portal:</strong> <a href="https://visa.vfsglobal.com/usa/en/prt" target="_blank">https://visa.vfsglobal.com/usa/en/prt</a> - Official partner for Portuguese visa filings.</li>
+        <li><strong>US Consular Jurisdiction Directory:</strong> <a href="/portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener">Find the Consulate Serving Your State</a> - Directory of Portuguese Embassy, regional Consulates, and VFS centres.</li>
       </ul>
     </section>
+  </main>
 
   <!-- Footer -->
   <footer class="app-footer" style="padding: 40px 0 30px; border-top: 1px solid var(--color-border); margin-top: 60px; text-align: center;">
     <div class="container footer-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
       <div class="footer-heading" style="font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: -4px;">Portugal Resources</div>
       <div class="footer-nav" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.95rem; font-weight: 500;">
-        <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
+        <a href="/portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline; font-weight: 600;">Embassy & Consulates</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
+        <a href="/terms.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Terms & Conditions</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
+        <a href="/disclaimer.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Disclaimer</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
+        <a href="/affiliate-disclosure.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Affiliate Disclosure</a>
         <span style="color: var(--color-text-dim);">|</span>
-        <a href="contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
+        <a href="/contact.html" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: underline;">Contact Us</a>
       </div>
       <p style="font-size: 0.85rem; color: var(--color-text-dim); margin: 0;">&copy; 2026 ReloPlan Platform. All rights reserved.</p>
     </div>
   </footer>
 
- <!-- Top Nav Wrapper -->
-  <div class="top-site-nav-wrapper"></div>
+  <script>
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      if (answer.style.display === 'none' || !answer.style.display) {
+        answer.style.display = 'block';
+        element.querySelector('span').innerText = '▲';
+      } else {
+        answer.style.display = 'none';
+        element.querySelector('span').innerText = '▼';
+      }
+    }
 
-  <!-- Main Content Container for TOC to scan -->
-  <main class="guide-container">
-    <h1>Page Title</h1>
-    
-    <h2>Section Title 1</h2>
-    <p>Details...</p>
+    // Dynamic fetch from JSON
+    async function loadShippingData() {
+      try {
+        const res = await fetch('/shipping-data.json');
+        if (!res.ok) throw new Error('Failed to load shipping data');
+        const data = await res.json();
 
-    <h2>Section Title 2</h2>
-    <p>Details...</p>
-  </main>
- 
+        // Update date
+        if (data.lastUpdated) {
+          document.getElementById('shipping-last-updated').textContent = `Last Updated: ${data.lastUpdated}`;
+        }
+
+        // Render Volume Pricing
+        const volumeTbody = document.getElementById('volume-pricing-tbody');
+        if (volumeTbody && data.volumePricing) {
+          volumeTbody.innerHTML = data.volumePricing.map(row => `
+            <tr>
+              <td class="font-semibold">${row.profile}</td>
+              <td>${row.method}</td>
+              <td>${row.costRange}</td>
+              <td>${row.averageCost}</td>
+              <td>${row.transit}</td>
+            </tr>
+          `).join('');
+        }
+
+        // Render Freight Modes
+        const freightTbody = document.getElementById('freight-modes-tbody');
+        if (freightTbody && data.freightModes) {
+          freightTbody.innerHTML = data.freightModes.map(row => `
+            <tr>
+              <td class="font-semibold">${row.mode}</td>
+              <td>${row.transit}</td>
+              <td>${row.basis}</td>
+              <td>${row.recommendedFor}</td>
+            </tr>
+          `).join('');
+        }
+      } catch (err) {
+        console.error('Error fetching shipping data:', err);
+        document.getElementById('shipping-last-updated').textContent = 'Last Updated: September 2, 2026';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadShippingData);
+  </script>
+
   <script type="module" src="/top-nav.js"></script>
-  <script src="toc.js"></script>
-<script type="module" src="/top-nav.js"></script>
-<script type="module" src="/toc.js"></script>
+  <script type="module" src="/toc.js"></script>
 </body>
 </html>
-
-
-
-

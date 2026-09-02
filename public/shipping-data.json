@@ -1,0 +1,82 @@
+{
+  "lastUpdated": "September 2, 2026",
+  "volumePricing": [
+    {
+      "profile": "Single Expat + T1/T2",
+      "method": "Shared container (LCL, 100–300 cu ft)",
+      "costRange": "$1,500 – $3,500",
+      "averageCost": "$2,500",
+      "transit": "8 – 12 Weeks"
+    },
+    {
+      "profile": "Single Expat + T3",
+      "method": "Shared container / U-Box",
+      "costRange": "$3,500 – $5,500",
+      "averageCost": "$4,500",
+      "transit": "6 – 10 Weeks"
+    },
+    {
+      "profile": "Single Expat + Detached Villa",
+      "method": "20ft Dedicated Container (FCL)",
+      "costRange": "$5,500 – $8,500",
+      "averageCost": "$7,000",
+      "transit": "5 – 8 Weeks"
+    },
+    {
+      "profile": "Couple + T1/T2",
+      "method": "Shared container / U-Box",
+      "costRange": "$3,500 – $5,500",
+      "averageCost": "$4,500",
+      "transit": "6 – 10 Weeks"
+    },
+    {
+      "profile": "Couple + T3",
+      "method": "20ft Dedicated Container (FCL)",
+      "costRange": "$5,500 – $8,500",
+      "averageCost": "$7,000",
+      "transit": "5 – 8 Weeks"
+    },
+    {
+      "profile": "Couple + Detached Villa",
+      "method": "2 to 3-Bedroom Home (20ft / Shared 40ft)",
+      "costRange": "$7,000 – $12,000",
+      "averageCost": "$9,500",
+      "transit": "6 – 9 Weeks"
+    },
+    {
+      "profile": "Family + T1/T2",
+      "method": "20ft Dedicated Container (FCL)",
+      "costRange": "$5,500 – $8,500",
+      "averageCost": "$7,000",
+      "transit": "5 – 8 Weeks"
+    },
+    {
+      "profile": "Family + T3",
+      "method": "2 to 3-Bedroom Home (20ft / Shared 40ft)",
+      "costRange": "$7,000 – $12,000",
+      "averageCost": "$9,500",
+      "transit": "6 – 9 Weeks"
+    },
+    {
+      "profile": "Family + Detached Villa",
+      "method": "40ft Dedicated Container (FCL)",
+      "costRange": "$8,500 – $14,000",
+      "averageCost": "$11,250",
+      "transit": "5 – 8 Weeks"
+    }
+  ],
+  "freightModes": [
+    {
+      "mode": "Sea Freight (Full Container Load (FCL) / Less than Container Load (LCL))",
+      "transit": "5 – 10 Weeks",
+      "basis": "Volume-based (cubic meters/feet)",
+      "recommendedFor": "<strong>Highly Recommended</strong> for bulk household furniture, books, appliances, and large moves."
+    },
+    {
+      "mode": "Air Freight",
+      "transit": "3 – 10 Days",
+      "basis": "Weight-based (chargeable kg)",
+      "recommendedFor": "Recommended only for critical personal effects, immediate clothing, documents, and high-value items."
+    }
+  ]
+}

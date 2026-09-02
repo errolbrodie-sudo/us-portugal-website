@@ -1,0 +1,80 @@
+{
+  "lastUpdated": "September 2, 2026",
+  "costEstimates": [
+    {
+      "category": "Microchip & Rabies Vaccine",
+      "diyUSD": "$80 – $150",
+      "diyEUR": "€75 – €140",
+      "proUSD": "Included in package",
+      "proEUR": "Included in package"
+    },
+    {
+      "category": "Health Certificate & USDA Fee",
+      "diyUSD": "$250 – $400",
+      "diyEUR": "€230 – €370",
+      "proUSD": "$500 – $800",
+      "proEUR": "€460 – €740"
+    },
+    {
+      "category": "IATA Travel Carrier (Crate)",
+      "diyUSD": "$100 – $300",
+      "diyEUR": "€90 – €280",
+      "proUSD": "$200 – $450",
+      "proEUR": "€185 – €415"
+    },
+    {
+      "category": "Airline Pet Fee (In-Cabin/Checked)",
+      "diyUSD": "$125 – $300",
+      "diyEUR": "€115 – €280",
+      "proUSD": "$1,500 – $3,500 (Cargo)",
+      "proEUR": "€1,380 – €3,220"
+    },
+    {
+      "category": "DGAV Airport Veterinary Entry Fee",
+      "diyUSD": "$50",
+      "diyEUR": "€45",
+      "proUSD": "Included in package",
+      "proEUR": "Included in package"
+    },
+    {
+      "category": "Concierge Coordination / Brokerage",
+      "diyUSD": "$0",
+      "diyEUR": "€0",
+      "proUSD": "$1,500 – $2,500",
+      "proEUR": "€1,380 – €2,300"
+    }
+  ],
+  "totals": {
+    "diyUSD": "$605 – $1,200",
+    "diyEUR": "€555 – €1,110",
+    "proUSD": "$3,700 – $7,250",
+    "proEUR": "€3,405 – €6,675"
+  },
+  "timelineSteps": [
+    {
+      "step": 1,
+      "title": "4 Months Before Departure: Microchip & Baseline Vaccine",
+      "desc": "Implant an ISO-compliant 15-digit microchip. Administer or update the Rabies vaccine. Ensure the chip number is noted on all medical charts."
+    },
+    {
+      "step": 2,
+      "title": "3 Months Before Departure: Carrier Training & Airline Booking",
+      "desc": "Purchase an IATA-approved travel carrier (for dogs/cats). Start training your pet to sleep and rest inside it. Contact airlines to secure a space (cabin weight limits are usually 8kg/17lbs including the carrier; larger pets must travel as manifest cargo or checked baggage)."
+    },
+    {
+      "step": 3,
+      "title": "1 Month Before Departure: Vet Coordination",
+      "desc": "Schedule your USDA-accredited vet appointment within 10 days of your flight. Verify weather restrictions (airlines will not fly cargo pets if temperatures exceed 85°F/29°C at any layover point)."
+    },
+    {
+      "step": 4,
+      "title": "10 Days Before Departure: Health Certificate & Endorsement",
+      "desc": "Attend the vet appointment to issue the EU Health Certificate. Submit the paperwork electronically via the USDA Veterinary Export Health Certification System (VEHCS) portal to obtain the official APHIS seal."
+    },
+    {
+      "step": 5,
+      "title": "48 Hours Before Departure: DGAV Notification",
+      "desc": "Send the DGAV entry notification form to your arrival airport’s vet inspection post (Lisbon, Porto, or Faro) with PDF copies of your flight ticket and endorsed health certificate."
+    }
+  ]
+}
