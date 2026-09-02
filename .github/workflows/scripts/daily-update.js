@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Target date formatted as "Month Day, Year" (e.g. September 2, 2026)
+// Target date formatted as "Month Day, Year"
 const todayFormatted = new Date().toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
@@ -13,51 +13,53 @@ const todayFormatted = new Date().toLocaleDateString('en-US', {
   timeZone: 'UTC'
 });
 
-const publicDir = path.resolve(__dirname, '../public');
+console.log(`[Daily Refresh] Running daily update for: ${todayFormatted}`);
 
-// List of all dynamic JSON files in public/
+// 1. Update JSON files in public/
+const publicDir = path.resolve(__dirname, '../public');
 const dataFiles = [
   'shipping-data.json',
   'pet-data.json',
   'education-data.json',
   'visa-data.json',
-  'rent-data.json'
+  'rent-data.json',
+  'insurance-data.json'
 ];
-
-console.log(`[Daily Refresh] Running daily update for: ${todayFormatted}`);
 
 dataFiles.forEach(file => {
   const filePath = path.join(publicDir, file);
-
   if (fs.existsSync(filePath)) {
     try {
       const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      
-      // Update lastUpdated timestamp
       content.lastUpdated = todayFormatted;
-
       fs.writeFileSync(filePath, JSON.stringify(content, null, 2) + '\n', 'utf8');
-      console.log(`✔ Successfully updated ${file}`);
+      console.log(`✔ Updated JSON: ${file}`);
     } catch (err) {
       console.error(`✖ Error processing ${file}:`, err.message);
     }
-  } else {
-    console.log(`ℹ Skipped ${file} (not found in public/)`);
   }
 });
 
-// Also update static date occurrence in index.html
-const indexPath = path.resolve(__dirname, '../index.html');
-if (fs.existsSync(indexPath)) {
+// 2. Update all HTML files in project root directly
+const rootDir = path.resolve(__dirname, '..');
+const htmlFiles = fs.readdirSync(rootDir).filter(file => file.endsWith('.html'));
+
+htmlFiles.forEach(file => {
+  const filePath = path.join(rootDir, file);
   try {
-    let indexHtml = fs.readFileSync(indexPath, 'utf8');
-    indexHtml = indexHtml.replace(
-      /Last Updated:\s*[A-Za-z]+\s+\d{1,2},\s*\d{4}/g,
+    let content = fs.readFileSync(filePath, 'utf8');
+    
+    // Matches "Last Updated: August 31, 2026", "Last Updated: Loading...", etc.
+    const updatedContent = content.replace(
+      /Last Updated:\s*(?:[A-Za-z]+\s+\d{1,2},\s*\d{4}|Loading\.\.\.)/g,
       `Last Updated: ${todayFormatted}`
     );
-    fs.writeFileSync(indexPath, indexHtml, 'utf8');
-    console.log('✔ Successfully updated index.html');
+
+    if (content !== updatedContent) {
+      fs.writeFileSync(filePath, updatedContent, 'utf8');
+      console.log(`✔ Updated HTML date in: ${file}`);
+    }
   } catch (err) {
-    console.error('✖ Error processing index.html:', err.message);
+    console.error(`✖ Error updating ${file}:`, err.message);
   }
-}
+});
