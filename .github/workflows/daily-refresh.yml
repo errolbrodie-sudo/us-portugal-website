@@ -1,0 +1,33 @@
+name: Daily 01:00 AM Data & Date Refresh
+
+on:
+  schedule:
+    # Runs at 01:00 AM UTC every day
+    - cron: '0 1 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run daily update script
+        run: node scripts/daily-update.js
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/*.json index.html
+          git diff-index --quiet HEAD || git commit -m "chore: automated daily data & date refresh [skip ci]"
+          git push
