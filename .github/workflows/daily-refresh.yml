@@ -32,7 +32,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add public/*.json *.html
           if ! git diff-index --quiet HEAD; then
-            git commit -m "chore: automated daily data & date refresh [skip ci]"
+            git commit -m "chore: automated daily data & date refresh"
             git pull --rebase origin master
             git push origin master
           else
