@@ -36,5 +36,5 @@ jobs:
             git pull --rebase origin master
             git push origin master
           else
-            console.log("No changes detected.")
+            echo "No changes detected."
           fi
