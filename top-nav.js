@@ -4,10 +4,6 @@
  * Features filtered guide links and '← Return to Budget Dashboard'.
  */
 
-// Initialize Vercel Web Analytics
-import { inject } from '@vercel/analytics';
-inject();
-
 (function () {
   'use strict';
 
