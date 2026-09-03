@@ -2,6 +2,10 @@
    ReloPlan - Relocation Logic Controller
    ========================================== */
 
+// Initialize Vercel Web Analytics
+import { inject } from '@vercel/analytics';
+inject({ mode: import.meta.env.MODE === 'development' ? 'development' : 'production' });
+
 document.addEventListener('DOMContentLoaded', () => {
   // --- DOM Elements ---
   const calcForm = document.getElementById('calculator-form');
