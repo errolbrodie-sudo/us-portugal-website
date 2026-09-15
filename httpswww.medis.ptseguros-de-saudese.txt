@@ -1,0 +1,13 @@
+https://www.medis.pt/seguros-de-saude/seguro-medis/
+
+https://www.dgav.gov.pt/
+
+https://www.dgav.pt/
+
+
+
+cd C:\Users\User\OneDrive\Documents\AI\Antigravity\Relocation Decision Platform
+git init
+git add .
+git commit -m "Initial commit"
+gh repo create US-Portugal-Website --public --source=. --remote=origin --push
