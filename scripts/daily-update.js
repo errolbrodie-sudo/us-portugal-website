@@ -58,12 +58,21 @@ htmlFiles.forEach(file => {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     
-    // Matches "Last Updated: August 31, 2026", "Last Updated: Loading...", etc.
-    const dateRegex = /(Last Updated:\s*(?:<[^>]+>)*)([^<,\n\r]+(?:\s+\d{1,2},\s*\d{4}|Loading\.\.\.))/gi;
+    // Matches "Last Updated: ...", "Last verified: ...", etc.
+    const dateRegex = /(Last (?:Updated|verified):\s*(?:<[^>]+>)*)([^<,\n\r]+(?:\s+\d{1,2},\s*\d{4}|Loading\.\.\.))/gi;
 
-    const updatedContent = content.replace(dateRegex, (match, prefix) => {
+    let updatedContent = content.replace(dateRegex, (match, prefix) => {
       return `${prefix}${todayFormatted}`;
     });
+
+    // Matches JS variables like: const LAST_VERIFIED_DATE = "September 15, 2026";
+    updatedContent = updatedContent.replace(/(LAST_VERIFIED_DATE\s*=\s*["'])([^"']+)(["'])/gi, `$1${todayFormatted}$3`);
+
+    // Matches text inside JS strings like: 'Last Updated: September 15, 2026'
+    updatedContent = updatedContent.replace(/('Last Updated:\s*)([^']+)'/gi, `$1${todayFormatted}'`);
+
+    // Matches "accessed on <strong>September 15, 2026</strong>"
+    updatedContent = updatedContent.replace(/(accessed on\s*<strong>)([^<]+)(<\/strong>)/gi, `$1${todayFormatted}$3`);
 
     if (content !== updatedContent) {
       fs.writeFileSync(filePath, updatedContent, 'utf8');

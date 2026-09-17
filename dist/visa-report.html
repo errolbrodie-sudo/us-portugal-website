@@ -275,6 +275,55 @@
         padding: 24px;
       }
     }
+
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+      }
+      .top-site-nav-wrapper,
+      .toc-sidebar-col,
+      .toc-mobile-container,
+      header,
+      footer,
+      .app-footer,
+      .btn-print,
+      main.container > section:not(#checklist-section),
+      .toc-main-col > section:not(#checklist-section) {
+        display: none !important;
+      }
+      .toc-layout-wrapper,
+      .toc-main-col,
+      main.container {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+      }
+      #checklist-section {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        color: black !important;
+      }
+      #checklist-section * {
+        color: black !important;
+      }
+      .checklist-item {
+        border-bottom: 1px solid #ccc !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    }
   </style>
   <script type="module" crossorigin src="/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
   <script type="module" crossorigin src="/assets/top-nav-BWD7Dl3y.js"></script>
@@ -289,12 +338,45 @@
     <header>
 
       <h1>US Citizen Portugal Residency &amp; Visa Guide (D7, D8, NIF)</h1>
-      <p class="subtitle">A comprehensive checklist and chronological guide to obtaining a NIF, opening a bank account, and securing a residency visa (D7/D8) for Portugal.</p>
+      <p class="subtitle">A comprehensive checklist and chronological guide to obtaining a NIF, opening a bank account, a Portuguese work visa, or  securing a Portugal residency for Americans visa (D7/D8) as well as an overview of other Portugal visa types for US citizens.</p>
       <div style="margin-top: 16px;">
         <a href="portuguese-embassy-consulates-usa.html" target="_blank" rel="noopener" style="display: inline-block; background: var(--color-primary); color: white; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">Find Your Portuguese Consulate</a>
       </div>
-      <p class="last-updated" id="last-updated-label">Last Updated:September 15, 2026</p>
+      <p class="last-updated" id="last-updated-label">Last Updated:September 17, 2026</p>
     </header>
+
+    <!-- Expat Requirements FAQ -->
+    <section>
+      <h2>Visa & NIF Requirements Details</h2>
+      
+      <h3>1. Visa Eligibility & Paths</h3>
+      <ul>
+        <li><strong>D7 Visa:</strong> Intended for retirees, passive income earners, and self-sufficient individuals. Income must be passive (e.g. social security, rental income, investments).</li>
+        <li><strong>D8 Digital Nomad Visa:</strong> Intended for active remote workers, freelancers, or business owners. Requires proof of monthly remote wages equal to at least 4x the current Portuguese minimum wage.</li>
+        <li><strong>D2 Visa (Entrepreneur &amp; Freelancer):</strong> Intended for Americans looking to launch a business, expand a company, or work independently in Portugal. Requires a comprehensive, viable business plan or proof of existing independent operations.</li>
+        <li><strong>D1 &amp; D3 Visas (Work Visas):</strong> <strong>D1:</strong> Standard work visa requiring a formal job contract with a local Portuguese company. <strong>D3:</strong> Highly qualified professional visa for specialized roles. Requires an advanced degree or specialized skill set and meeting threshold salary requirements.</li>
+        <li><strong>Golden Visa (ARI):</strong> An investment-based residency route that does not require full-time physical residence (only 7 days per year). Requires a qualifying non-real estate investment, such as €500,000 into regulated Portuguese investment funds.</li>
+      </ul>
+
+      <h3>2. Obtaining a NIF (Tax Number) & Bank Account</h3>
+      <ul>
+        <li><strong>NIF:</strong> Your <strong>Número de Identificação Fiscal</strong> is required for all legal actions. US citizens can obtain it online using virtual legal proxy services (like <a href="https://bordr.com/" target="_blank" rel="noopener">Bordr</a> or <a href="https://anchorless.io/portugal" target="_blank" rel="noopener">Anchorless</a>) for approx. $80–$150.</li>
+        <li><strong>Bank Account:</strong> You must open a <a href="https://anchorless.io/portugal" target="_blank" rel="noopener">Portuguese bank account</a> (such as Millennium BCP, Novo Banco, or ActivoBank) to deposit visa qualification savings. This requires a NIF, proof of US employment, and physical identification.</li>
+      </ul>
+
+      <h3>3. Accommodation & Insurance Requirements</h3>
+      <ul>
+        <li><strong>Lease Length:</strong> Portuguese consulates in the US require a registered lease contract of <strong>at least 12 months</strong> or a deed showing home ownership. Shared apartments or short-term sublets are generally rejected.</li>
+        <li><strong>Health Insurance:</strong> Must cover repatriation, emergency care, and have €0 deductibles. Coverage must begin before consulate filing.</li>
+      </ul>
+
+      <h3>4. Legal Counsel & Processing Costs</h3>
+      <ul>
+        <li><strong>Legal Counsel:</strong> Legal representation is <strong>optional but highly recommended</strong> to navigate consulate nuances and coordinate local biometrics slots.</li>
+        <li><strong>Consular & Administrative Fees:</strong> Consulate application fee is approx. $100. VFS processing fees are approx. $50. NIF and bank setup proxies total $150–$300.</li>
+        <li><strong>Processing Times:</strong> Consulate phase: 60 to 90 days. Biometrics bi-annual scheduling phase: 60 to 120 days.</li>
+      </ul>
+    </section>
 
     <!-- Chronological Steps -->
     <section>
@@ -362,8 +444,13 @@
     </section>
 
     <!-- Dynamic Document Checklist -->
-    <section>
-      <h2>Document Dossier Checklist</h2>
+    <section id="checklist-section">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; border-bottom: 1.5px solid var(--color-border); padding-bottom: 12px;">
+        <h2 style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Document Dossier Checklist</h2>
+        <button type="button" onclick="window.print()" class="btn-print" style="display: inline-flex; align-items: center; gap: 8px; background: var(--color-primary); color: white; border: none; padding: 8px 18px; border-radius: 20px; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <span>🖨️</span> <span>Print Checklist</span>
+        </button>
+      </div>
       <p>
         Check off the items below to prepare your visa application package.
       </p>
@@ -374,36 +461,6 @@
           <li style="padding:20px; text-align:center;">Loading checklist data...</li>
         </ul>
       </div>
-    </section>
-
-    <!-- Expat Requirements FAQ -->
-    <section>
-      <h2>Visa & NIF Requirements Details</h2>
-      
-      <h3>1. Visa Eligibility & Paths</h3>
-      <ul>
-        <li><strong>D7 Visa:</strong> Intended for retirees, passive income earners, and self-sufficient individuals. Income must be passive (e.g. social security, rental income, investments).</li>
-        <li><strong>D8 Digital Nomad Visa:</strong> Intended for active remote workers, freelancers, or business owners. Requires proof of monthly remote wages equal to at least 4x the current Portuguese minimum wage.</li>
-      </ul>
-
-      <h3>2. Obtaining a NIF (Tax Number) & Bank Account</h3>
-      <ul>
-        <li><strong>NIF:</strong> Your <strong>Número de Identificação Fiscal</strong> is required for all legal actions. US citizens can obtain it online using virtual legal proxy services (like <a href="https://bordr.com/" target="_blank" rel="noopener">Bordr</a> or <a href="https://anchorless.io/portugal" target="_blank" rel="noopener">Anchorless</a>) for approx. $80–$150.</li>
-        <li><strong>Bank Account:</strong> You must open a <a href="https://anchorless.io/portugal" target="_blank" rel="noopener">Portuguese bank account</a> (such as Millennium BCP, Novo Banco, or ActivoBank) to deposit visa qualification savings. This requires a NIF, proof of US employment, and physical identification.</li>
-      </ul>
-
-      <h3>3. Accommodation & Insurance Requirements</h3>
-      <ul>
-        <li><strong>Lease Length:</strong> Portuguese consulates in the US require a registered lease contract of <strong>at least 12 months</strong> or a deed showing home ownership. Shared apartments or short-term sublets are generally rejected.</li>
-        <li><strong>Health Insurance:</strong> Must cover repatriation, emergency care, and have €0 deductibles. Coverage must begin before consulate filing.</li>
-      </ul>
-
-      <h3>4. Legal Counsel & Processing Costs</h3>
-      <ul>
-        <li><strong>Legal Counsel:</strong> Legal representation is <strong>optional but highly recommended</strong> to navigate consulate nuances and coordinate local biometrics slots.</li>
-        <li><strong>Consular & Administrative Fees:</strong> Consulate application fee is approx. $100. VFS processing fees are approx. $50. NIF and bank setup proxies total $150–$300.</li>
-        <li><strong>Processing Times:</strong> Consulate phase: 60 to 90 days. Biometrics bi-annual scheduling phase: 60 to 120 days.</li>
-      </ul>
     </section>
 
     <!-- FAQ Accordion -->
