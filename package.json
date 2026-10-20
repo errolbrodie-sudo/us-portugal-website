@@ -2,18 +2,23 @@
   "name": "relocation-decision-platform",
   "version": "1.0.0",
   "description": "Relocation Decision Platform",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^5.4.21"
+    "preview": "vite preview",
+    "test": "node --test tests/auth.test.js",
+    "hash-password": "node scripts/hash-password.js"
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.1"
+    "@node-rs/argon2": "^2.2.2",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/functions": "^3.10.1",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.16",
+    "vite": "^5.4.21"
   }
-  
 }
-

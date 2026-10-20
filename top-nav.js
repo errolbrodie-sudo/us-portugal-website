@@ -4,6 +4,8 @@
  * Features filtered guide links and '← Return to Budget Dashboard'.
  */
 
+import './account-menu.js';
+
 (function () {
   'use strict';
 

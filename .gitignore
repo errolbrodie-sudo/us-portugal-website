@@ -1,1 +1,7 @@
 node_modules/
+
+# Secrets: never commit environment files (the GitHub repository is public).
+.env
+.env.*
+!.env.example
+.vercel/

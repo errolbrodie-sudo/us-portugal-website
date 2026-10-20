@@ -4,6 +4,7 @@
 
 // Initialize Vercel Web Analytics
 import { inject } from '@vercel/analytics';
+import './account-menu.js';
 inject({ mode: import.meta.env.MODE === 'development' ? 'development' : 'production' });
 
 document.addEventListener('DOMContentLoaded', () => {
