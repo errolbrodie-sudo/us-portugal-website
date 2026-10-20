@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Log In | ReloPlan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <!-- Self-contained styles: everything else on the site requires a session, including styles.css. -->
+  <style>
+    :root {
+      --bg: #EAE3DD;
+      --card: rgba(255, 255, 255, 0.72);
+      --border: rgba(13, 92, 70, 0.22);
+      --primary: #0d5c46;
+      --primary-hover: #094232;
+      --accent: #C0DDD5;
+      --text: #1f1a14;
+      --muted: #5a5146;
+      --error: #a12a1f;
+      --success: #0d5c46;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--primary); }
+    .tagline { color: var(--muted); margin: 0 0 24px; text-align: center; }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--accent);
+      padding: 5px;
+      border-radius: 50px;
+      margin-bottom: 22px;
+    }
+    .tab {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      padding: 9px 12px;
+      border-radius: 50px;
+      font: inherit;
+      font-weight: 600;
+      color: #072b22;
+      cursor: pointer;
+    }
+    .tab[aria-selected="true"] { background: #fff; box-shadow: 0 2px 8px rgba(13, 92, 70, 0.15); }
+    label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
+    .field { margin-bottom: 16px; }
+    .input-row { position: relative; }
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      font: inherit;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    input:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+    .input-row input { padding-right: 76px; }
+    .toggle {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: var(--accent);
+      color: #072b22;
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .hint { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+    .hint.ok { color: var(--success); }
+    .submit {
+      width: 100%;
+      border: 0;
+      background: var(--primary);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 13px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+    .submit:hover { background: var(--primary-hover); }
+    .submit[disabled] { opacity: 0.6; cursor: progress; }
+    .message { min-height: 1.4em; margin: 0 0 14px; font-size: 0.95rem; }
+    .message.error { color: var(--error); }
+    .message.success { color: var(--success); }
+    [hidden] { display: none !important; }
+    footer { margin-top: 24px; font-size: 0.85rem; color: var(--muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <a class="logo" href="/login.html">Relo<span>Plan</span></a>
+  <p class="tagline">Moving to Portugal from the USA &mdash; Relocation Decision Platform</p>
+
+  <main class="card">
+    <div class="tabs" role="tablist" aria-label="Account">
+      <button class="tab" role="tab" id="tab-login" aria-selected="true" aria-controls="login-form" type="button">Log in</button>
+      <button class="tab" role="tab" id="tab-register" aria-selected="false" aria-controls="register-form" type="button">Create account</button>
+    </div>
+
+    <p id="message" class="message" role="alert" aria-live="polite"></p>
+
+    <form id="login-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+      <div class="field">
+        <label for="login-username">Email or username</label>
+        <input id="login-username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <div class="input-row">
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="toggle" type="button" data-target="login-password" aria-controls="login-password" aria-pressed="false">Show</button>
+        </div>
+      </div>
+      <button class="submit" type="submit">Log in</button>
+    </form>
+
+    <form id="register-form" role="tabpanel" aria-labelledby="tab-register" novalidate hidden>
+      <div class="field">
+        <label for="register-email">Email address</label>
+        <input id="register-email" name="email" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" required>
+      </div>
+      <div class="field">
+        <label for="register-password">Password</label>
+        <div class="input-row">
+          <input id="register-password" name="password" type="password" autocomplete="new-password" required aria-describedby="register-password-hint">
+          <button class="toggle" type="button" data-target="register-password" aria-controls="register-password" aria-pressed="false">Show</button>
+        </div>
+        <p id="register-password-hint" class="hint">Exactly 8 characters &mdash; any letters, numbers, spaces or symbols. <span id="register-count">0/8</span></p>
+      </div>
+      <button class="submit" type="submit">Create account</button>
+    </form>
+  </main>
+
+  <footer>&copy; 2026 ReloPlan Platform. All rights reserved.</footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var PASSWORD_LENGTH = 8;
+      var message = document.getElementById('message');
+      var loginForm = document.getElementById('login-form');
+      var registerForm = document.getElementById('register-form');
+      var tabs = { login: document.getElementById('tab-login'), register: document.getElementById('tab-register') };
+
+      // Code points, matching the server: an accented letter or emoji counts as one character.
+      function charCount(value) { return Array.from(value).length; }
+
+      function nextPath() {
+        var next = new URLSearchParams(location.search).get('next') || '/';
+        return next.charAt(0) === '/' && next.charAt(1) !== '/' ? next : '/';
+      }
+
+      function showMessage(text, kind) {
+        message.textContent = text || '';
+        message.className = 'message' + (kind ? ' ' + kind : '');
+      }
+
+      function selectTab(name) {
+        var isLogin = name === 'login';
+        tabs.login.setAttribute('aria-selected', String(isLogin));
+        tabs.register.setAttribute('aria-selected', String(!isLogin));
+        loginForm.hidden = !isLogin;
+        registerForm.hidden = isLogin;
+        showMessage('');
+        (isLogin ? document.getElementById('login-username') : document.getElementById('register-email')).focus();
+      }
+      tabs.login.addEventListener('click', function () { selectTab('login'); });
+      tabs.register.addEventListener('click', function () { selectTab('register'); });
+
+      document.querySelectorAll('.toggle').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var input = document.getElementById(button.dataset.target);
+          var show = input.type === 'password';
+          input.type = show ? 'text' : 'password';
+          button.textContent = show ? 'Hide' : 'Show';
+          button.setAttribute('aria-pressed', String(show));
+        });
+      });
+
+      var registerPassword = document.getElementById('register-password');
+      var registerCount = document.getElementById('register-count');
+      registerPassword.addEventListener('input', function () {
+        var n = charCount(registerPassword.value);
+        registerCount.textContent = n + '/' + PASSWORD_LENGTH;
+        registerCount.parentElement.classList.toggle('ok', n === PASSWORD_LENGTH);
+      });
+
+      async function submit(form, url, payload) {
+        var button = form.querySelector('.submit');
+        button.disabled = true;
+        showMessage('');
+        try {
+          var response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'same-origin',
+            body: JSON.stringify(payload)
+          });
+          var data = {};
+          try { data = await response.json(); } catch (e) { /* non-JSON error page */ }
+          if (response.ok) {
+            showMessage(url.indexOf('register') !== -1 ? 'Account created. Taking you to ReloPlan…' : 'Logged in. Loading…', 'success');
+            location.assign(data.redirect || '/');
+            return;
+          }
+          showMessage(data.error || 'Something went wrong. Please try again.', 'error');
+        } catch (e) {
+          showMessage('We could not reach the server. Check your connection and try again.', 'error');
+        }
+        button.disabled = false;
+      }
+
+      loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var username = document.getElementById('login-username').value;
+        var password = document.getElementById('login-password').value;
+        if (!username.trim() || !password) {
+          showMessage('Please enter your username and password.', 'error');
+          return;
+        }
+        submit(loginForm, '/api/auth/login', { username: username, password: password, next: nextPath() });
+      });
+
+      registerForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var email = document.getElementById('register-email').value.trim();
+        var password = registerPassword.value; // sent exactly as typed, never trimmed
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+        if (charCount(password) !== PASSWORD_LENGTH) {
+          showMessage('Password must be exactly ' + PASSWORD_LENGTH + ' characters.', 'error');
+          return;
+        }
+        submit(registerForm, '/api/auth/register', { email: email, password: password, next: nextPath() });
+      });
+
+      if (new URLSearchParams(location.search).get('mode') === 'register') selectTab('register');
+    })();
+  </script>
+</body>
+</html>

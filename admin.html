@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>User Management | ReloPlan</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #EAE3DD; font-family: 'Outfit', sans-serif; color: var(--color-text-white); }
+    .admin-container { max-width: 1040px; margin: 32px auto; padding: 0 16px; }
+    .panel {
+      background: rgba(255, 255, 255, 0.6); border: 1px solid var(--color-border); border-radius: 12px;
+      padding: 24px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    h1 { font-size: 1.6rem; margin: 0 0 4px; color: #0d5c46; }
+    h2 { font-size: 1.15rem; margin: 0 0 14px; }
+    .sub { color: var(--color-text-dim); margin: 0; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+    .row > .grow { flex: 1 1 220px; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+    input, select {
+      width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 8px;
+      background: rgba(255, 255, 255, 0.85); font: inherit; font-size: 0.95rem; box-sizing: border-box;
+    }
+    button { font: inherit; cursor: pointer; }
+    .btn-solid { background: #0d5c46; color: #fff; border: 0; border-radius: 8px; padding: 10px 18px; font-weight: 600; }
+    .btn-small {
+      background: rgba(255, 255, 255, 0.85); color: #072b22; border: 1px solid rgba(13, 92, 70, 0.3);
+      border-radius: 6px; padding: 5px 10px; font-size: 0.85rem; font-weight: 600; margin: 2px;
+    }
+    .btn-small.danger { color: #a12a1f; border-color: rgba(161, 42, 31, 0.35); }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--color-border); vertical-align: middle; }
+    th { font-size: 0.85rem; color: var(--color-text-dim); font-weight: 600; }
+    td.email { overflow-wrap: anywhere; }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+    .badge.active { background: #C0DDD5; color: #072b22; }
+    .badge.deregistered { background: #f1d6d2; color: #7a2016; }
+    .message { min-height: 1.4em; font-size: 0.95rem; margin: 10px 0 0; }
+    .message.error { color: #a12a1f; }
+    .message.success { color: #0d5c46; }
+    .pager { display: flex; gap: 8px; align-items: center; justify-content: flex-end; margin-top: 12px; }
+    .hint { font-size: 0.85rem; color: var(--color-text-dim); margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="top-site-nav-wrapper"></div>
+
+  <main class="admin-container">
+    <section class="panel">
+      <h1>User management</h1>
+      <p class="sub">Administrator only. Every action is authorized on the server.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Add a user</h2>
+      <form id="create-form" class="row" novalidate>
+        <div class="grow">
+          <label for="create-email">Email address</label>
+          <input id="create-email" type="email" autocomplete="off" required>
+        </div>
+        <div class="grow">
+          <label for="create-password">Password (exactly 8 characters)</label>
+          <input id="create-password" type="text" autocomplete="new-password" spellcheck="false" required>
+        </div>
+        <div><button class="btn-solid" type="submit">Add user</button></div>
+      </form>
+      <p class="message" id="create-message" role="alert" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Users</h2>
+      <form id="search-form" class="row" role="search">
+        <div class="grow">
+          <label for="search-q">Search by email</label>
+          <input id="search-q" type="search" autocomplete="off">
+        </div>
+        <div>
+          <label for="search-status">Status</label>
+          <select id="search-status">
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="deregistered">Deregistered</option>
+          </select>
+        </div>
+        <div><button class="btn-solid" type="submit">Search</button></div>
+      </form>
+      <p class="message" id="list-message" role="alert" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Email</th><th>Status</th><th>Registered</th><th>Deregistered</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="users-body"><tr><td colspan="5">Loading…</td></tr></tbody>
+        </table>
+      </div>
+      <div class="pager">
+        <span id="page-info" class="hint"></span>
+        <button class="btn-small" type="button" id="prev-page">Previous</button>
+        <button class="btn-small" type="button" id="next-page">Next</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+      var PASSWORD_LENGTH = 8;
+      var state = { q: '', status: 'all', page: 1, total: 0, pageSize: 50 };
+      var tbody = document.getElementById('users-body');
+
+      function charCount(value) { return Array.from(value).length; }
+
+      function setMessage(id, text, kind) {
+        var el = document.getElementById(id);
+        el.textContent = text || '';
+        el.className = 'message' + (kind ? ' ' + kind : '');
+      }
+
+      async function api(method, url, body) {
+        var response = await fetch(url, {
+          method: method,
+          credentials: 'same-origin',
+          headers: body ? { 'Content-Type': 'application/json' } : {},
+          body: body ? JSON.stringify(body) : undefined
+        });
+        if (response.status === 401) { location.assign('/login.html?next=/admin.html'); throw new Error('Please log in.'); }
+        var data = await response.json().catch(function () { return {}; });
+        if (!response.ok) throw new Error(data.error || 'Something went wrong.');
+        return data;
+      }
+
+      function cell(text, className) {
+        var td = document.createElement('td');
+        td.textContent = text;
+        if (className) td.className = className;
+        return td;
+      }
+
+      function actionButton(label, onClick, danger) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'btn-small' + (danger ? ' danger' : '');
+        b.textContent = label;
+        b.addEventListener('click', onClick);
+        return b;
+      }
+
+      async function runAction(user, action, extra, confirmText) {
+        if (confirmText && !confirm(confirmText)) return;
+        try {
+          await api('POST', '/api/admin/users', Object.assign({ action: action, id: user.id }, extra || {}));
+          setMessage('list-message', 'Updated ' + user.username + '.', 'success');
+          load();
+        } catch (e) {
+          setMessage('list-message', e.message, 'error');
+        }
+      }
+
+      function render(users) {
+        tbody.innerHTML = '';
+        if (!users.length) {
+          var tr = document.createElement('tr');
+          var td = cell('No users found.');
+          td.colSpan = 5;
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+          return;
+        }
+        users.forEach(function (user) {
+          var tr = document.createElement('tr');
+          tr.appendChild(cell(user.username, 'email'));
+          var statusTd = document.createElement('td');
+          var badge = document.createElement('span');
+          badge.className = 'badge ' + user.status;
+          badge.textContent = user.status === 'active' ? 'Active' : 'Deregistered';
+          statusTd.appendChild(badge);
+          tr.appendChild(statusTd);
+          tr.appendChild(cell(user.registered || ''));
+          tr.appendChild(cell(user.deregistered || '—'));
+
+          var actions = document.createElement('td');
+          actions.appendChild(actionButton('Set password', function () {
+            var password = prompt('New password for ' + user.username + ' (exactly ' + PASSWORD_LENGTH + ' characters):');
+            if (password === null) return;
+            if (charCount(password) !== PASSWORD_LENGTH) {
+              setMessage('list-message', 'Password must be exactly ' + PASSWORD_LENGTH + ' characters.', 'error');
+              return;
+            }
+            runAction(user, 'set-password', { password: password });
+          }));
+          if (user.status === 'active') {
+            actions.appendChild(actionButton('Deregister', function () {
+              runAction(user, 'deregister', null, 'Deregister ' + user.username + '? They will be signed out and unable to log in.');
+            }, true));
+          } else {
+            actions.appendChild(actionButton('Reactivate', function () {
+              runAction(user, 'reactivate', null, 'Reactivate ' + user.username + '?');
+            }));
+          }
+          tr.appendChild(actions);
+          tbody.appendChild(tr);
+        });
+      }
+
+      async function load() {
+        var params = new URLSearchParams({ q: state.q, status: state.status, page: String(state.page) });
+        try {
+          var data = await api('GET', '/api/admin/users?' + params.toString());
+          state.total = data.total;
+          state.pageSize = data.pageSize;
+          render(data.users);
+          var pages = Math.max(1, Math.ceil(state.total / state.pageSize));
+          document.getElementById('page-info').textContent = state.total + ' user(s) · page ' + state.page + ' of ' + pages;
+          document.getElementById('prev-page').disabled = state.page <= 1;
+          document.getElementById('next-page').disabled = state.page >= pages;
+        } catch (e) {
+          setMessage('list-message', e.message, 'error');
+        }
+      }
+
+      document.getElementById('search-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        state.q = document.getElementById('search-q').value;
+        state.status = document.getElementById('search-status').value;
+        state.page = 1;
+        setMessage('list-message', '');
+        load();
+      });
+      document.getElementById('prev-page').addEventListener('click', function () { state.page--; load(); });
+      document.getElementById('next-page').addEventListener('click', function () { state.page++; load(); });
+
+      document.getElementById('create-form').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        var email = document.getElementById('create-email').value.trim();
+        var password = document.getElementById('create-password').value;
+        if (charCount(password) !== PASSWORD_LENGTH) {
+          setMessage('create-message', 'Password must be exactly ' + PASSWORD_LENGTH + ' characters.', 'error');
+          return;
+        }
+        try {
+          var data = await api('POST', '/api/admin/users', { action: 'create', email: email, password: password });
+          setMessage('create-message', 'Added ' + data.user.username + '.', 'success');
+          event.target.reset();
+          load();
+        } catch (e) {
+          setMessage('create-message', e.message, 'error');
+        }
+      });
+
+      load();
+    })();
+  </script>
+  <script type="module" src="/top-nav.js"></script>
+</body>
+</html>

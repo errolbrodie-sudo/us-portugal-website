@@ -6,6 +6,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        login: resolve(__dirname, 'login.html'),
+        account: resolve(__dirname, 'account.html'),
+        admin: resolve(__dirname, 'admin.html'),
         affiliate: resolve(__dirname, 'affiliate-disclosure.html'),
         contact: resolve(__dirname, 'contact.html'),
         disclaimer: resolve(__dirname, 'disclaimer.html'),
